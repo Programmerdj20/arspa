@@ -3,14 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
 :root {
-  /* ARspa Brand Colors */
-  --color-primary: #000000; /* Negro */
-  --color-secondary: #FFD700; /* Dorado */
-  --color-accent: #40E0D0; /* Azul turquesa */
+  /* ARspa Brand Colors - Basados en el logo */
+  --color-primary: #000000; /* Negro principal */
+  --color-secondary: #D4AF37; /* Dorado elegante */
+  --color-accent: #48CAE4; /* Azul turquesa del logo */
   --color-white: #FFFFFF;
   --color-gray-light: #F8F9FA;
   --color-gray-medium: #6C757D;
   --color-gray-dark: #343A40;
+  --color-turquoise-light: #E8F8F5;
+  --color-gold-light: #FAF3E0;
 }
 
 body {

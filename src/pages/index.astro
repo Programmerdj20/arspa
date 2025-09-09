@@ -1,26 +1,607 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Arturo Ramírez - Portafolio</title>
-		<meta name="description" content="Portafolio profesional de Arturo Ramírez" />
-	</head>
-	<body class="bg-gray-50 text-gray-900">
-		<div class="min-h-screen flex items-center justify-center">
-			<div class="text-center">
-				<h1 class="text-4xl font-bold text-gray-900 mb-4">Arturo Ramírez</h1>
-				<p class="text-xl text-gray-600 mb-8">Bienvenido a mi portafolio profesional</p>
-				<div class="bg-white p-8 rounded-lg shadow-lg max-w-md mx-auto">
-					<p class="text-gray-700">Sitio web en construcción...</p>
-					<p class="text-sm text-gray-500 mt-4">Desarrollado con Astro, Tailwind CSS y TypeScript</p>
+<Layout title="ARspa - Estética y Bienestar | Medellín" description="Spa especializado en estética y bienestar en Medellín. Masajes, tratamientos corporales, faciales, sueroterapia. Atención profesional con base científica.">
+	<!-- Hero Section -->
+	<section id="inicio" class="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white overflow-hidden">
+		<!-- Background Pattern -->
+		<div class="absolute inset-0 opacity-5">
+			<div class="absolute top-20 left-20 w-40 h-40 bg-secondary rounded-full blur-3xl"></div>
+			<div class="absolute bottom-20 right-20 w-60 h-60 bg-accent rounded-full blur-3xl"></div>
+		</div>
+		
+		<div class="relative section-padding py-20">
+			<div class="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+				<!-- Hero Content -->
+				<div class="space-y-8">
+					<div class="space-y-4">
+						<div class="flex items-center space-x-4 mb-6">
+							<div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center shadow-gold">
+								<span class="text-primary font-bold text-2xl font-decorative">AR</span>
+							</div>
+							<div>
+								<h1 class="text-3xl md:text-4xl font-bold text-secondary font-primary">ARspa</h1>
+								<p class="text-accent text-lg">Estética & Bienestar</p>
+							</div>
+						</div>
+						
+						<h2 class="text-4xl md:text-6xl font-bold font-primary leading-tight">
+							Transforma tu 
+							<span class="text-secondary">belleza natural</span>
+						</h2>
+						
+						<p class="text-xl text-gray-300 leading-relaxed">
+							En ARspa transformamos el concepto de un spa tradicional en un espacio de 
+							<span class="text-accent font-semibold">autocuidado integral</span>, donde la salud, 
+							la estética y el bienestar se unen para resaltar tu belleza natural.
+						</p>
+					</div>
+					
+					<!-- Dual Gender Banners -->
+					<div class="grid sm:grid-cols-2 gap-4">
+						<div class="bg-gradient-to-r from-pink-500/20 to-purple-500/20 backdrop-blur-sm border border-pink-300/30 rounded-xl p-6 text-center hover:scale-105 transition-transform">
+							<h3 class="text-xl font-semibold text-pink-200 mb-2">Para Ella</h3>
+							<p class="text-sm text-gray-300">Tratamientos especializados para el cuidado femenino</p>
+						</div>
+						<div class="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm border border-blue-300/30 rounded-xl p-6 text-center hover:scale-105 transition-transform">
+							<h3 class="text-xl font-semibold text-blue-200 mb-2">Para Él</h3>
+							<p class="text-sm text-gray-300">Experiencias de bienestar pensadas para el hombre moderno</p>
+						</div>
+					</div>
+					
+					<!-- CTA Buttons -->
+					<div class="flex flex-col sm:flex-row gap-4">
+						<a href="#servicios" class="btn-secondary inline-flex items-center justify-center">
+							<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							Ver Servicios
+						</a>
+						<a 
+							href="https://wa.me/573013545997?text=Hola! Me interesa agendar una cita en ARspa" 
+							target="_blank"
+							class="btn-accent inline-flex items-center justify-center"
+						>
+							<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"/>
+							</svg>
+							Reservar Cita
+						</a>
+					</div>
+				</div>
+				
+				<!-- Appointment Form -->
+				<div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20">
+					<h3 class="text-2xl font-bold text-secondary mb-6 text-center">Agenda tu Cita</h3>
+					<form id="appointment-form" class="space-y-4">
+						<div class="grid sm:grid-cols-2 gap-4">
+							<input 
+								type="text" 
+								id="nombre" 
+								placeholder="Tu nombre" 
+								required 
+								class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+							>
+							<input 
+								type="tel" 
+								id="telefono" 
+								placeholder="Tu teléfono" 
+								required 
+								class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+							>
+						</div>
+						
+						<select 
+							id="servicio" 
+							required 
+							class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+						>
+							<option value="" class="text-gray-800">Selecciona un servicio</option>
+							<option value="masajes" class="text-gray-800">Masajes de Relajación</option>
+							<option value="corporales" class="text-gray-800">Tratamientos Corporales</option>
+							<option value="faciales" class="text-gray-800">Faciales</option>
+							<option value="sueroterapia" class="text-gray-800">Sueroterapia</option>
+							<option value="dias-especiales" class="text-gray-800">Días Especiales</option>
+						</select>
+						
+						<div class="grid sm:grid-cols-2 gap-4">
+							<input 
+								type="date" 
+								id="fecha" 
+								required 
+								class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+							>
+							<select 
+								id="modalidad" 
+								required 
+								class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+							>
+								<option value="" class="text-gray-800">Modalidad</option>
+								<option value="spa" class="text-gray-800">En el Spa</option>
+								<option value="domicilio" class="text-gray-800">A Domicilio (+Costo variable)</option>
+							</select>
+						</div>
+						
+						<textarea 
+							id="mensaje" 
+							rows="3" 
+							placeholder="Mensaje adicional (opcional)" 
+							class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent resize-none"
+						></textarea>
+						
+						<button 
+							type="submit" 
+							class="w-full btn-secondary font-semibold py-4 text-lg hover:scale-[1.02] transition-all duration-300"
+						>
+							Enviar por WhatsApp
+						</button>
+					</form>
 				</div>
 			</div>
 		</div>
-	</body>
-</html>
+	</section>
+
+	<!-- How It Works Section -->
+	<section id="como-funciona" class="py-20 bg-gray-50">
+		<div class="section-padding">
+			<div class="text-center mb-16">
+				<h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">¿Cómo funciona?</h2>
+				<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+					Nuestro proceso de atención está basado en la ciencia y la personalización, 
+					garantizando tu seguridad y satisfacción en cada paso.
+				</p>
+			</div>
+			
+			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+				<!-- Step 1 -->
+				<div class="text-center group">
+					<div class="relative mb-6">
+						<div class="w-20 h-20 bg-gradient-gold rounded-full flex items-center justify-center mx-auto shadow-gold group-hover:scale-110 transition-transform">
+							<span class="text-2xl font-bold text-primary">01</span>
+						</div>
+						<div class="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full flex items-center justify-center">
+							<svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+							</svg>
+						</div>
+					</div>
+					<h3 class="text-xl font-bold text-primary mb-3">Valoración</h3>
+					<p class="text-gray-600 mb-2 font-semibold">Nos centramos en el estado de salud y de piel del paciente</p>
+					<p class="text-sm text-gray-500">Análisis profesional para entender tus necesidades específicas</p>
+				</div>
+				
+				<!-- Step 2 -->
+				<div class="text-center group">
+					<div class="relative mb-6">
+						<div class="w-20 h-20 bg-gradient-turquoise rounded-full flex items-center justify-center mx-auto shadow-turquoise group-hover:scale-110 transition-transform">
+							<span class="text-2xl font-bold text-primary">02</span>
+						</div>
+						<div class="absolute -top-2 -right-2 w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+							<svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+							</svg>
+						</div>
+					</div>
+					<h3 class="text-xl font-bold text-primary mb-3">Tratamiento</h3>
+					<p class="text-gray-600 mb-2 font-semibold">Experiencia única adaptada a tus necesidades</p>
+					<p class="text-sm text-gray-500">Procedimientos personalizados con técnicas avanzadas</p>
+				</div>
+				
+				<!-- Step 3 -->
+				<div class="text-center group">
+					<div class="relative mb-6">
+						<div class="w-20 h-20 bg-gradient-gold rounded-full flex items-center justify-center mx-auto shadow-gold group-hover:scale-110 transition-transform">
+							<span class="text-2xl font-bold text-primary">03</span>
+						</div>
+						<div class="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full flex items-center justify-center">
+							<svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+						</div>
+					</div>
+					<h3 class="text-xl font-bold text-primary mb-3">Acompañamiento</h3>
+					<p class="text-gray-600 mb-2 font-semibold">Atención personalizada asegurando una experiencia cómoda y efectiva</p>
+					<p class="text-sm text-gray-500">Cuidado constante durante todo el proceso</p>
+				</div>
+				
+				<!-- Step 4 -->
+				<div class="text-center group">
+					<div class="relative mb-6">
+						<div class="w-20 h-20 bg-gradient-turquoise rounded-full flex items-center justify-center mx-auto shadow-turquoise group-hover:scale-110 transition-transform">
+							<span class="text-2xl font-bold text-primary">04</span>
+						</div>
+						<div class="absolute -top-2 -right-2 w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+							<svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+							</svg>
+						</div>
+					</div>
+					<h3 class="text-xl font-bold text-primary mb-3">Evaluación</h3>
+					<p class="text-gray-600 mb-2 font-semibold">Evaluación y análisis detallado para garantizar los mejores resultados de tu tratamiento</p>
+					<p class="text-sm text-gray-500">Seguimiento para optimizar resultados</p>
+				</div>
+			</div>
+			
+			<!-- Call to Action -->
+			<div class="text-center mt-16">
+				<p class="text-lg text-gray-600 mb-6">Más que un tratamiento, ofrecemos una <span class="text-accent font-semibold">experiencia integral</span> que equilibra cuerpo, piel y mente.</p>
+				<a 
+					href="https://wa.me/573013545997?text=Hola! Me gustaría conocer más sobre el proceso de atención de ARspa" 
+					target="_blank"
+					class="btn-primary inline-flex items-center"
+				>
+					<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+						<path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"/>
+				</svg>
+					Conocer Más
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Scripts -->
+	<script>
+		// Service Tabs Functionality
+		document.addEventListener('DOMContentLoaded', function() {
+			const tabs = document.querySelectorAll('.service-tab');
+			const panels = document.querySelectorAll('.tab-panel');
+			
+			tabs.forEach(tab => {
+				tab.addEventListener('click', () => {
+					const targetTab = tab.getAttribute('data-tab');
+					
+					// Remove active class from all tabs and panels
+					tabs.forEach(t => t.classList.remove('active'));
+					panels.forEach(p => p.classList.remove('active'));
+					
+					// Add active class to clicked tab and corresponding panel
+					tab.classList.add('active');
+					document.getElementById(targetTab).classList.add('active');
+				});
+			});
+			
+			// WhatsApp Form Handler
+			const form = document.getElementById('appointment-form');
+			if (form) {
+				form.addEventListener('submit', function(e) {
+					e.preventDefault();
+					
+					const nombre = document.getElementById('nombre').value;
+					const telefono = document.getElementById('telefono').value;
+					const servicio = document.getElementById('servicio').value;
+					const fecha = document.getElementById('fecha').value;
+					const modalidad = document.getElementById('modalidad').value;
+					const mensaje = document.getElementById('mensaje').value;
+					
+					// Construct WhatsApp message
+					let whatsappMessage = `¡Hola! Me interesa agendar una cita en ARspa.\n\n`;
+					whatsappMessage += `👤 *Nombre:* ${nombre}\n`;
+					whatsappMessage += `📱 *Teléfono:* ${telefono}\n`;
+					whatsappMessage += `✨ *Servicio:* ${getServiceName(servicio)}\n`;
+					whatsappMessage += `📅 *Fecha preferida:* ${fecha}\n`;
+					whatsappMessage += `📍 *Modalidad:* ${modalidad === 'spa' ? 'En el Spa' : 'A Domicilio'}\n`;
+					
+					if (mensaje.trim()) {
+						whatsappMessage += `\n📝 *Mensaje adicional:*\n${mensaje}`;
+					}
+					
+					// Open WhatsApp with the message
+					const whatsappUrl = `https://wa.me/573013545997?text=${encodeURIComponent(whatsappMessage)}`;
+					window.open(whatsappUrl, '_blank');
+				});
+			}
+			
+			function getServiceName(serviceValue) {
+				const services = {
+					'masajes': 'Masajes de Relajación',
+					'corporales': 'Tratamientos Corporales',
+					'faciales': 'Faciales',
+					'sueroterapia': 'Sueroterapia',
+					'dias-especiales': 'Días Especiales'
+				};
+				return services[serviceValue] || serviceValue;
+			}
+			
+			// Smooth scrolling for service cards clicks
+			document.querySelectorAll('.service-card, .package-card, .suero-card, .special-day-card').forEach(card => {
+				card.addEventListener('click', function() {
+					const serviceName = this.querySelector('h3, h4')?.textContent || 'Consulta de servicio';
+					const whatsappUrl = `https://wa.me/573013545997?text=Hola! Me interesa información sobre: ${encodeURIComponent(serviceName)}`;
+					window.open(whatsappUrl, '_blank');
+				});
+			});
+			
+			// Set minimum date to today
+			const dateInput = document.getElementById('fecha');
+			if (dateInput) {
+				const today = new Date().toISOString().split('T')[0];
+				dateInput.setAttribute('min', today);
+			}
+		});
+	</script>
+</Layout>
+	<!-- Services Section -->
+	<section id="servicios" class="py-20 bg-white">
+		<div class="section-padding">
+			<div class="text-center mb-16">
+				<h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">Nuestros Servicios</h2>
+				<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+					Descubre nuestra amplia gama de tratamientos personalizados, 
+					diseñados para mejorar tu bienestar físico y emocional.
+				</p>
+			</div>
+			
+			<!-- Service Tabs -->
+			<div class="max-w-6xl mx-auto">
+				<!-- Tab Buttons -->
+				<div class="flex flex-wrap justify-center gap-4 mb-12">
+					<button class="service-tab active" data-tab="masajes">
+						<span class="text-2xl mb-2 block">💆‍♀️</span>
+						Masajes de Relajación
+					</button>
+					<button class="service-tab" data-tab="corporales">
+						<span class="text-2xl mb-2 block">🎨</span>
+						Tratamientos Corporales
+					</button>
+					<button class="service-tab" data-tab="faciales">
+						<span class="text-2xl mb-2 block">✨</span>
+						Faciales
+					</button>
+					<button class="service-tab" data-tab="sueroterapia">
+						<span class="text-2xl mb-2 block">💉</span>
+						Sueroterapia
+					</button>
+					<button class="service-tab" data-tab="dias-especiales">
+						<span class="text-2xl mb-2 block">🎁</span>
+						Días Especiales
+					</button>
+				</div>
+				
+				<!-- Tab Content -->
+				<div class="tab-content">
+					<!-- Masajes -->
+					<div id="masajes" class="tab-panel active">
+						<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+							<div class="service-card">
+								<div class="service-icon">💪</div>
+								<h3>Masaje de Espalda</h3>
+								<p>Alivia la tensión y dolor en espalda, cuello y hombros.</p>
+								<span class="price">$70.000</span>
+							</div>
+							<div class="service-card">
+								<div class="service-icon">😌</div>
+								<h3>Masaje de Relajación</h3>
+								<p>Experiencia completa de relajación y bienestar.</p>
+								<span class="price">$110.000</span>
+							</div>
+							<div class="service-card">
+								<div class="service-icon">🌋</div>
+								<h3>Masaje con Piedras Volcánicas</h3>
+								<p>Terapia de calor profundo para relajación muscular.</p>
+								<span class="price">$140.000</span>
+							</div>
+							<div class="service-card">
+								<div class="service-icon">💧</div>
+								<h3>Drenaje Linfático</h3>
+								<p>Estimula la circulación y elimina toxinas del cuerpo.</p>
+								<span class="price">$180.000</span>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Tratamientos Corporales -->
+					<div id="corporales" class="tab-panel">
+						<div class="grid md:grid-cols-2 gap-8">
+							<div class="space-y-6">
+								<h3 class="text-2xl font-bold text-primary mb-4">Depilación con Cera</h3>
+								<div class="grid gap-4">
+									<div class="service-item">
+										<span class="service-name">Axilas</span>
+										<span class="service-price">$25.000</span>
+									</div>
+									<div class="service-item">
+										<span class="service-name">Bikini Parcial</span>
+										<span class="service-price">$35.000</span>
+									</div>
+									<div class="service-item">
+										<span class="service-name">Bikini Completo</span>
+										<span class="service-price">$50.000</span>
+									</div>
+									<div class="service-item">
+										<span class="service-name">Piernas</span>
+										<span class="service-price">$50.000</span>
+									</div>
+									<div class="service-item">
+										<span class="service-name">Pecho</span>
+										<span class="service-price">$30.000</span>
+									</div>
+									<div class="service-item">
+										<span class="service-name">Espalda</span>
+										<span class="service-price">$30.000</span>
+									</div>
+								</div>
+							</div>
+							<div class="space-y-6">
+								<h3 class="text-2xl font-bold text-primary mb-4">Paquetes de Masajes (10 sesiones)</h3>
+								<div class="grid gap-4">
+									<div class="package-card">
+										<h4>Masajes Reductores</h4>
+										<p class="text-sm text-gray-600">Reduce medidas y tonifica</p>
+										<span class="package-price">$1.100.000</span>
+									</div>
+									<div class="package-card">
+										<h4>Masajes Anticeluíticos</h4>
+										<p class="text-sm text-gray-600">Combate la celulitis efectivamente</p>
+										<span class="package-price">$1.100.000</span>
+									</div>
+									<div class="package-card">
+										<h4>Levantamiento de Glúteos</h4>
+										<p class="text-sm text-gray-600">Tonifica y levanta naturalmente</p>
+										<span class="package-price">$1.100.000</span>
+									</div>
+									<div class="package-card">
+										<h4>Masajes Post Quirúrgicos</h4>
+										<p class="text-sm text-gray-600">Recuperación óptima</p>
+										<span class="package-price">$1.100.000</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Faciales -->
+					<div id="faciales" class="tab-panel">
+						<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+							<div class="service-card">
+								<div class="service-icon">💧</div>
+								<h3>Hidratación Facial</h3>
+								<p>Restaura la hidratación natural de tu piel.</p>
+								<span class="price">$85.000</span>
+							</div>
+							<div class="service-card">
+								<div class="service-icon">🧡</div>
+								<h3>Limpieza Facial Profunda</h3>
+								<p>Elimina impurezas y puntos negros profundamente.</p>
+								<span class="price">$130.000</span>
+							</div>
+							<div class="service-card">
+								<div class="service-icon">✨</div>
+								<h3>Rejuvenecimiento Facial</h3>
+								<p>Tratamiento antiedad integral (10 sesiones).</p>
+								<span class="price">$1.100.000</span>
+							</div>
+							<div class="service-card highlight">
+								<div class="service-icon">🩸</div>
+								<h3>Plasma Rico en Plaquetas</h3>
+								<p>Facial y capilar. 3 sesiones con 15% descuento.</p>
+								<div class="price-group">
+									<span class="price-single">$220.000 x sesión</span>
+									<span class="price-package">$561.000 (3 sesiones)</span>
+								</div>
+							</div>
+							<div class="service-card">
+								<div class="service-icon">💋</div>
+								<h3>Hidralip</h3>
+								<p>Hidratación profunda para labios. 3 sesiones con 10% descuento.</p>
+								<div class="price-group">
+									<span class="price-single">$70.000 x sesión</span>
+									<span class="price-package">$189.000 (3 sesiones)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Sueroterapia -->
+					<div id="sueroterapia" class="tab-panel">
+						<div class="text-center mb-8">
+							<h3 class="text-2xl font-bold text-primary mb-4">Sueroterapia Personalizada</h3>
+							<p class="text-gray-600 max-w-2xl mx-auto">
+								Tratamientos intravenosos especializados para diferentes necesidades de salud y bienestar.
+								<strong class="text-accent">$120.000 por sesión</strong> | 
+								<strong class="text-secondary">4 sesiones por $432.000 (10% descuento)</strong>
+							</p>
+						</div>
+						
+						<div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+							<div class="suero-card">Detox</div>
+							<div class="suero-card">Fortalecimiento Respiratorio</div>
+							<div class="suero-card">Inmunológico General</div>
+							<div class="suero-card">Anti Envejecimiento</div>
+							<div class="suero-card">Adelgazante</div>
+							<div class="suero-card">Post Quirúrgico</div>
+							<div class="suero-card">Afecciones de la Piel</div>
+							<div class="suero-card">Afecciones del Colon</div>
+							<div class="suero-card">Sistema Osteo-Articular</div>
+							<div class="suero-card">Estrés</div>
+							<div class="suero-card">Diabetes</div>
+							<div class="suero-card">Sistema Circulatorio</div>
+							<div class="suero-card">Energía - Fatiga</div>
+							<div class="suero-card">Ácido Úrico</div>
+							<div class="suero-card">Guayabo</div>
+							<div class="suero-card">Próstata</div>
+							<div class="suero-card">Migraña</div>
+							<div class="suero-card">Menopausia</div>
+							<div class="suero-card">Revitalizante Masculino</div>
+							<div class="suero-card">Revitalizante Femenino</div>
+						</div>
+					</div>
+					
+					<!-- Días Especiales -->
+					<div id="dias-especiales" class="tab-panel">
+						<div class="text-center mb-8">
+							<h3 class="text-2xl font-bold text-primary mb-4">Días de ARspa</h3>
+							<p class="text-gray-600 max-w-2xl mx-auto">
+								Experiencias especiales diseñadas para celebrar momentos importantes 
+								y crear recuerdos inolvidables.
+							</p>
+						</div>
+						
+						<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+							<div class="special-day-card">
+								<div class="icon">💑</div>
+								<h4>En Pareja</h4>
+								<p>Experiencia romántica para dos</p>
+							</div>
+							<div class="special-day-card">
+								<div class="icon">🌹</div>
+								<h4>Día de la Madre</h4>
+								<p>Homenaje especial para mamá</p>
+							</div>
+							<div class="special-day-card">
+								<div class="icon">🎁</div>
+								<h4>Aguinaldos</h4>
+								<p>Regalo perfecto de fin de año</p>
+							</div>
+							<div class="special-day-card">
+								<div class="icon">👰</div>
+								<h4>Baño de Novia</h4>
+								<p>Preparación especial pre-boda</p>
+							</div>
+							<div class="special-day-card">
+								<div class="icon">👨‍🎓</div>
+								<h4>Día del Padre</h4>
+								<p>Relajación especial para papá</p>
+							</div>
+							<div class="special-day-card">
+								<div class="icon">💕</div>
+								<h4>Amor y Amistad</h4>
+								<p>Celebra el amor en todas sus formas</p>
+							</div>
+							<div class="special-day-card">
+								<div class="icon">🎉</div>
+								<h4>Spa de Aniversario</h4>
+								<p>Conmemoración única y especial</p>
+							</div>
+							<div class="special-day-card">
+								<div class="icon">🍾</div>
+								<h4>Despedida de Soltera</h4>
+								<p>Celebra tu última aventura soltera</p>
+							</div>
+							<div class="special-day-card">
+								<div class="icon">🎂</div>
+								<h4>Spa de Quinceañeras</h4>
+								<p>Celebra este momento tan especial</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Service Notice -->
+				<div class="bg-accent/10 border border-accent/20 rounded-xl p-6 mt-12 text-center">
+					<div class="flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+						</svg>
+						<h4 class="text-lg font-semibold text-primary">Servicio a Domicilio Disponible</h4>
+					</div>
+					<p class="text-gray-600">
+						Todos nuestros servicios están disponibles en la comodidad de tu hogar. 
+						<strong class="text-accent">El costo adicional varía según la ubicación.</strong>
+						<a href="https://wa.me/573013545997?text=Hola! Me interesa el servicio a domicilio" target="_blank" class="text-secondary font-semibold hover:underline ml-2">Consultar precios →</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>

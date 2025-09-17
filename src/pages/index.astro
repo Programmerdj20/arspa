@@ -266,7 +266,7 @@ import '../styles/global.css';
 					
 					// Add active class to clicked tab and corresponding panel
 					tab.classList.add('active');
-					document.getElementById(targetTab).classList.add('active');
+					document.getElementById(targetTab!)?.classList.add('active');
 				});
 			});
 			
@@ -276,12 +276,12 @@ import '../styles/global.css';
 				form.addEventListener('submit', function(e) {
 					e.preventDefault();
 					
-					const nombre = document.getElementById('nombre').value;
-					const telefono = document.getElementById('telefono').value;
-					const servicio = document.getElementById('servicio').value;
-					const fecha = document.getElementById('fecha').value;
-					const modalidad = document.getElementById('modalidad').value;
-					const mensaje = document.getElementById('mensaje').value;
+					const nombre = (document.getElementById('nombre') as HTMLInputElement)?.value || '';
+					const telefono = (document.getElementById('telefono') as HTMLInputElement)?.value || '';
+					const servicio = (document.getElementById('servicio') as HTMLSelectElement)?.value || '';
+					const fecha = (document.getElementById('fecha') as HTMLInputElement)?.value || '';
+					const modalidad = (document.getElementById('modalidad') as HTMLSelectElement)?.value || '';
+					const mensaje = (document.getElementById('mensaje') as HTMLTextAreaElement)?.value || '';
 					
 					// Construct WhatsApp message
 					let whatsappMessage = `¡Hola! Me interesa agendar una cita en ARspa.\n\n`;
@@ -301,7 +301,7 @@ import '../styles/global.css';
 				});
 			}
 			
-			function getServiceName(serviceValue) {
+			function getServiceName(serviceValue: string): string {
 				const services = {
 					'masajes': 'Masajes de Relajación',
 					'corporales': 'Tratamientos Corporales',
@@ -309,13 +309,13 @@ import '../styles/global.css';
 					'sueroterapia': 'Sueroterapia',
 					'dias-especiales': 'Días Especiales'
 				};
-				return services[serviceValue] || serviceValue;
+				return services[serviceValue as keyof typeof services] || serviceValue;
 			}
 			
 			// Smooth scrolling for service cards clicks
 			document.querySelectorAll('.service-card, .package-card, .suero-card, .special-day-card').forEach(card => {
-				card.addEventListener('click', function() {
-					const serviceName = this.querySelector('h3, h4')?.textContent || 'Consulta de servicio';
+				card.addEventListener('click', function(this: HTMLElement) {
+					const serviceName = (this.querySelector('h3, h4') as HTMLElement)?.textContent || 'Consulta de servicio';
 					const whatsappUrl = `https://wa.me/573013545997?text=Hola! Me interesa información sobre: ${encodeURIComponent(serviceName)}`;
 					window.open(whatsappUrl, '_blank');
 				});

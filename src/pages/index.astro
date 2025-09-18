@@ -10,19 +10,19 @@ import '../styles/global.css';
 		<div class="absolute inset-0">
 			<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10"></div>
 			<div class="hero-carousel">
-				<img 
-					src="/images/Banner_hero.webp" 
-					alt="ARspa ambiente relajante con mesa de masaje y velas" 
+				<img
+					src="/images/Banner_hero.webp"
+					alt="ARspa ambiente relajante con mesa de masaje y velas"
 					class="carousel-image"
 				>
-				<img 
-					src="/images/Banner_hero_2.webp" 
-					alt="ARspa espacio sereno de relajación y bienestar" 
+				<img
+					src="/images/Banner_hero_2.webp"
+					alt="ARspa espacio sereno de relajación y bienestar"
 					class="carousel-image"
 				>
 			</div>
 		</div>
-		
+
 		<div class="relative z-20 section-padding py-20">
 			<div class="hero-grid">
 				<!-- Hero Content -->
@@ -31,19 +31,16 @@ import '../styles/global.css';
 						<div class="space-y-6">
 							<!-- Logo y Titulo -->
 							<div class="space-y-4">
-								
-								
 								<h2 class="text-5xl md:text-7xl font-bold font-primary leading-tight text-white">
-									Tu belleza,  
+									Tu belleza,
 									<span style="color: #D4AF37;">tu espacio.</span>
 								</h2>
-								
+
 								<p class="text-xl text-gray-200 leading-relaxed max-w-xl">
 									En ARspa convertimos tu espacio en autocuidado: tratamientos diseñados para cuidar tu salud, mejorar tu estética y devolverte bienestar.
 								</p>
 							</div>
-							
-							
+
 							<!-- CTA Buttons -->
 							<div class="flex flex-col sm:flex-row gap-4 max-w-lg">
 								<a href="#servicios" style="background-color: #fbe878; color: #1c1a1d;" class="px-8 py-4 font-semibold rounded-full hover:opacity-90 transition-all text-center flex items-center justify-center">
@@ -63,7 +60,7 @@ import '../styles/global.css';
 						</div>
 					</div>
 				</div>
-				
+
 				<!-- Appointment Form -->
 				<div class="bg-black/30 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-white/10 max-w-sm ml-auto hero-form" style="background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)); backdrop-filter: blur(20px);">
 					<div class="text-center mb-5">
@@ -75,28 +72,28 @@ import '../styles/global.css';
 						<h3 class="text-xl font-semibold text-white mb-1 font-primary">Reserva tu Cita</h3>
 						<p style="color: #fbe878;" class="text-sm font-primary">Agenda fácilmente vía WhatsApp</p>
 					</div>
-					
+
 					<form id="appointment-form" class="space-y-3">
 						<div class="space-y-3">
-							<input 
-								type="text" 
-								id="nombre" 
-								placeholder="Tu nombre completo" 
-								required 
-								class="w-full px-3 py-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:border-transparent transition-all font-primary text-sm" 
-								style="focus:ring-color: #fbe878;"
-							>
-							<input 
-								type="tel" 
-								id="telefono" 
-								placeholder="Tu número de teléfono" 
-								required 
+							<input
+								type="text"
+								id="nombre"
+								placeholder="Tu nombre completo"
+								required
 								class="w-full px-3 py-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:border-transparent transition-all font-primary text-sm"
 								style="focus:ring-color: #fbe878;"
 							>
-							<select 
-								id="servicio" 
-								required 
+							<input
+								type="tel"
+								id="telefono"
+								placeholder="Tu número de teléfono"
+								required
+								class="w-full px-3 py-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:border-transparent transition-all font-primary text-sm"
+								style="focus:ring-color: #fbe878;"
+							>
+							<select
+								id="servicio"
+								required
 								class="w-full px-3 py-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:border-transparent transition-all font-primary text-sm"
 								style="focus:ring-color: #fbe878;"
 							>
@@ -108,16 +105,16 @@ import '../styles/global.css';
 								<option value="dias-especiales" style="color: #1c1a1d;">Días Especiales</option>
 							</select>
 							<div class="grid grid-cols-2 gap-2">
-								<input 
-									type="date" 
-									id="fecha" 
-									required 
+								<input
+									type="date"
+									id="fecha"
+									required
 									class="w-full px-3 py-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:border-transparent transition-all font-primary text-sm"
 									style="focus:ring-color: #fbe878;"
 								>
-								<select 
-									id="modalidad" 
-									required 
+								<select
+									id="modalidad"
+									required
 									class="w-full px-3 py-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:border-transparent transition-all font-primary text-sm"
 									style="focus:ring-color: #fbe878;"
 								>
@@ -126,17 +123,17 @@ import '../styles/global.css';
 									<option value="domicilio" style="color: #1c1a1d;">A Domicilio (+Costo extra)</option>
 								</select>
 							</div>
-							<textarea 
-								id="mensaje" 
-								rows="2" 
-								placeholder="Mensaje adicional (opcional)" 
+							<textarea
+								id="mensaje"
+								rows="2"
+								placeholder="Mensaje adicional (opcional)"
 								class="w-full px-3 py-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:border-transparent resize-none transition-all font-primary text-sm"
 								style="focus:ring-color: #fbe878;"
 							></textarea>
 						</div>
-						
-						<button 
-							type="submit" 
+
+						<button
+							type="submit"
 							class="w-full py-3 font-semibold rounded-lg transition-all duration-300 flex items-center justify-center text-white hover:scale-[1.02] shadow-lg font-primary"
 							style="background: linear-gradient(135deg, #25D366, #128C7E);"
 						>
@@ -157,11 +154,11 @@ import '../styles/global.css';
 			<div class="text-center mb-16">
 				<h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">¿Cómo funciona?</h2>
 				<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-					Nuestro proceso de atención está basado en la ciencia y la personalización, 
+					Nuestro proceso de atención está basado en la ciencia y la personalización,
 					garantizando tu seguridad y satisfacción en cada paso.
 				</p>
 			</div>
-			
+
 			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 				<!-- Step 1 -->
 				<div class="text-center group">
@@ -179,7 +176,7 @@ import '../styles/global.css';
 					<p class="text-gray-600 mb-2 font-semibold">Nos centramos en el estado de salud y de piel del paciente</p>
 					<p class="text-sm text-gray-500">Análisis profesional para entender tus necesidades específicas</p>
 				</div>
-				
+
 				<!-- Step 2 -->
 				<div class="text-center group">
 					<div class="relative mb-6">
@@ -196,7 +193,7 @@ import '../styles/global.css';
 					<p class="text-gray-600 mb-2 font-semibold">Experiencia única adaptada a tus necesidades</p>
 					<p class="text-sm text-gray-500">Procedimientos personalizados con técnicas avanzadas</p>
 				</div>
-				
+
 				<!-- Step 3 -->
 				<div class="text-center group">
 					<div class="relative mb-6">
@@ -213,7 +210,7 @@ import '../styles/global.css';
 					<p class="text-gray-600 mb-2 font-semibold">Atención personalizada asegurando una experiencia cómoda y efectiva</p>
 					<p class="text-sm text-gray-500">Cuidado constante durante todo el proceso</p>
 				</div>
-				
+
 				<!-- Step 4 -->
 				<div class="text-center group">
 					<div class="relative mb-6">
@@ -231,12 +228,12 @@ import '../styles/global.css';
 					<p class="text-sm text-gray-500">Seguimiento para optimizar resultados</p>
 				</div>
 			</div>
-			
+
 			<!-- Call to Action -->
 			<div class="text-center mt-16">
 				<p class="text-lg text-gray-600 mb-6">Más que un tratamiento, ofrecemos una <span class="text-accent font-semibold">experiencia integral</span> que equilibra cuerpo, piel y mente.</p>
-				<a 
-					href="https://wa.me/573013545997?text=Hola! Me gustaría conocer más sobre el proceso de atención de ARspa" 
+				<a
+					href="https://wa.me/573013545997?text=Hola! Me gustaría conocer más sobre el proceso de atención de ARspa"
 					target="_blank"
 					class="btn-primary inline-flex items-center"
 				>
@@ -249,98 +246,17 @@ import '../styles/global.css';
 		</div>
 	</section>
 
-	<!-- Scripts -->
-	<script>
-		// Service Tabs Functionality
-		document.addEventListener('DOMContentLoaded', function() {
-			const tabs = document.querySelectorAll('.service-tab');
-			const panels = document.querySelectorAll('.tab-panel');
-			
-			tabs.forEach(tab => {
-				tab.addEventListener('click', () => {
-					const targetTab = tab.getAttribute('data-tab');
-					
-					// Remove active class from all tabs and panels
-					tabs.forEach(t => t.classList.remove('active'));
-					panels.forEach(p => p.classList.remove('active'));
-					
-					// Add active class to clicked tab and corresponding panel
-					tab.classList.add('active');
-					document.getElementById(targetTab!)?.classList.add('active');
-				});
-			});
-			
-			// WhatsApp Form Handler
-			const form = document.getElementById('appointment-form');
-			if (form) {
-				form.addEventListener('submit', function(e) {
-					e.preventDefault();
-					
-					const nombre = (document.getElementById('nombre') as HTMLInputElement)?.value || '';
-					const telefono = (document.getElementById('telefono') as HTMLInputElement)?.value || '';
-					const servicio = (document.getElementById('servicio') as HTMLSelectElement)?.value || '';
-					const fecha = (document.getElementById('fecha') as HTMLInputElement)?.value || '';
-					const modalidad = (document.getElementById('modalidad') as HTMLSelectElement)?.value || '';
-					const mensaje = (document.getElementById('mensaje') as HTMLTextAreaElement)?.value || '';
-					
-					// Construct WhatsApp message
-					let whatsappMessage = `¡Hola! Me interesa agendar una cita en ARspa.\n\n`;
-					whatsappMessage += `👤 *Nombre:* ${nombre}\n`;
-					whatsappMessage += `📱 *Teléfono:* ${telefono}\n`;
-					whatsappMessage += `✨ *Servicio:* ${getServiceName(servicio)}\n`;
-					whatsappMessage += `📅 *Fecha preferida:* ${fecha}\n`;
-					whatsappMessage += `📍 *Modalidad:* ${modalidad === 'spa' ? 'En el Spa' : 'A Domicilio'}\n`;
-					
-					if (mensaje.trim()) {
-						whatsappMessage += `\n📝 *Mensaje adicional:*\n${mensaje}`;
-					}
-					
-					// Open WhatsApp with the message
-					const whatsappUrl = `https://wa.me/573013545997?text=${encodeURIComponent(whatsappMessage)}`;
-					window.open(whatsappUrl, '_blank');
-				});
-			}
-			
-			function getServiceName(serviceValue: string): string {
-				const services = {
-					'masajes': 'Masajes de Relajación',
-					'corporales': 'Tratamientos Corporales',
-					'faciales': 'Faciales',
-					'sueroterapia': 'Sueroterapia',
-					'dias-especiales': 'Días Especiales'
-				};
-				return services[serviceValue as keyof typeof services] || serviceValue;
-			}
-			
-			// Smooth scrolling for service cards clicks
-			document.querySelectorAll('.service-card, .package-card, .suero-card, .special-day-card').forEach(card => {
-				card.addEventListener('click', function(this: HTMLElement) {
-					const serviceName = (this.querySelector('h3, h4') as HTMLElement)?.textContent || 'Consulta de servicio';
-					const whatsappUrl = `https://wa.me/573013545997?text=Hola! Me interesa información sobre: ${encodeURIComponent(serviceName)}`;
-					window.open(whatsappUrl, '_blank');
-				});
-			});
-			
-			// Set minimum date to today
-			const dateInput = document.getElementById('fecha');
-			if (dateInput) {
-				const today = new Date().toISOString().split('T')[0];
-				dateInput.setAttribute('min', today);
-			}
-		});
-	</script>
-</Layout>
 	<!-- Services Section -->
 	<section id="servicios" class="py-20 bg-white">
 		<div class="section-padding">
 			<div class="text-center mb-16">
 				<h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">Nuestros Servicios</h2>
 				<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-					Descubre nuestra amplia gama de tratamientos personalizados, 
+					Descubre nuestra amplia gama de tratamientos personalizados,
 					diseñados para mejorar tu bienestar físico y emocional.
 				</p>
 			</div>
-			
+
 			<!-- Service Tabs -->
 			<div class="max-w-6xl mx-auto">
 				<!-- Tab Buttons -->
@@ -366,7 +282,7 @@ import '../styles/global.css';
 						Días Especiales
 					</button>
 				</div>
-				
+
 				<!-- Tab Content -->
 				<div class="tab-content">
 					<!-- Masajes -->
@@ -398,7 +314,7 @@ import '../styles/global.css';
 							</div>
 						</div>
 					</div>
-					
+
 					<!-- Tratamientos Corporales -->
 					<div id="corporales" class="tab-panel">
 						<div class="grid md:grid-cols-2 gap-8">
@@ -458,7 +374,7 @@ import '../styles/global.css';
 							</div>
 						</div>
 					</div>
-					
+
 					<!-- Faciales -->
 					<div id="faciales" class="tab-panel">
 						<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -500,18 +416,18 @@ import '../styles/global.css';
 							</div>
 						</div>
 					</div>
-					
+
 					<!-- Sueroterapia -->
 					<div id="sueroterapia" class="tab-panel">
 						<div class="text-center mb-8">
 							<h3 class="text-2xl font-bold text-primary mb-4">Sueroterapia Personalizada</h3>
 							<p class="text-gray-600 max-w-2xl mx-auto">
 								Tratamientos intravenosos especializados para diferentes necesidades de salud y bienestar.
-								<strong class="text-accent">$120.000 por sesión</strong> | 
+								<strong class="text-accent">$120.000 por sesión</strong> |
 								<strong class="text-secondary">4 sesiones por $432.000 (10% descuento)</strong>
 							</p>
 						</div>
-						
+
 						<div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
 							<div class="suero-card">Detox</div>
 							<div class="suero-card">Fortalecimiento Respiratorio</div>
@@ -535,17 +451,17 @@ import '../styles/global.css';
 							<div class="suero-card">Revitalizante Femenino</div>
 						</div>
 					</div>
-					
+
 					<!-- Días Especiales -->
 					<div id="dias-especiales" class="tab-panel">
 						<div class="text-center mb-8">
 							<h3 class="text-2xl font-bold text-primary mb-4">Días de ARspa</h3>
 							<p class="text-gray-600 max-w-2xl mx-auto">
-								Experiencias especiales diseñadas para celebrar momentos importantes 
+								Experiencias especiales diseñadas para celebrar momentos importantes
 								y crear recuerdos inolvidables.
 							</p>
 						</div>
-						
+
 						<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 							<div class="special-day-card">
 								<div class="icon">💑</div>
@@ -591,10 +507,11 @@ import '../styles/global.css';
 								<div class="icon">🎂</div>
 								<h4>Spa de Quinceañeras</h4>
 								<p>Celebra este momento tan especial</p>
+							</div>
 						</div>
 					</div>
 				</div>
-				
+
 				<!-- Service Notice -->
 				<div class="bg-accent/10 border border-accent/20 rounded-xl p-6 mt-12 text-center">
 					<div class="flex items-center justify-center mb-4">
@@ -604,7 +521,7 @@ import '../styles/global.css';
 						<h4 class="text-lg font-semibold text-primary">Servicio a Domicilio Disponible</h4>
 					</div>
 					<p class="text-gray-600">
-						Todos nuestros servicios están disponibles en la comodidad de tu hogar. 
+						Todos nuestros servicios están disponibles en la comodidad de tu hogar.
 						<strong class="text-accent">El costo adicional varía según la ubicación.</strong>
 						<a href="https://wa.me/573013545997?text=Hola! Me interesa el servicio a domicilio" target="_blank" class="text-secondary font-semibold hover:underline ml-2">Consultar precios →</a>
 					</p>
@@ -612,3 +529,87 @@ import '../styles/global.css';
 			</div>
 		</div>
 	</section>
+
+	<!-- Scripts -->
+	<script>
+		// Service Tabs Functionality
+		document.addEventListener('DOMContentLoaded', function() {
+			const tabs = document.querySelectorAll('.service-tab');
+			const panels = document.querySelectorAll('.tab-panel');
+
+			tabs.forEach(tab => {
+				tab.addEventListener('click', () => {
+					const targetTab = tab.getAttribute('data-tab');
+
+					// Remove active class from all tabs and panels
+					tabs.forEach(t => t.classList.remove('active'));
+					panels.forEach(p => p.classList.remove('active'));
+
+					// Add active class to clicked tab and corresponding panel
+					tab.classList.add('active');
+					if (targetTab) {
+						document.getElementById(targetTab)?.classList.add('active');
+					}
+				});
+			});
+
+			// WhatsApp Form Handler
+			const form = document.getElementById('appointment-form');
+			if (form) {
+				form.addEventListener('submit', function(e) {
+					e.preventDefault();
+
+					const nombre = (document.getElementById('nombre') as HTMLInputElement)?.value || '';
+					const telefono = (document.getElementById('telefono') as HTMLInputElement)?.value || '';
+					const servicio = (document.getElementById('servicio') as HTMLSelectElement)?.value || '';
+					const fecha = (document.getElementById('fecha') as HTMLInputElement)?.value || '';
+					const modalidad = (document.getElementById('modalidad') as HTMLSelectElement)?.value || '';
+					const mensaje = (document.getElementById('mensaje') as HTMLTextAreaElement)?.value || '';
+
+					// Construct WhatsApp message
+					let whatsappMessage = `¡Hola! Me interesa agendar una cita en ARspa.\n\n`;
+					whatsappMessage += `👤 *Nombre:* ${nombre}\n`;
+					whatsappMessage += `📱 *Teléfono:* ${telefono}\n`;
+					whatsappMessage += `✨ *Servicio:* ${getServiceName(servicio)}\n`;
+					whatsappMessage += `📅 *Fecha preferida:* ${fecha}\n`;
+					whatsappMessage += `📍 *Modalidad:* ${modalidad === 'spa' ? 'En el Spa' : 'A Domicilio'}\n`;
+
+					if (mensaje.trim()) {
+						whatsappMessage += `\n📝 *Mensaje adicional:*\n${mensaje}`;
+					}
+
+					// Open WhatsApp with the message
+					const whatsappUrl = `https://wa.me/573013545997?text=${encodeURIComponent(whatsappMessage)}`;
+					window.open(whatsappUrl, '_blank');
+				});
+			}
+
+			function getServiceName(serviceValue: string): string {
+				const services = {
+					'masajes': 'Masajes de Relajación',
+					'corporales': 'Tratamientos Corporales',
+					'faciales': 'Faciales',
+					'sueroterapia': 'Sueroterapia',
+					'dias-especiales': 'Días Especiales'
+				};
+				return services[serviceValue as keyof typeof services] || serviceValue;
+			}
+
+			// Smooth scrolling for service cards clicks
+			document.querySelectorAll('.service-card, .package-card, .suero-card, .special-day-card').forEach(card => {
+				card.addEventListener('click', function(this: HTMLElement) {
+					const serviceName = (this.querySelector('h3, h4') as HTMLElement)?.textContent || 'Consulta de servicio';
+					const whatsappUrl = `https://wa.me/573013545997?text=Hola! Me interesa información sobre: ${encodeURIComponent(serviceName)}`;
+					window.open(whatsappUrl, '_blank');
+				});
+			});
+
+			// Set minimum date to today
+			const dateInput = document.getElementById('fecha');
+			if (dateInput) {
+				const today = new Date().toISOString().split('T')[0];
+				dateInput.setAttribute('min', today);
+			}
+		});
+	</script>
+</Layout>

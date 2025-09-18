@@ -488,6 +488,7 @@ body {
 }
 
 /* Hero Grid - Centrado vertical para ambos elementos */
+/* Actualizado: 2025-09-18 - Centrado vertical mejorado para texto y formulario */
 .hero-grid {
   display: grid;
   gap: 4rem;

@@ -1,0 +1,337 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+---
+
+<Layout title="Nuestros Servicios - ARspa | Medellín" description="Descubre nuestra amplia gama de tratamientos personalizados en ARspa Medellín: masajes, tratamientos corporales, faciales, sueroterapia y días especiales.">
+	<!-- Services Section -->
+	<section id="servicios" class="py-20 bg-white">
+		<div class="section-padding">
+			<div class="text-center mb-16">
+				<h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">Nuestros Servicios</h1>
+				<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+					Descubre nuestra amplia gama de tratamientos personalizados,
+					diseñados para mejorar tu bienestar físico y emocional.
+				</p>
+			</div>
+
+			<!-- Service Tabs -->
+			<div class="max-w-6xl mx-auto">
+				<!-- Tab Buttons -->
+				<div class="flex flex-wrap justify-center gap-4 mb-12">
+					<button class="service-tab active" data-tab="masajes">
+						<span class="text-2xl mb-2 block">💆‍♀️</span>
+						Masajes de Relajación
+					</button>
+					<button class="service-tab" data-tab="corporales">
+						<span class="text-2xl mb-2 block">🎨</span>
+						Tratamientos Corporales
+					</button>
+					<button class="service-tab" data-tab="faciales">
+						<span class="text-2xl mb-2 block">✨</span>
+						Faciales
+					</button>
+					<button class="service-tab" data-tab="sueroterapia">
+						<span class="text-2xl mb-2 block">💉</span>
+						Sueroterapia
+					</button>
+					<button class="service-tab" data-tab="dias-especiales">
+						<span class="text-2xl mb-2 block">🎁</span>
+						Días Especiales
+					</button>
+				</div>
+
+				<!-- Tab Content -->
+				<div class="tab-content">
+					<!-- Masajes -->
+					<div id="masajes" class="tab-panel active">
+						<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+							<div class="service-card">
+								<div class="service-icon">💪</div>
+								<h3>Masaje de Espalda</h3>
+								<p>Alivia la tensión y dolor en espalda, cuello y hombros.</p>
+								<span class="price">$70.000</span>
+							</div>
+							<div class="service-card">
+								<div class="service-icon">😌</div>
+								<h3>Masaje de Relajación</h3>
+								<p>Experiencia completa de relajación y bienestar.</p>
+								<span class="price">$110.000</span>
+							</div>
+							<div class="service-card">
+								<div class="service-icon">🌋</div>
+								<h3>Masaje con Piedras Volcánicas</h3>
+								<p>Terapia de calor profundo para relajación muscular.</p>
+								<span class="price">$140.000</span>
+							</div>
+							<div class="service-card">
+								<div class="service-icon">💧</div>
+								<h3>Drenaje Linfático</h3>
+								<p>Estimula la circulación y elimina toxinas del cuerpo.</p>
+								<span class="price">$180.000</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Tratamientos Corporales -->
+					<div id="corporales" class="tab-panel">
+						<div class="grid md:grid-cols-2 gap-8">
+							<div class="space-y-6">
+								<h3 class="text-2xl font-bold text-primary mb-4">Depilación con Cera</h3>
+								<div class="grid gap-4">
+									<div class="service-item">
+										<span class="service-name">Axilas</span>
+										<span class="service-price">$25.000</span>
+									</div>
+									<div class="service-item">
+										<span class="service-name">Bikini Parcial</span>
+										<span class="service-price">$35.000</span>
+									</div>
+									<div class="service-item">
+										<span class="service-name">Bikini Completo</span>
+										<span class="service-price">$50.000</span>
+									</div>
+									<div class="service-item">
+										<span class="service-name">Piernas</span>
+										<span class="service-price">$50.000</span>
+									</div>
+									<div class="service-item">
+										<span class="service-name">Pecho</span>
+										<span class="service-price">$30.000</span>
+									</div>
+									<div class="service-item">
+										<span class="service-name">Espalda</span>
+										<span class="service-price">$30.000</span>
+									</div>
+								</div>
+							</div>
+							<div class="space-y-6">
+								<h3 class="text-2xl font-bold text-primary mb-4">Paquetes de Masajes (10 sesiones)</h3>
+								<div class="grid gap-4">
+									<div class="package-card">
+										<h4>Masajes Reductores</h4>
+										<p class="text-sm text-gray-600">Reduce medidas y tonifica</p>
+										<span class="package-price">$1.100.000</span>
+									</div>
+									<div class="package-card">
+										<h4>Masajes Anticeluíticos</h4>
+										<p class="text-sm text-gray-600">Combate la celulitis efectivamente</p>
+										<span class="package-price">$1.100.000</span>
+									</div>
+									<div class="package-card">
+										<h4>Levantamiento de Glúteos</h4>
+										<p class="text-sm text-gray-600">Tonifica y levanta naturalmente</p>
+										<span class="package-price">$1.100.000</span>
+									</div>
+									<div class="package-card">
+										<h4>Masajes Post Quirúrgicos</h4>
+										<p class="text-sm text-gray-600">Recuperación óptima</p>
+										<span class="package-price">$1.100.000</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Faciales -->
+					<div id="faciales" class="tab-panel">
+						<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+							<div class="service-card">
+								<div class="service-icon">💧</div>
+								<h3>Hidratación Facial</h3>
+								<p>Restaura la hidratación natural de tu piel.</p>
+								<span class="price">$85.000</span>
+							</div>
+							<div class="service-card">
+								<div class="service-icon">🧡</div>
+								<h3>Limpieza Facial Profunda</h3>
+								<p>Elimina impurezas y puntos negros profundamente.</p>
+								<span class="price">$130.000</span>
+							</div>
+							<div class="service-card">
+								<div class="service-icon">✨</div>
+								<h3>Rejuvenecimiento Facial</h3>
+								<p>Tratamiento antiedad integral (10 sesiones).</p>
+								<span class="price">$1.100.000</span>
+							</div>
+							<div class="service-card highlight">
+								<div class="service-icon">🩸</div>
+								<h3>Plasma Rico en Plaquetas</h3>
+								<p>Facial y capilar. 3 sesiones con 15% descuento.</p>
+								<div class="price-group">
+									<span class="price-single">$220.000 x sesión</span>
+									<span class="price-package">$561.000 (3 sesiones)</span>
+								</div>
+							</div>
+							<div class="service-card">
+								<div class="service-icon">💋</div>
+								<h3>Hidralip</h3>
+								<p>Hidratación profunda para labios. 3 sesiones con 10% descuento.</p>
+								<div class="price-group">
+									<span class="price-single">$70.000 x sesión</span>
+									<span class="price-package">$189.000 (3 sesiones)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Sueroterapia -->
+					<div id="sueroterapia" class="tab-panel">
+						<div class="text-center mb-8">
+							<h3 class="text-2xl font-bold text-primary mb-4">Sueroterapia Personalizada</h3>
+							<p class="text-gray-600 max-w-2xl mx-auto">
+								Tratamientos intravenosos especializados para diferentes necesidades de salud y bienestar.
+								<strong class="text-accent">$120.000 por sesión</strong> |
+								<strong class="text-secondary">4 sesiones por $432.000 (10% descuento)</strong>
+							</p>
+						</div>
+
+						<div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+							<div class="suero-card">Detox</div>
+							<div class="suero-card">Fortalecimiento Respiratorio</div>
+							<div class="suero-card">Inmunológico General</div>
+							<div class="suero-card">Anti Envejecimiento</div>
+							<div class="suero-card">Adelgazante</div>
+							<div class="suero-card">Post Quirúrgico</div>
+							<div class="suero-card">Afecciones de la Piel</div>
+							<div class="suero-card">Afecciones del Colon</div>
+							<div class="suero-card">Sistema Osteo-Articular</div>
+							<div class="suero-card">Estrés</div>
+							<div class="suero-card">Diabetes</div>
+							<div class="suero-card">Sistema Circulatorio</div>
+							<div class="suero-card">Energía - Fatiga</div>
+							<div class="suero-card">Ácido Úrico</div>
+							<div class="suero-card">Guayabo</div>
+							<div class="suero-card">Próstata</div>
+							<div class="suero-card">Migraña</div>
+							<div class="suero-card">Menopausia</div>
+							<div class="suero-card">Revitalizante Masculino</div>
+							<div class="suero-card">Revitalizante Femenino</div>
+						</div>
+					</div>
+
+					<!-- Días Especiales -->
+					<div id="dias-especiales" class="tab-panel">
+						<div class="text-center mb-8">
+							<h3 class="text-2xl font-bold text-primary mb-4">Días de ARspa</h3>
+							<p class="text-gray-600 max-w-2xl mx-auto">
+								Experiencias especiales diseñadas para celebrar momentos importantes
+								y crear recuerdos inolvidables.
+							</p>
+						</div>
+
+						<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+							<div class="special-day-card">
+								<div class="icon">💑</div>
+								<h4>En Pareja</h4>
+								<p>Experiencia romántica para dos</p>
+							</div>
+							<div class="special-day-card">
+								<div class="icon">🌹</div>
+								<h4>Día de la Madre</h4>
+								<p>Homenaje especial para mamá</p>
+							</div>
+							<div class="special-day-card">
+								<div class="icon">🎁</div>
+								<h4>Aguinaldos</h4>
+								<p>Regalo perfecto de fin de año</p>
+							</div>
+							<div class="special-day-card">
+								<div class="icon">👰</div>
+								<h4>Baño de Novia</h4>
+								<p>Preparación especial pre-boda</p>
+							</div>
+							<div class="special-day-card">
+								<div class="icon">👨‍🎓</div>
+								<h4>Día del Padre</h4>
+								<p>Relajación especial para papá</p>
+							</div>
+							<div class="special-day-card">
+								<div class="icon">💕</div>
+								<h4>Amor y Amistad</h4>
+								<p>Celebra el amor en todas sus formas</p>
+							</div>
+							<div class="special-day-card">
+								<div class="icon">🎉</div>
+								<h4>Spa de Aniversario</h4>
+								<p>Conmemoración única y especial</p>
+							</div>
+							<div class="special-day-card">
+								<div class="icon">🍾</div>
+								<h4>Despedida de Soltera</h4>
+								<p>Celebra tu última aventura soltera</p>
+							</div>
+							<div class="special-day-card">
+								<div class="icon">🎂</div>
+								<h4>Spa de Quinceañeras</h4>
+								<p>Celebra este momento tan especial</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service Notice -->
+				<div class="bg-accent/10 border border-accent/20 rounded-xl p-6 mt-12 text-center">
+					<div class="flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+						</svg>
+						<h4 class="text-lg font-semibold text-primary">Servicio a Domicilio Disponible</h4>
+					</div>
+					<p class="text-gray-600">
+						Todos nuestros servicios están disponibles en la comodidad de tu hogar.
+						<strong class="text-accent">El costo adicional varía según la ubicación.</strong>
+						<a href="https://wa.me/573013545997?text=Hola! Me interesa el servicio a domicilio" target="_blank" class="text-secondary font-semibold hover:underline ml-2">Consultar precios →</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Scripts -->
+	<script>
+		// Service Tabs Functionality
+		document.addEventListener('DOMContentLoaded', function() {
+			const tabs = document.querySelectorAll('.service-tab');
+			const panels = document.querySelectorAll('.tab-panel');
+
+			tabs.forEach(tab => {
+				tab.addEventListener('click', () => {
+					// Remove active class from all tabs and panels
+					tabs.forEach(t => t.classList.remove('active'));
+					panels.forEach(p => p.classList.remove('active'));
+
+					// Add active class to clicked tab
+					tab.classList.add('active');
+
+					// Show corresponding panel
+					const targetPanel = tab.getAttribute('data-tab');
+					const panel = document.getElementById(targetPanel);
+					if (panel) {
+						panel.classList.add('active');
+					}
+				});
+			});
+
+			function getServiceName(serviceValue: string): string {
+				const services = {
+					'masajes': 'Masajes de Relajación',
+					'corporales': 'Tratamientos Corporales',
+					'faciales': 'Faciales',
+					'sueroterapia': 'Sueroterapia',
+					'dias-especiales': 'Días Especiales'
+				};
+				return services[serviceValue as keyof typeof services] || serviceValue;
+			}
+
+			// Smooth scrolling for service cards clicks
+			document.querySelectorAll('.service-card, .package-card, .suero-card, .special-day-card').forEach(card => {
+				card.addEventListener('click', function(this: HTMLElement) {
+					const serviceName = (this.querySelector('h3, h4') as HTMLElement)?.textContent || 'Consulta de servicio';
+					const whatsappUrl = `https://wa.me/573013545997?text=Hola! Me interesa información sobre: ${encodeURIComponent(serviceName)}`;
+					window.open(whatsappUrl, '_blank');
+				});
+			});
+		});
+	</script>
+</Layout>

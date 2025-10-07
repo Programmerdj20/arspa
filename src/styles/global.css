@@ -3,20 +3,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
 :root {
-  /* ARspa Brand Colors - Nueva paleta */
-  --color-primary: #252525; /* Gris oscuro navbar */
-  --color-secondary: #fbe878; /* Amarillo principal */
+  /* ARspa Brand Colors - Paleta Luxury Spa Modo Oscuro */
+
+  /* Degradado Dorado Metálico Principal */
+  --gradient-luxury: linear-gradient(180deg, #D9AD46, #B5882E, #9A6D1C);
+
+  /* Fondos */
+  --color-bg-main: #0E0E0E; /* Negro cálido profundo - fondo principal */
+  --color-bg-secondary: #1A1A1A; /* Gris oscuro suave - tarjetas/secciones */
+
+  /* Textos */
+  --color-text-primary: #EDEBE7; /* Blanco cálido - lectura principal */
+  --color-text-secondary: #B5B3AE; /* Gris cálido claro - descripciones */
+
+  /* Bordes y líneas */
+  --color-border: #2A2A28; /* Gris piedra - bordes discretos */
+
+  /* Acentos */
+  --color-accent-subtle: #6E6B62; /* Gris-dorado apagado - acentos suaves */
+  --color-hover: #B5882E; /* Dorado medio - interacciones */
+
+  /* Colores dorados (del degradado) */
+  --color-gold-light: #D9AD46; /* Dorado claro */
+  --color-gold-medium: #B5882E; /* Dorado medio */
+  --color-gold-dark: #9A6D1C; /* Dorado oscuro */
+
+  /* Color del logo (mantener) */
   --color-accent: #48CAE4; /* Azul turquesa del logo */
-  --color-white: #FFFFFF;
-  --color-gray-light: #F8F9FA;
-  --color-gray-medium: #6C757D;
-  --color-gray-dark: #343A40;
-  --color-turquoise-light: #E8F8F5;
-  --color-gold-light: #FAF3E0;
-  --color-navbar-bg: #252525;
-  --color-navbar-link: #fbe878;
-  --color-navbar-hover: #ffffff;
-  --color-body-bg: #1c1a1d;
+
+  /* Compatibilidad con código existente */
+  --color-primary: #1A1A1A; /* Gris oscuro navbar */
+  --color-secondary: #B5882E; /* Dorado medio */
+  --color-secondary-light: #D9AD46; /* Dorado claro */
+  --color-secondary-dark: #9A6D1C; /* Dorado oscuro */
+  --color-white: #EDEBE7; /* Blanco cálido */
+  --color-navbar-bg: #1A1A1A;
+  --color-navbar-link: #D9AD46;
+  --color-navbar-hover: #EDEBE7;
+  --color-body-bg: #0E0E0E;
+  --gradient-gold-luxury: linear-gradient(180deg, #D9AD46, #B5882E, #9A6D1C);
 }
 
 body {
@@ -33,32 +58,79 @@ body {
   font-family: 'Dancing Script', cursive;
 }
 
+/* Clases de Utilidad - Textos */
 .text-primary {
-  color: var(--color-primary);
+  color: var(--color-text-primary);
 }
 
 .text-secondary {
-  color: var(--color-secondary);
+  color: var(--color-text-secondary);
+}
+
+.text-gold-light {
+  color: var(--color-gold-light);
+}
+
+.text-gold-medium {
+  color: var(--color-gold-medium);
+}
+
+.text-gold-dark {
+  color: var(--color-gold-dark);
 }
 
 .text-accent {
   color: var(--color-accent);
 }
 
-.bg-primary {
-  background-color: var(--color-primary);
+.text-accent-subtle {
+  color: var(--color-accent-subtle);
+}
+
+/* Clases de Utilidad - Fondos */
+.bg-main {
+  background-color: var(--color-bg-main);
 }
 
 .bg-secondary {
-  background-color: var(--color-secondary);
+  background-color: var(--color-bg-secondary);
+}
+
+.bg-gold-light {
+  background-color: var(--color-gold-light);
+}
+
+.bg-gold-medium {
+  background-color: var(--color-gold-medium);
+}
+
+.bg-gold-dark {
+  background-color: var(--color-gold-dark);
 }
 
 .bg-accent {
   background-color: var(--color-accent);
 }
 
-.border-secondary {
-  border-color: var(--color-secondary);
+.bg-luxury {
+  background: var(--gradient-luxury);
+}
+
+/* Clases de Utilidad - Bordes */
+.border-luxury {
+  border-color: var(--color-border);
+}
+
+.border-gold-light {
+  border-color: var(--color-gold-light);
+}
+
+.border-gold-medium {
+  border-color: var(--color-gold-medium);
+}
+
+.border-gold-dark {
+  border-color: var(--color-gold-dark);
 }
 
 .border-accent {
@@ -141,7 +213,7 @@ body {
 }
 
 .gradient-gold {
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  background: linear-gradient(180deg, #D9AD46 0%, #B5882E 50%, #9A6D1C 100%);
 }
 
 .gradient-turquoise {
@@ -149,7 +221,7 @@ body {
 }
 
 .shadow-gold {
-  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(181, 136, 46, 0.4);
 }
 
 .shadow-turquoise {
@@ -175,7 +247,7 @@ body {
 .service-tab:hover {
   border-color: var(--color-secondary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(181, 136, 46, 0.3);
 }
 
 .service-tab.active {
@@ -183,7 +255,7 @@ body {
   border-color: var(--color-secondary);
   color: var(--color-primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(181, 136, 46, 0.4);
 }
 
 /* Tab Panels */
@@ -306,7 +378,7 @@ body {
 
 .package-card:hover {
   border-color: var(--color-secondary);
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(181, 136, 46, 0.2);
 }
 
 .package-card h4 {
@@ -360,7 +432,7 @@ body {
 
 .special-day-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(181, 136, 46, 0.2);
   border-color: var(--color-secondary);
 }
 
@@ -385,11 +457,11 @@ body {
 @keyframes pulse-glow {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(251, 232, 120, 0.4);
+    box-shadow: 0 0 0 0 rgba(217, 173, 70, 0.4);
   }
   50% {
     transform: scale(1.02);
-    box-shadow: 0 0 20px 5px rgba(251, 232, 120, 0.3);
+    box-shadow: 0 0 20px 5px rgba(181, 136, 46, 0.4);
   }
 }
 
@@ -401,7 +473,7 @@ body {
 .cta-button-animated:hover {
   animation-play-state: paused;
   transform: scale(1.05);
-  box-shadow: 0 0 25px 8px rgba(251, 232, 120, 0.5);
+  box-shadow: 0 0 25px 8px rgba(181, 136, 46, 0.6);
 }
 
 /* Hero Carousel Animation */
@@ -666,7 +738,7 @@ body {
 
 .testimonial-content:hover {
   transform: translateY(-8px);
-  border-color: rgba(251, 232, 120, 0.3);
+  border-color: rgba(217, 173, 70, 0.4);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -708,7 +780,7 @@ body {
 }
 
 .stars {
-  color: #fbe878;
+  color: #D9AD46;
   font-size: 14px;
   margin-top: 4px;
 }
@@ -750,14 +822,14 @@ body {
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(251, 232, 120, 0.3);
+  border: 1px solid rgba(217, 173, 70, 0.3);
   border-radius: 50%;
   width: 56px;
   height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fbe878;
+  color: #D9AD46;
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 10;
@@ -772,8 +844,8 @@ body {
 }
 
 .nav-btn:hover {
-  background: rgba(251, 232, 120, 0.2);
-  border-color: #fbe878;
+  background: rgba(181, 136, 46, 0.2);
+  border-color: #D9AD46;
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -795,7 +867,7 @@ body {
 }
 
 .dot.active {
-  background: #fbe878;
+  background: #D9AD46;
   transform: scale(1.2);
 }
 

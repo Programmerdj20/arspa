@@ -31,66 +31,169 @@ const { title, description = "ARspa - Spa especializado en estética y bienestar
 	</head>
 	<body style="background-color: var(--color-bg-main);">
 		<!-- Header -->
-		<header class="sticky top-0 z-50 shadow-lg bg-secondary" style="color: var(--color-text-primary);">
+		<header class="sticky top-0 z-50 shadow-lg bg-secondary backdrop-blur-md bg-opacity-95" style="color: var(--color-text-primary);">
 			<nav class="section-padding py-4">
 				<div class="flex items-center justify-between">
 					<!-- Logo -->
-					<div class="flex items-center space-x-3">
+					<div class="flex items-center">
 						<a href="/" class="flex items-center justify-center hover:opacity-90 transition-opacity">
-							<img src="/icons/Logo_blanco.webp" alt="ARspa Logo" class="w-20 h-20 object-contain">
+							<img src="/icons/Logo_blanco.webp" alt="ARspa Logo" class="w-16 h-16 md:w-20 md:h-20 object-contain">
 						</a>
 					</div>
 
 					<!-- Navigation Desktop -->
-					<div class="hidden md:flex items-center space-x-10 lg:space-x-12">
-						<a href="#inicio" class="text-gold-light text-base font-medium transition-all duration-300 hover:text-white hover:scale-105">Inicio</a>
-						<a href="/servicios" class="text-gold-light text-base font-medium transition-all duration-300 hover:text-white hover:scale-105">Servicios</a>
-						<a href="#precios" class="text-gold-light text-base font-medium transition-all duration-300 hover:text-white hover:scale-105">Precios</a>
-						<a href="#nosotros" class="text-gold-light text-base font-medium transition-all duration-300 hover:text-white hover:scale-105">Nosotros</a>
-						<a href="#contacto" class="text-gold-light text-base font-medium transition-all duration-300 hover:text-white hover:scale-105">Contacto</a>
+					<div class="hidden lg:flex items-center space-x-8 xl:space-x-10">
+						<a href="#inicio" class="text-gold-light text-base font-medium transition-all duration-300 hover:text-white hover:scale-105 relative group">
+							Inicio
+							<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-luxury transition-all duration-300 group-hover:w-full"></span>
+						</a>
+						<a href="/servicios" class="text-gold-light text-base font-medium transition-all duration-300 hover:text-white hover:scale-105 relative group">
+							Servicios
+							<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-luxury transition-all duration-300 group-hover:w-full"></span>
+						</a>
+						<a href="#precios" class="text-gold-light text-base font-medium transition-all duration-300 hover:text-white hover:scale-105 relative group">
+							Precios
+							<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-luxury transition-all duration-300 group-hover:w-full"></span>
+						</a>
+						<a href="#nosotros" class="text-gold-light text-base font-medium transition-all duration-300 hover:text-white hover:scale-105 relative group">
+							Nosotros
+							<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-luxury transition-all duration-300 group-hover:w-full"></span>
+						</a>
+						<a href="#contacto" class="text-gold-light text-base font-medium transition-all duration-300 hover:text-white hover:scale-105 relative group">
+							Contacto
+							<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-luxury transition-all duration-300 group-hover:w-full"></span>
+						</a>
 					</div>
 
-					<!-- WhatsApp Button -->
-					<div class="flex items-center space-x-4">
+					<!-- CTA Button Desktop & Mobile Menu Button -->
+					<div class="flex items-center gap-3">
+						<!-- CTA Button - Visible on all screens -->
 						<a
 							href="https://wa.me/573013545997?text=Hola! Me interesa agendar una cita en ARspa"
 							target="_blank"
-							class="bg-luxury px-7 py-3.5 rounded-full font-semibold text-base cta-button-animated flex items-center shadow-gold hover:shadow-xl transition-all duration-300"
+							class="bg-luxury px-5 py-2.5 md:px-8 md:py-3.5 rounded-full font-semibold text-sm md:text-base cta-button-animated flex items-center justify-center shadow-gold hover:shadow-xl transition-all duration-300 hover:scale-105"
 							style="color: var(--color-bg-main);"
 						>
-							<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+							<svg class="w-4 h-4 md:w-5 md:h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
 								<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787"></path>
 							</svg>
-							<span class="hidden md:inline">Reservar Cita</span>
-							<span class="md:hidden">Cita</span>
+							<span class="whitespace-nowrap">Reservar Cita</span>
 						</a>
 
 						<!-- Mobile Menu Button -->
-						<button id="mobile-menu-btn" class="md:hidden text-gold-light transition-all duration-300 hover:text-white">
-							<svg id="hamburger-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+						<button
+							id="mobile-menu-btn"
+							class="lg:hidden text-gold-light p-2 rounded-lg transition-all duration-300 hover:text-white hover:bg-gold-dark/10"
+							aria-label="Toggle menu"
+						>
+							<svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
 							</svg>
-							<svg id="close-icon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+							<svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
 							</svg>
 						</button>
 					</div>
 				</div>
-
-				<!-- Mobile Navigation -->
-				<div id="mobile-menu" class="md:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
-					<div class="mt-4 pt-4 border-luxury" style="border-top-width: 1px;">
-						<div class="flex flex-col space-y-1">
-							<a href="#inicio" class="mobile-nav-link text-gold-light text-base font-medium py-4 px-2 rounded-lg transition-all duration-300 hover:bg-gold-dark/10 hover:text-white hover:pl-4">Inicio</a>
-							<a href="/servicios" class="mobile-nav-link text-gold-light text-base font-medium py-4 px-2 rounded-lg transition-all duration-300 hover:bg-gold-dark/10 hover:text-white hover:pl-4">Servicios</a>
-							<a href="#precios" class="mobile-nav-link text-gold-light text-base font-medium py-4 px-2 rounded-lg transition-all duration-300 hover:bg-gold-dark/10 hover:text-white hover:pl-4">Precios</a>
-							<a href="#nosotros" class="mobile-nav-link text-gold-light text-base font-medium py-4 px-2 rounded-lg transition-all duration-300 hover:bg-gold-dark/10 hover:text-white hover:pl-4">Nosotros</a>
-							<a href="#contacto" class="mobile-nav-link text-gold-light text-base font-medium py-4 px-2 rounded-lg transition-all duration-300 hover:bg-gold-dark/10 hover:text-white hover:pl-4">Contacto</a>
-						</div>
-					</div>
-				</div>
 			</nav>
 		</header>
+
+		<!-- Mobile Sidebar Overlay -->
+		<div
+			id="sidebar-overlay"
+			class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] opacity-0 invisible transition-all duration-300 lg:hidden"
+			aria-hidden="true"
+		></div>
+
+		<!-- Mobile Sidebar -->
+		<aside
+			id="mobile-sidebar"
+			class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-secondary shadow-2xl z-[70] transform translate-x-full transition-transform duration-300 ease-out lg:hidden"
+			style="color: var(--color-text-primary);"
+			aria-label="Mobile navigation"
+		>
+			<!-- Sidebar Header -->
+			<div class="flex items-center justify-between p-6 border-luxury" style="border-bottom-width: 1px;">
+				<div class="flex items-center space-x-3">
+					<img src="/icons/Logo_blanco.webp" alt="ARspa" class="w-12 h-12 object-contain">
+					<h2 class="text-xl font-bold text-gold-medium">ARspa</h2>
+				</div>
+				<button
+					id="sidebar-close-btn"
+					class="text-gold-light p-2 rounded-lg transition-all duration-300 hover:text-white hover:bg-gold-dark/10 hover:rotate-90"
+					aria-label="Close menu"
+				>
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+					</svg>
+				</button>
+			</div>
+
+			<!-- Sidebar Navigation -->
+			<nav class="flex flex-col p-6 space-y-2">
+				<a
+					href="#inicio"
+					class="sidebar-nav-link group flex items-center space-x-3 text-gold-light text-base font-medium py-4 px-4 rounded-xl transition-all duration-300 hover:bg-gold-dark/10 hover:text-white hover:pl-6"
+				>
+					<svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+					</svg>
+					<span>Inicio</span>
+				</a>
+				<a
+					href="/servicios"
+					class="sidebar-nav-link group flex items-center space-x-3 text-gold-light text-base font-medium py-4 px-4 rounded-xl transition-all duration-300 hover:bg-gold-dark/10 hover:text-white hover:pl-6"
+				>
+					<svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+					</svg>
+					<span>Servicios</span>
+				</a>
+				<a
+					href="#precios"
+					class="sidebar-nav-link group flex items-center space-x-3 text-gold-light text-base font-medium py-4 px-4 rounded-xl transition-all duration-300 hover:bg-gold-dark/10 hover:text-white hover:pl-6"
+				>
+					<svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+					</svg>
+					<span>Precios</span>
+				</a>
+				<a
+					href="#nosotros"
+					class="sidebar-nav-link group flex items-center space-x-3 text-gold-light text-base font-medium py-4 px-4 rounded-xl transition-all duration-300 hover:bg-gold-dark/10 hover:text-white hover:pl-6"
+				>
+					<svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+					</svg>
+					<span>Nosotros</span>
+				</a>
+				<a
+					href="#contacto"
+					class="sidebar-nav-link group flex items-center space-x-3 text-gold-light text-base font-medium py-4 px-4 rounded-xl transition-all duration-300 hover:bg-gold-dark/10 hover:text-white hover:pl-6"
+				>
+					<svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+					</svg>
+					<span>Contacto</span>
+				</a>
+			</nav>
+
+			<!-- Sidebar Footer -->
+			<div class="absolute bottom-0 left-0 right-0 p-6 border-luxury" style="border-top-width: 1px;">
+				<p class="text-secondary text-sm text-center mb-3">Síguenos en redes sociales</p>
+				<div class="flex justify-center space-x-4">
+					<a href="https://www.facebook.com/share/1ArHDiZFhJ/?mibextid=wwXIfr" target="_blank" class="text-accent p-2.5 rounded-xl transition-all duration-300 hover:bg-gold-dark/20 hover:scale-110" aria-label="Facebook">
+						<img src="https://cdn.simpleicons.org/facebook/E8D4C0" alt="Facebook" class="w-6 h-6 transition-all duration-300 hover:brightness-125" style="filter: drop-shadow(0 2px 4px rgba(217, 173, 70, 0.3));">
+					</a>
+					<a href="https://www.instagram.com/ar_spamedellinigsh=MXE2dzRiY2wxZzY1NQ%3D%3D&utm_source=qr" target="_blank" class="text-accent p-2.5 rounded-xl transition-all duration-300 hover:bg-gold-dark/20 hover:scale-110" aria-label="Instagram">
+						<img src="https://cdn.simpleicons.org/instagram/E8D4C0" alt="Instagram" class="w-6 h-6 transition-all duration-300 hover:brightness-125" style="filter: drop-shadow(0 2px 4px rgba(217, 173, 70, 0.3));">
+					</a>
+					<a href="https://www.tiktok.com/@ar.spamedellin?_t=ZS-8zEwl3gyfLk&_r=1" target="_blank" class="text-accent p-2.5 rounded-xl transition-all duration-300 hover:bg-gold-dark/20 hover:scale-110" aria-label="TikTok">
+						<img src="https://cdn.simpleicons.org/tiktok/E8D4C0" alt="TikTok" class="w-6 h-6 transition-all duration-300 hover:brightness-125" style="filter: drop-shadow(0 2px 4px rgba(217, 173, 70, 0.3));">
+					</a>
+				</div>
+			</div>
+		</aside>
 
 		<!-- Main Content -->
 		<main>
@@ -106,7 +209,7 @@ const { title, description = "ARspa - Spa especializado en estética y bienestar
 					<!-- Company Info -->
 					<div>
 						<div class="flex items-center space-x-3 mb-4">
-							<img src="/icons/Logo_navbar.webp" alt="ARspa Logo" class="w-10 h-10 object-contain">
+							<img src="/icons/Logo_blanco.webp" alt="ARspa Logo" class="w-10 h-10 object-contain">
 							<h3 class="text-xl font-bold text-gold-medium">ARspa</h3>
 						</div>
 						<p class="text-secondary mb-4">
@@ -115,22 +218,16 @@ const { title, description = "ARspa - Spa especializado en estética y bienestar
 						</p>
 						<div class="flex space-x-4">
 							<!-- Facebook -->
-							<a href="https://www.facebook.com/share/1ArHDiZFhJ/?mibextid=wwXIfr" target="_blank" class="text-accent transition-colors" style="hover: var(--color-gold-medium);" onmouseover="this.style.color='var(--color-gold-medium)'" onmouseout="this.style.color='var(--color-accent)'"
-								<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-									<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-								</svg>
+							<a href="https://www.facebook.com/share/1ArHDiZFhJ/?mibextid=wwXIfr" target="_blank" class="p-2.5 rounded-xl transition-all duration-300 hover:bg-gold-dark/20 hover:scale-110" aria-label="Facebook">
+								<img src="https://cdn.simpleicons.org/facebook/E8D4C0" alt="Facebook" class="w-6 h-6 transition-all duration-300 hover:brightness-125" style="filter: drop-shadow(0 2px 4px rgba(217, 173, 70, 0.3));">
 							</a>
 							<!-- Instagram -->
-							<a href="https://www.instagram.com/ar_spamedellinigsh=MXE2dzRiY2wxZzY1NQ%3D%3D&utm_source=qr" target="_blank" class="text-accent transition-colors" onmouseover="this.style.color='var(--color-gold-medium)'" onmouseout="this.style.color='var(--color-accent)'">
-								<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-									<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-								</svg>
+							<a href="https://www.instagram.com/ar_spamedellinigsh=MXE2dzRiY2wxZzY1NQ%3D%3D&utm_source=qr" target="_blank" class="p-2.5 rounded-xl transition-all duration-300 hover:bg-gold-dark/20 hover:scale-110" aria-label="Instagram">
+								<img src="https://cdn.simpleicons.org/instagram/E8D4C0" alt="Instagram" class="w-6 h-6 transition-all duration-300 hover:brightness-125" style="filter: drop-shadow(0 2px 4px rgba(217, 173, 70, 0.3));">
 							</a>
 							<!-- TikTok -->
-							<a href="https://www.tiktok.com/@ar.spamedellin?_t=ZS-8zEwl3gyfLk&_r=1" target="_blank" class="text-accent transition-colors" onmouseover="this.style.color='var(--color-gold-medium)'" onmouseout="this.style.color='var(--color-accent)'">
-								<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-									<path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-								</svg>
+							<a href="https://www.tiktok.com/@ar.spamedellin?_t=ZS-8zEwl3gyfLk&_r=1" target="_blank" class="p-2.5 rounded-xl transition-all duration-300 hover:bg-gold-dark/20 hover:scale-110" aria-label="TikTok">
+								<img src="https://cdn.simpleicons.org/tiktok/E8D4C0" alt="TikTok" class="w-6 h-6 transition-all duration-300 hover:brightness-125" style="filter: drop-shadow(0 2px 4px rgba(217, 173, 70, 0.3));">
 							</a>
 						</div>
 					</div>
@@ -181,47 +278,102 @@ const { title, description = "ARspa - Spa especializado en estética y bienestar
 			</div>
 		</footer>
 
-		<!-- Mobile Menu Script -->
+		<!-- Modern Sidebar Script -->
 		<script>
 			const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-			const mobileMenu = document.getElementById('mobile-menu');
+			const sidebarCloseBtn = document.getElementById('sidebar-close-btn');
+			const mobileSidebar = document.getElementById('mobile-sidebar');
+			const sidebarOverlay = document.getElementById('sidebar-overlay');
 			const hamburgerIcon = document.getElementById('hamburger-icon');
 			const closeIcon = document.getElementById('close-icon');
-			const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+			const sidebarNavLinks = document.querySelectorAll('.sidebar-nav-link');
 
-			if (mobileMenuBtn && mobileMenu && hamburgerIcon && closeIcon) {
-				let isMenuOpen = false;
+			let isSidebarOpen = false;
 
-				function toggleMenu() {
-					isMenuOpen = !isMenuOpen;
+			// Función para abrir el sidebar
+			function openSidebar() {
+				isSidebarOpen = true;
+				document.body.style.overflow = 'hidden'; // Prevenir scroll del body
 
-					if (isMenuOpen) {
-						// Abrir menú
-						mobileMenu!.classList.remove('max-h-0', 'opacity-0');
-						mobileMenu!.classList.add('max-h-96', 'opacity-100');
-						hamburgerIcon!.classList.add('hidden');
-						closeIcon!.classList.remove('hidden');
-					} else {
-						// Cerrar menú
-						mobileMenu!.classList.remove('max-h-96', 'opacity-100');
-						mobileMenu!.classList.add('max-h-0', 'opacity-0');
-						hamburgerIcon!.classList.remove('hidden');
-						closeIcon!.classList.add('hidden');
-					}
+				// Mostrar overlay
+				if (sidebarOverlay) {
+					sidebarOverlay.classList.remove('opacity-0', 'invisible');
+					sidebarOverlay.classList.add('opacity-100', 'visible');
 				}
 
-				// Toggle al hacer click en el botón
-				mobileMenuBtn.addEventListener('click', toggleMenu);
+				// Mostrar sidebar con slide-in desde la derecha
+				if (mobileSidebar) {
+					mobileSidebar.classList.remove('translate-x-full');
+					mobileSidebar.classList.add('translate-x-0');
+				}
 
-				// Cerrar menú al hacer click en cualquier link
-				mobileNavLinks.forEach(link => {
-					link.addEventListener('click', () => {
-						if (isMenuOpen) {
-							toggleMenu();
-						}
-					});
+				// Cambiar íconos
+				if (hamburgerIcon && closeIcon) {
+					hamburgerIcon.classList.add('hidden');
+					closeIcon.classList.remove('hidden');
+				}
+			}
+
+			// Función para cerrar el sidebar
+			function closeSidebar() {
+				isSidebarOpen = false;
+				document.body.style.overflow = ''; // Restaurar scroll del body
+
+				// Ocultar overlay
+				if (sidebarOverlay) {
+					sidebarOverlay.classList.remove('opacity-100', 'visible');
+					sidebarOverlay.classList.add('opacity-0', 'invisible');
+				}
+
+				// Ocultar sidebar con slide-out hacia la derecha
+				if (mobileSidebar) {
+					mobileSidebar.classList.remove('translate-x-0');
+					mobileSidebar.classList.add('translate-x-full');
+				}
+
+				// Cambiar íconos
+				if (hamburgerIcon && closeIcon) {
+					hamburgerIcon.classList.remove('hidden');
+					closeIcon.classList.add('hidden');
+				}
+			}
+
+			// Toggle sidebar al hacer click en el botón del menú
+			if (mobileMenuBtn) {
+				mobileMenuBtn.addEventListener('click', () => {
+					if (isSidebarOpen) {
+						closeSidebar();
+					} else {
+						openSidebar();
+					}
 				});
 			}
+
+			// Cerrar sidebar al hacer click en el botón de cerrar
+			if (sidebarCloseBtn) {
+				sidebarCloseBtn.addEventListener('click', closeSidebar);
+			}
+
+			// Cerrar sidebar al hacer click en el overlay
+			if (sidebarOverlay) {
+				sidebarOverlay.addEventListener('click', closeSidebar);
+			}
+
+			// Cerrar sidebar al hacer click en cualquier link de navegación
+			sidebarNavLinks.forEach(link => {
+				link.addEventListener('click', () => {
+					if (isSidebarOpen) {
+						closeSidebar();
+					}
+				});
+			});
+
+			// Cerrar sidebar con la tecla ESC
+			document.addEventListener('keydown', (e: KeyboardEvent) => {
+				if (e.key === 'Escape' && isSidebarOpen) {
+					closeSidebar();
+				}
+			});
 
 			// Smooth scroll for anchor links
 			document.querySelectorAll('a[href^="#"]').forEach(anchor => {

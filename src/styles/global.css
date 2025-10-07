@@ -28,8 +28,8 @@
   --color-gold-medium: #B5882E; /* Dorado medio */
   --color-gold-dark: #9A6D1C; /* Dorado oscuro */
 
-  /* Color del logo (mantener) */
-  --color-accent: #48CAE4; /* Azul turquesa del logo */
+  /* Color accent rosa champagne - elegante y luxury spa */
+  --color-accent: #E8D4C0; /* Rosa champagne luxury */
 
   /* Compatibilidad con código existente */
   --color-primary: #1A1A1A; /* Gris oscuro navbar */
@@ -182,7 +182,7 @@ body {
 }
 
 .btn-accent:hover {
-  background-color: #00CED1;
+  background-color: #D4BFAA;
   transform: translateY(-2px);
 }
 
@@ -216,16 +216,16 @@ body {
   background: linear-gradient(180deg, #D9AD46 0%, #B5882E 50%, #9A6D1C 100%);
 }
 
-.gradient-turquoise {
-  background: linear-gradient(135deg, #40E0D0 0%, #00CED1 100%);
+.gradient-champagne {
+  background: linear-gradient(135deg, #E8D4C0 0%, #D4BFAA 100%);
 }
 
 .shadow-gold {
   box-shadow: 0 4px 20px rgba(181, 136, 46, 0.4);
 }
 
-.shadow-turquoise {
-  box-shadow: 0 4px 20px rgba(64, 224, 208, 0.3);
+.shadow-champagne {
+  box-shadow: 0 4px 20px rgba(232, 212, 192, 0.3);
 }
 
 /* Service Tabs */
@@ -414,9 +414,9 @@ body {
 
 .suero-card:hover {
   background: var(--color-accent);
-  color: white;
+  color: #1A1A1A;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(64, 224, 208, 0.3);
+  box-shadow: 0 4px 12px rgba(232, 212, 192, 0.4);
 }
 
 /* Special Day Cards */
@@ -752,11 +752,11 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #48CAE4; /* Azul celeste como color accent */
+  background: #E8D4C0; /* Rosa champagne luxury */
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000000; /* Texto en negro */
+  color: #1A1A1A; /* Texto oscuro para contraste con fondo claro */
   font-weight: bold;
   font-size: 16px;
   margin-right: 12px;
@@ -799,9 +799,9 @@ body {
 }
 
 .service-tag {
-  color: #48CAE4;
-  background: rgba(72, 202, 228, 0.1);
-  border: 1px solid rgba(72, 202, 228, 0.2);
+  color: #E8D4C0;
+  background: rgba(232, 212, 192, 0.12);
+  border: 1px solid rgba(232, 212, 192, 0.25);
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 12px;

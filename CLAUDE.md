@@ -33,11 +33,16 @@ src/
 ### Sistema de Estilos
 - **Paleta de colores personalizada** definida en `src/styles/global.css` con variables CSS
 - **Fuentes**: Poppins (principal) y Dancing Script (decorativa)
-- **Colores principales**:
-  - `--color-primary: #252525` (navbar)
-  - `--color-secondary: #fbe878` (amarillo principal)
-  - `--color-accent: #48CAE4` (azul turquesa)
-  - `--color-body-bg: #1c1a1d` (fondo del cuerpo)
+- **Colores principales (Luxury Spa Mode Oscuro)**:
+  - `--color-bg-main: #0E0E0E` (negro cálido profundo - fondo principal)
+  - `--color-bg-secondary: #1A1A1A` (gris oscuro suave - tarjetas/secciones)
+  - `--color-gold-light: #D9AD46` (dorado claro)
+  - `--color-gold-medium: #B5882E` (dorado medio)
+  - `--color-gold-dark: #9A6D1C` (dorado oscuro)
+  - `--color-accent: #E8D4C0` (rosa champagne luxury - elegante y refinado)
+  - `--gradient-luxury: linear-gradient(180deg, #D9AD46, #B5882E, #9A6D1C)` (degradado dorado metálico)
+  - `--color-text-primary: #EDEBE7` (blanco cálido - lectura principal)
+  - `--color-text-secondary: #B5B3AE` (gris cálido claro - descripciones)
 
 ### Componentes Principales
 - **Layout.astro**: Header sticky con navegación responsive, footer con información de contacto, y scripts para menú móvil

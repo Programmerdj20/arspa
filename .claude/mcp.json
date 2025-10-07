@@ -1,8 +1,15 @@
 {
-  "mcpServers": {
-    "@magicuidesign/mcp": {
-      "command": "npx",
-      "args": ["-y", "@magicuidesign/mcp@latest"]
+    "mcpServers": {
+        "@magicuidesign/mcp": {
+            "command": "npx",
+            "args": ["-y", "@magicuidesign/mcp@latest"]
+        },
+        "context7": {
+            "type": "http",
+            "url": "https://mcp.context7.com/mcp",
+            "headers": {
+                "CONTEXT7_API_KEY": "ctx7sk-47e78f6f-c0f4-41e3-aa2e-8ad1dbddb256"
+            }
+        }
     }
-  }
 }

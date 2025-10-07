@@ -1,0 +1,270 @@
+---
+// BookingModal.astro - Modal component for appointment booking
+---
+
+<!-- Modal Backdrop & Container -->
+<div id="booking-modal-wrapper" class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 invisible transition-all duration-300 pointer-events-none">
+	<!-- Backdrop with blur -->
+	<div
+		id="booking-modal-backdrop"
+		class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300"
+		aria-hidden="true"
+	></div>
+
+	<!-- Modal Dialog -->
+	<div
+		id="booking-modal-content"
+		role="dialog"
+		aria-modal="true"
+		aria-labelledby="modal-title"
+		class="relative w-full max-w-md transform transition-all duration-300 scale-95 opacity-0 md:scale-95 md:opacity-0 md:max-h-[90vh]"
+	>
+		<!-- Modal Card -->
+		<div class="relative rounded-2xl shadow-2xl overflow-hidden md:overflow-hidden" style="background: linear-gradient(135deg, rgba(26,26,26,0.98), rgba(26,26,26,0.95)); border: 1px solid var(--color-gold-light);">
+			<!-- Close Button -->
+			<button
+				id="close-modal-btn"
+				type="button"
+				class="absolute top-4 right-4 z-10 p-3 md:p-2 rounded-lg text-gold-light transition-all duration-300 hover:text-white hover:bg-gold-dark/20 hover:rotate-90"
+				aria-label="Cerrar modal"
+			>
+				<svg class="w-6 h-6 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+				</svg>
+			</button>
+
+			<!-- Modal Header -->
+			<div class="text-center pt-6 md:pt-8 pb-4 md:pb-6 px-4 md:px-6">
+				<div class="w-16 h-16 md:w-16 md:h-16 mx-auto mb-4 rounded-full flex items-center justify-center bg-luxury shadow-gold">
+					<svg class="w-8 h-8 md:w-8 md:h-8" style="color: var(--color-bg-main);" fill="currentColor" viewBox="0 0 20 20">
+						<path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+					</svg>
+				</div>
+				<h2 id="modal-title" class="text-2xl md:text-3xl font-bold text-primary mb-2 font-primary">Reserva tu Cita</h2>
+				<p class="text-gold-light text-sm font-primary">Agenda fácilmente vía WhatsApp</p>
+			</div>
+
+			<!-- Modal Body - Booking Form -->
+			<div class="px-4 md:px-6 pb-6 md:pb-8">
+				<form id="modal-appointment-form" class="space-y-4 md:space-y-4">
+					<div class="space-y-4 md:space-y-4">
+						<input
+							type="text"
+							id="modal-nombre"
+							name="nombre"
+							placeholder="Tu nombre completo"
+							required
+							class="w-full px-4 py-4 md:py-3 backdrop-blur-sm rounded-lg text-primary focus:outline-none focus:ring-2 focus:ring-gold-medium focus:border-transparent transition-all font-primary text-base md:text-sm"
+							style="background-color: rgba(237, 235, 231, 0.1); border: 1px solid var(--color-border); color: var(--color-text-primary);"
+						>
+						<input
+							type="tel"
+							id="modal-telefono"
+							name="telefono"
+							placeholder="Tu número de teléfono"
+							required
+							class="w-full px-4 py-4 md:py-3 backdrop-blur-sm rounded-lg text-primary focus:outline-none focus:ring-2 focus:ring-gold-medium focus:border-transparent transition-all font-primary text-base md:text-sm"
+							style="background-color: rgba(237, 235, 231, 0.1); border: 1px solid var(--color-border); color: var(--color-text-primary);"
+						>
+						<select
+							id="modal-servicio"
+							name="servicio"
+							required
+							class="w-full px-4 py-4 md:py-3 backdrop-blur-sm rounded-lg text-primary focus:outline-none focus:ring-2 focus:ring-gold-medium focus:border-transparent transition-all font-primary text-base md:text-sm"
+							style="background-color: rgba(237, 235, 231, 0.1); border: 1px solid var(--color-border); color: var(--color-text-primary);"
+						>
+							<option value="" style="color: var(--color-bg-main);">Selecciona un servicio</option>
+							<option value="masajes" style="color: var(--color-bg-main);">Masajes de Relajación</option>
+							<option value="corporales" style="color: var(--color-bg-main);">Tratamientos Corporales</option>
+							<option value="faciales" style="color: var(--color-bg-main);">Faciales</option>
+							<option value="sueroterapia" style="color: var(--color-bg-main);">Sueroterapia</option>
+							<option value="dias-especiales" style="color: var(--color-bg-main);">Días Especiales</option>
+						</select>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-3">
+							<input
+								type="date"
+								id="modal-fecha"
+								name="fecha"
+								required
+								class="w-full px-4 py-4 md:py-3 backdrop-blur-sm rounded-lg text-primary focus:outline-none focus:ring-2 focus:ring-gold-medium focus:border-transparent transition-all font-primary text-base md:text-sm"
+								style="background-color: rgba(237, 235, 231, 0.1); border: 1px solid var(--color-border); color: var(--color-text-primary);"
+							>
+							<select
+								id="modal-modalidad"
+								name="modalidad"
+								required
+								class="w-full px-4 py-4 md:py-3 backdrop-blur-sm rounded-lg text-primary focus:outline-none focus:ring-2 focus:ring-gold-medium focus:border-transparent transition-all font-primary text-base md:text-sm"
+								style="background-color: rgba(237, 235, 231, 0.1); border: 1px solid var(--color-border); color: var(--color-text-primary);"
+							>
+								<option value="" style="color: var(--color-bg-main);">Modalidad</option>
+								<option value="spa" style="color: var(--color-bg-main);">En el Spa</option>
+								<option value="domicilio" style="color: var(--color-bg-main);">A Domicilio (+Costo extra)</option>
+							</select>
+						</div>
+						<textarea
+							id="modal-mensaje"
+							name="mensaje"
+							rows="3"
+							placeholder="Mensaje adicional (opcional)"
+							class="w-full px-4 py-4 md:py-3 backdrop-blur-sm rounded-lg text-primary focus:outline-none focus:ring-2 focus:ring-gold-medium focus:border-transparent resize-none transition-all font-primary text-base md:text-sm"
+							style="background-color: rgba(237, 235, 231, 0.1); border: 1px solid var(--color-border); color: var(--color-text-primary);"
+						></textarea>
+					</div>
+
+					<button
+						type="submit"
+						class="w-full py-5 md:py-4 font-semibold rounded-lg transition-all duration-300 flex items-center justify-center hover:scale-[1.02] shadow-lg font-primary text-primary text-base md:text-base"
+						style="background: linear-gradient(135deg, #25D366, #128C7E);"
+					>
+						<svg class="w-5 h-5 md:w-5 md:h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787"/>
+						</svg>
+						Enviar vía WhatsApp
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal Control Script -->
+<script>
+	function initBookingModal() {
+		const modalWrapper = document.getElementById('booking-modal-wrapper');
+		const modalContent = document.getElementById('booking-modal-content');
+		const modalBackdrop = document.getElementById('booking-modal-backdrop');
+		const closeBtn = document.getElementById('close-modal-btn');
+		const form = document.getElementById('modal-appointment-form');
+
+		if (!modalWrapper || !modalContent || !modalBackdrop || !closeBtn || !form) return;
+
+		// Detectar si es un dispositivo móvil
+		const isMobile = window.innerWidth < 768;
+		
+		// Guardar posición del scroll antes de abrir el modal
+		let scrollPosition = 0;
+
+		// Función para abrir el modal
+		function openModal() {
+			// Guardar posición actual del scroll
+			scrollPosition = window.pageYOffset;
+			
+			modalWrapper.classList.remove('opacity-0', 'invisible', 'pointer-events-none');
+			modalWrapper.classList.add('opacity-100', 'visible', 'pointer-events-auto');
+
+			// Animación del contenido
+			setTimeout(() => {
+				modalContent.classList.remove('scale-95', 'opacity-0');
+				modalContent.classList.add('scale-100', 'opacity-100');
+			}, 10);
+
+			// Prevenir scroll del body y mantener posición
+			if (isMobile) {
+				// En móviles, permitir que el modal ocupe más espacio y sea scrolleable
+				modalContent.style.maxHeight = '90vh';
+				modalContent.style.overflowY = 'auto';
+				
+				// Prevenir scroll del body
+				document.body.style.position = 'fixed';
+				document.body.style.top = `-${scrollPosition}px`;
+				document.body.style.width = '100%';
+			} else {
+				document.body.style.overflow = 'hidden';
+			}
+		}
+
+		// Función para cerrar el modal
+		function closeModal() {
+			modalContent.classList.remove('scale-100', 'opacity-100');
+			modalContent.classList.add('scale-95', 'opacity-0');
+
+			setTimeout(() => {
+				modalWrapper.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
+				modalWrapper.classList.add('opacity-0', 'invisible', 'pointer-events-none');
+			}, 300);
+
+			// Restaurar scroll del body
+			if (isMobile) {
+				document.body.style.position = '';
+				document.body.style.top = '';
+				document.body.style.width = '';
+				window.scrollTo(0, scrollPosition);
+			} else {
+				document.body.style.overflow = '';
+			}
+		}
+
+		// Event listeners
+		closeBtn.addEventListener('click', closeModal);
+		modalBackdrop.addEventListener('click', closeModal);
+
+		// Cerrar con tecla ESC
+		document.addEventListener('keydown', (e: KeyboardEvent) => {
+			if (e.key === 'Escape' && !modalWrapper.classList.contains('invisible')) {
+				closeModal();
+			}
+		});
+
+		// Manejar envío del formulario
+		form.addEventListener('submit', function(e) {
+			e.preventDefault();
+
+			const nombre = (document.getElementById('modal-nombre') as HTMLInputElement)?.value || '';
+			const telefono = (document.getElementById('modal-telefono') as HTMLInputElement)?.value || '';
+			const servicio = (document.getElementById('modal-servicio') as HTMLSelectElement)?.value || '';
+			const fecha = (document.getElementById('modal-fecha') as HTMLInputElement)?.value || '';
+			const modalidad = (document.getElementById('modal-modalidad') as HTMLSelectElement)?.value || '';
+			const mensaje = (document.getElementById('modal-mensaje') as HTMLTextAreaElement)?.value || '';
+
+			// Construir mensaje de WhatsApp
+			let whatsappMessage = `¡Hola! Me interesa agendar una cita en ARspa.\n\n`;
+			whatsappMessage += `👤 *Nombre:* ${nombre}\n`;
+			whatsappMessage += `📱 *Teléfono:* ${telefono}\n`;
+			whatsappMessage += `✨ *Servicio:* ${getServiceName(servicio)}\n`;
+			whatsappMessage += `📅 *Fecha preferida:* ${fecha}\n`;
+			whatsappMessage += `📍 *Modalidad:* ${modalidad === 'spa' ? 'En el Spa' : 'A Domicilio'}\n`;
+
+			if (mensaje.trim()) {
+				whatsappMessage += `\n📝 *Mensaje adicional:*\n${mensaje}`;
+			}
+
+			// Abrir WhatsApp
+			const whatsappUrl = `https://wa.me/573013545997?text=${encodeURIComponent(whatsappMessage)}`;
+			window.open(whatsappUrl, '_blank');
+
+			// Cerrar modal después de enviar
+			setTimeout(() => {
+				closeModal();
+				(form as HTMLFormElement).reset();
+			}, 500);
+		});
+
+		function getServiceName(serviceValue: string): string {
+			const services = {
+				'masajes': 'Masajes de Relajación',
+				'corporales': 'Tratamientos Corporales',
+				'faciales': 'Faciales',
+				'sueroterapia': 'Sueroterapia',
+				'dias-especiales': 'Días Especiales'
+			};
+			return services[serviceValue as keyof typeof services] || serviceValue;
+		}
+
+		// Establecer fecha mínima a hoy
+		const dateInput = document.getElementById('modal-fecha');
+		if (dateInput) {
+			const today = new Date().toISOString().split('T')[0];
+			dateInput.setAttribute('min', today);
+		}
+
+		// Exponer función globalmente para ser llamada desde el botón
+		(window as any).openBookingModal = openModal;
+	}
+
+	// Inicializar cuando el DOM esté listo
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initBookingModal);
+	} else {
+		initBookingModal();
+	}
+</script>

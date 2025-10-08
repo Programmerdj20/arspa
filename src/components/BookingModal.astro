@@ -3,7 +3,7 @@
 ---
 
 <!-- Modal Backdrop & Container -->
-<div id="booking-modal-wrapper" class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 invisible transition-all duration-300 pointer-events-none">
+<div id="booking-modal-wrapper" class="fixed inset-0 z-[100] flex items-start justify-center p-4 pt-8 md:pt-4 opacity-0 invisible transition-all duration-300 pointer-events-none overflow-y-auto">
 	<!-- Backdrop with blur -->
 	<div
 		id="booking-modal-backdrop"
@@ -17,10 +17,11 @@
 		role="dialog"
 		aria-modal="true"
 		aria-labelledby="modal-title"
-		class="relative w-full max-w-md transform transition-all duration-300 scale-95 opacity-0 md:scale-95 md:opacity-0 md:max-h-[90vh]"
+		class="relative w-full max-w-md max-h-[90vh] my-auto transform transition-all duration-300 scale-95 opacity-0 overflow-y-auto"
+		style="-webkit-overflow-scrolling: touch;"
 	>
 		<!-- Modal Card -->
-		<div class="relative rounded-2xl shadow-2xl overflow-hidden md:overflow-hidden" style="background: linear-gradient(135deg, rgba(26,26,26,0.98), rgba(26,26,26,0.95)); border: 1px solid var(--color-gold-light);">
+		<div class="relative rounded-2xl shadow-2xl" style="background: linear-gradient(135deg, rgba(26,26,26,0.98), rgba(26,26,26,0.95)); border: 1px solid var(--color-gold-light);">
 			<!-- Close Button -->
 			<button
 				id="close-modal-btn"
@@ -129,6 +130,10 @@
 
 <!-- Modal Control Script -->
 <script>
+	/**
+	 * BookingModal - Modal de reserva con Focus Trap y accesibilidad
+	 * Basado en W3C ARIA Practices y mejores prácticas de UX
+	 */
 	function initBookingModal() {
 		const modalWrapper = document.getElementById('booking-modal-wrapper');
 		const modalContent = document.getElementById('booking-modal-content');
@@ -138,83 +143,168 @@
 
 		if (!modalWrapper || !modalContent || !modalBackdrop || !closeBtn || !form) return;
 
-		// Detectar si es un dispositivo móvil
-		const isMobile = window.innerWidth < 768;
-		
-		// Guardar posición del scroll antes de abrir el modal
-		let scrollPosition = 0;
+		// Estado del modal
+		let isModalOpen = false;
+		let previousActiveElement = null;
 
-		// Función para abrir el modal
-		function openModal() {
-			// Guardar posición actual del scroll
-			scrollPosition = window.pageYOffset;
-			
-			modalWrapper.classList.remove('opacity-0', 'invisible', 'pointer-events-none');
-			modalWrapper.classList.add('opacity-100', 'visible', 'pointer-events-auto');
+		// Elementos focuseables para Focus Trap
+		let focusableElements = [];
+		let firstFocusableElement = null;
+		let lastFocusableElement = null;
 
-			// Animación del contenido
-			setTimeout(() => {
-				modalContent.classList.remove('scale-95', 'opacity-0');
-				modalContent.classList.add('scale-100', 'opacity-100');
-			}, 10);
+		/**
+		 * Obtiene todos los elementos focuseables dentro del modal
+		 */
+		function updateFocusableElements() {
+			const selector = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+			focusableElements = Array.from(modalContent.querySelectorAll(selector))
+				.filter(el => !el.hasAttribute('disabled') && el.offsetParent !== null);
 
-			// Prevenir scroll del body y mantener posición
-			if (isMobile) {
-				// En móviles, permitir que el modal ocupe más espacio y sea scrolleable
-				modalContent.style.maxHeight = '90vh';
-				modalContent.style.overflowY = 'auto';
-				
-				// Prevenir scroll del body
-				document.body.style.position = 'fixed';
-				document.body.style.top = `-${scrollPosition}px`;
-				document.body.style.width = '100%';
+			firstFocusableElement = focusableElements[0];
+			lastFocusableElement = focusableElements[focusableElements.length - 1];
+		}
+
+		/**
+		 * Focus Trap - Mantiene el foco dentro del modal
+		 */
+		function handleFocusTrap(e) {
+			if (!isModalOpen) return;
+
+			const isTabPressed = e.key === 'Tab';
+			if (!isTabPressed) return;
+
+			if (e.shiftKey) {
+				// Shift + Tab
+				if (document.activeElement === firstFocusableElement) {
+					e.preventDefault();
+					lastFocusableElement?.focus();
+				}
 			} else {
-				document.body.style.overflow = 'hidden';
+				// Tab
+				if (document.activeElement === lastFocusableElement) {
+					e.preventDefault();
+					firstFocusableElement?.focus();
+				}
 			}
 		}
 
-		// Función para cerrar el modal
+		/**
+		 * Función para abrir el modal
+		 */
+		function openModal() {
+			// Prevenir apertura múltiple
+			if (isModalOpen) return;
+
+			// Guardar elemento activo para restaurar después
+			previousActiveElement = document.activeElement;
+
+			// Registrar en OverlayManager
+			if (window.overlayManager) {
+				window.overlayManager.register({
+					id: 'booking-modal',
+					type: 'modal',
+					element: modalWrapper,
+					onClose: closeModal
+				});
+			}
+
+			// Marcar como abierto
+			isModalOpen = true;
+
+			// Actualizar aria-hidden
+			modalWrapper.setAttribute('aria-hidden', 'false');
+
+			// Mostrar modal
+			modalWrapper.classList.remove('opacity-0', 'invisible', 'pointer-events-none');
+			modalWrapper.classList.add('opacity-100', 'visible', 'pointer-events-auto');
+
+			// Animación del contenido con requestAnimationFrame
+			requestAnimationFrame(() => {
+				modalContent.classList.remove('scale-95', 'opacity-0');
+				modalContent.classList.add('scale-100', 'opacity-100');
+			});
+
+			// Setup Focus Trap
+			updateFocusableElements();
+
+			// Enfocar primer elemento después de la animación
+			setTimeout(() => {
+				firstFocusableElement?.focus();
+			}, 100);
+
+			// Anunciar apertura para lectores de pantalla
+			announceToScreenReader('Modal de reserva abierto');
+		}
+
+		/**
+		 * Función para cerrar el modal
+		 */
 		function closeModal() {
+			// Prevenir cierre múltiple
+			if (!isModalOpen) return;
+
+			// Animación de cierre
 			modalContent.classList.remove('scale-100', 'opacity-100');
 			modalContent.classList.add('scale-95', 'opacity-0');
 
 			setTimeout(() => {
 				modalWrapper.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
 				modalWrapper.classList.add('opacity-0', 'invisible', 'pointer-events-none');
+
+				// Actualizar aria-hidden
+				modalWrapper.setAttribute('aria-hidden', 'true');
 			}, 300);
 
-			// Restaurar scroll del body
-			if (isMobile) {
-				document.body.style.position = '';
-				document.body.style.top = '';
-				document.body.style.width = '';
-				window.scrollTo(0, scrollPosition);
-			} else {
-				document.body.style.overflow = '';
+			// Desregistrar del OverlayManager
+			if (window.overlayManager) {
+				window.overlayManager.unregister('booking-modal');
 			}
+
+			// Marcar como cerrado
+			isModalOpen = false;
+
+			// Restaurar foco al elemento anterior
+			if (previousActiveElement && previousActiveElement.focus) {
+				previousActiveElement.focus();
+			}
+
+			// Anunciar cierre para lectores de pantalla
+			announceToScreenReader('Modal de reserva cerrado');
+		}
+
+		/**
+		 * Anuncia mensajes a lectores de pantalla
+		 */
+		function announceToScreenReader(message) {
+			const announcement = document.createElement('div');
+			announcement.setAttribute('role', 'status');
+			announcement.setAttribute('aria-live', 'polite');
+			announcement.className = 'sr-only';
+			announcement.textContent = message;
+			document.body.appendChild(announcement);
+
+			setTimeout(() => {
+				document.body.removeChild(announcement);
+			}, 1000);
 		}
 
 		// Event listeners
 		closeBtn.addEventListener('click', closeModal);
 		modalBackdrop.addEventListener('click', closeModal);
 
-		// Cerrar con tecla ESC
-		document.addEventListener('keydown', (e: KeyboardEvent) => {
-			if (e.key === 'Escape' && !modalWrapper.classList.contains('invisible')) {
-				closeModal();
-			}
-		});
+		// Focus Trap listener
+		document.addEventListener('keydown', handleFocusTrap);
 
 		// Manejar envío del formulario
 		form.addEventListener('submit', function(e) {
 			e.preventDefault();
 
-			const nombre = (document.getElementById('modal-nombre') as HTMLInputElement)?.value || '';
-			const telefono = (document.getElementById('modal-telefono') as HTMLInputElement)?.value || '';
-			const servicio = (document.getElementById('modal-servicio') as HTMLSelectElement)?.value || '';
-			const fecha = (document.getElementById('modal-fecha') as HTMLInputElement)?.value || '';
-			const modalidad = (document.getElementById('modal-modalidad') as HTMLSelectElement)?.value || '';
-			const mensaje = (document.getElementById('modal-mensaje') as HTMLTextAreaElement)?.value || '';
+			const nombre = document.getElementById('modal-nombre')?.value || '';
+			const telefono = document.getElementById('modal-telefono')?.value || '';
+			const servicio = document.getElementById('modal-servicio')?.value || '';
+			const fecha = document.getElementById('modal-fecha')?.value || '';
+			const modalidad = document.getElementById('modal-modalidad')?.value || '';
+			const mensaje = document.getElementById('modal-mensaje')?.value || '';
 
 			// Construir mensaje de WhatsApp
 			let whatsappMessage = `¡Hola! Me interesa agendar una cita en ARspa.\n\n`;
@@ -235,11 +325,11 @@
 			// Cerrar modal después de enviar
 			setTimeout(() => {
 				closeModal();
-				(form as HTMLFormElement).reset();
+				form.reset();
 			}, 500);
 		});
 
-		function getServiceName(serviceValue: string): string {
+		function getServiceName(serviceValue) {
 			const services = {
 				'masajes': 'Masajes de Relajación',
 				'corporales': 'Tratamientos Corporales',
@@ -247,7 +337,7 @@
 				'sueroterapia': 'Sueroterapia',
 				'dias-especiales': 'Días Especiales'
 			};
-			return services[serviceValue as keyof typeof services] || serviceValue;
+			return services[serviceValue] || serviceValue;
 		}
 
 		// Establecer fecha mínima a hoy
@@ -257,8 +347,8 @@
 			dateInput.setAttribute('min', today);
 		}
 
-		// Exponer función globalmente para ser llamada desde el botón
-		(window as any).openBookingModal = openModal;
+		// Exponer función globalmente
+		window.openBookingModal = openModal;
 	}
 
 	// Inicializar cuando el DOM esté listo
@@ -268,3 +358,18 @@
 		initBookingModal();
 	}
 </script>
+
+<!-- Estilo para screen reader only -->
+<style>
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border-width: 0;
+	}
+</style>

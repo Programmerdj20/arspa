@@ -1,0 +1,451 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BookingModal from '../components/BookingModal.astro';
+import '../styles/global.css';
+import '../styles/nosotros.css';
+---
+
+<Layout title="Nosotros - ARspa | Conoce Nuestra Historia" description="Conoce la historia de ARspa, donde Leidis Ramirez combina su experiencia como enfermera profesional y cosmetóloga esteticista para crear un espacio único de bienestar integral.">
+	<!-- Hero Section Personal -->
+	<section id="hero-nosotros" class="hero-personal section-padding">
+		<div class="container">
+			<div class="hero-content">
+				<div class="imagen-leidis-main animate-on-scroll animate-fade-in-left">
+					<picture>
+						<source 
+							media="(min-width: 1024px)" 
+							srcset="/images/Perfil_nosotros_large.webp"
+							type="image/webp"
+						>
+						<source 
+							media="(min-width: 768px)" 
+							srcset="/images/Perfil_nosotros_medium.webp"
+							type="image/webp"
+						>
+						<source 
+							srcset="/images/Perfil_nosotros_small.webp"
+							type="image/webp"
+						>
+						<img 
+							src="/images/Perfil_nosotros_small.webp"
+							alt="Leidis Ramirez - Fundadora de ARspa"
+							loading="lazy"
+							decoding="async"
+							class="imagen-perfil"
+						>
+					</picture>
+				</div>
+				<div class="texto-hero animate-on-scroll animate-fade-in-right">
+					<h1 class="titulo-principal">Más que un spa, un sueño hecho realidad</h1>
+					<p class="subtitulo">Conoce la historia detrás de ARspa, donde la ciencia y el cuidado humano se encuentran para transformar vidas</p>
+					<div class="hero-cta-container">
+						<div class="hero-cta-primary">
+							<a href="#contacto" class="btn-hero-primary" onclick="trackCTA('hero_principal')">
+								<span class="btn-icon">💫</span>
+								<span class="btn-text">Comienza Tu Transformación</span>
+								<span class="btn-arrow">→</span>
+							</a>
+						</div>
+						<div class="hero-cta-secondary">
+							<a href="#proceso" class="btn-hero-secondary">
+								<span class="btn-icon">🌟</span>
+								<span class="btn-text">Conoce Nuestro Proceso</span>
+							</a>
+						</div>
+					</div>
+					<div class="firma-leidis animate-on-scroll">
+						<p>Leidis Ramirez</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Mi Historia - Timeline -->
+	<section id="mi-historia" class="historia-timeline section-padding bg-secondary">
+		<div class="container">
+			<div class="section-header animate-on-scroll animate-fade-in-up">
+				<h2 class="titulo-seccion">Mi viaje hacia el cuidado integral</h2>
+				<p class="subtitulo-seccion">Cada experiencia me ha preparado para crear ARspa, un espacio donde tu bienestar es nuestra prioridad absoluta</p>
+			</div>
+			
+			<div class="timeline-vertical">
+				<div class="timeline-item animate-on-scroll animate-fade-in-left">
+					<div class="timeline-icon">🏥</div>
+					<div class="timeline-content">
+						<h3>Enfermera Profesional</h3>
+						<p>Descubrí la belleza de la sanación y el poder del cuidado humano. Cada paciente me enseñó que la verdadera curación va más allá del tratamiento físico.</p>
+					</div>
+				</div>
+				
+				<div class="timeline-item animate-on-scroll animate-fade-in-right">
+					<div class="timeline-icon">✨</div>
+					<div class="timeline-content">
+						<h3>Cosmetóloga Esteticista</h3>
+						<p>Encontré mi verdadera vocación: el arte de realzar la belleza natural que cada persona lleva dentro, combinando ciencia y sensibilidad.</p>
+					</div>
+				</div>
+				
+				<div class="timeline-item animate-on-scroll animate-fade-in-left">
+					<div class="timeline-icon">💫</div>
+					<div class="timeline-content">
+						<h3>ARspa Nace</h3>
+						<p>Materialicé un sueño: crear un espacio donde cada persona que cruza nuestras puertas no solo reciba un tratamiento, sino que experimente una transformación integral.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA después de Historia -->
+	<div class="section-cta historia-cta section-padding">
+		<div class="container">
+			<div class="cta-content animate-on-scroll animate-fade-in-up">
+				<h3>¿Te identificas con mi historia?</h3>
+				<p>Descubre cómo podemos escribir juntas la próxima etapa de tu viaje de bienestar.</p>
+				<div class="cta-buttons">
+					<button onclick="openBookingModal()" class="btn-emotional">
+						<span class="btn-icon">💝</span>
+						<span>Reservar Consulta Personal</span>
+					</button>
+					<a href="#filosofia" class="btn-discover">
+						<span class="btn-icon">🌿</span>
+						<span>Explorar Nuestra Filosofía</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Filosofía ARspa -->
+	<section id="filosofia" class="filosofia-grid section-padding">
+		<div class="container">
+			<div class="section-header animate-on-scroll animate-fade-in-up">
+				<h2 class="titulo-seccion">ARspa: Donde la ciencia abraza el alma</h2>
+				<p class="subtitulo-seccion">Hemos revolucionado el concepto tradicional del spa, creando un santuario de autocuidado integral</p>
+			</div>
+			
+			<div class="filosofia-main animate-on-scroll animate-fade-in-up">
+				<p>En ARspa no creemos en estándares de belleza impuestos, sino en resaltar la autenticidad de cada persona. Cada tratamiento que ofrecemos es un diálogo entre la ciencia avanzada y el cuidado personal, entre la técnica profesional y el toque humano que marca la diferencia.</p>
+			</div>
+			
+			<div class="pilares-grid">
+				<div class="pilar-card animate-on-scroll animate-fade-in-up animate-delay-1">
+					<div class="pilar-icon">🔬</div>
+					<h3>Ciencia Avanzada</h3>
+					<p>Tratamientos respaldados por evidencia científica y tecnología de vanguardia.</p>
+				</div>
+				
+				<div class="pilar-card animate-on-scroll animate-fade-in-up animate-delay-2">
+					<div class="pilar-icon">❤️</div>
+					<h3>Cuidado Humano</h3>
+					<p>Cada tratamiento tocado por la calidez del alma y la sensibilidad profesional.</p>
+				</div>
+				
+				<div class="pilar-card animate-on-scroll animate-fade-in-up animate-delay-3">
+					<div class="pilar-icon">🌟</div>
+					<h3>Belleza Auténtica</h3>
+					<p>Celebramos tu esencia única e irrepetible, realzando tu belleza natural.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Proceso Transformador -->
+	<section id="proceso" class="proceso-lineal section-padding bg-secondary">
+		<div class="container">
+			<div class="section-header animate-on-scroll animate-fade-in-up">
+				<h2 class="titulo-seccion">Tu viaje transformador en ARspa</h2>
+				<p class="subtitulo-seccion">Cada etapa ha sido diseñada con amor y profesionalismo para tu bienestar integral</p>
+			</div>
+			
+			<div class="proceso-conectado">
+				<div class="paso-proceso animate-on-scroll animate-fade-in-up" id="paso-1">
+					<div class="paso-circulo">
+						<span class="paso-numero">1</span>
+						<div class="paso-icono">🌟</div>
+					</div>
+					<h3>Descubrimiento Personal</h3>
+					<p>Más que una valoración, es un diálogo auténtico donde escuchamos tus necesidades, entendemos tus preocupaciones y conectamos con tus aspiraciones.</p>
+				</div>
+				
+				<div class="paso-proceso animate-on-scroll animate-fade-in-up" id="paso-2">
+					<div class="paso-circulo">
+						<span class="paso-numero">2</span>
+						<div class="paso-icono">🎨</div>
+					</div>
+					<h3>Diseño de Experiencia</h3>
+					<p>Creamos un tratamiento único como tú, combinando nuestra expertise con lo que tu cuerpo y alma necesitan en este momento de tu vida.</p>
+				</div>
+				
+				<div class="paso-proceso animate-on-scroll animate-fade-in-up" id="paso-3">
+					<div class="paso-circulo">
+						<span class="paso-numero">3</span>
+						<div class="paso-icono">🤝</div>
+					</div>
+					<h3>Acompañamiento Consciente</h3>
+					<p>Durante cada sesión, no solo aplicamos técnicas, sino que creamos un ambiente de confianza donde puedes relajarte completamente y entregarte al proceso.</p>
+				</div>
+				
+				<div class="paso-proceso animate-on-scroll animate-fade-in-up" id="paso-4">
+					<div class="paso-circulo">
+						<span class="paso-numero">4</span>
+						<div class="paso-icono">🌈</div>
+					</div>
+					<h3>Celebración de Resultados</h3>
+					<p>Juntos celebramos cada logro, por pequeño que sea, y planificamos cómo continuar nutriendo tu bienestar a largo plazo.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA después de Proceso -->
+	<div class="section-cta proceso-cta section-padding">
+		<div class="container">
+			<div class="cta-content animate-on-scroll animate-fade-in-up">
+				<h3>¿Lista para comenzar tu viaje?</h3>
+				<p>Cada paso está diseñado con amor y profesionalismo para tu transformación integral.</p>
+				<div class="cta-highlight">
+					<div class="highlight-text">
+						<span class="highlight-icon">✨</span>
+						<span>Primera consulta con 20% de descuento</span>
+					</div>
+					<button onclick="openBookingModal()" class="btn-highlight-cta">
+						Agendar Mi Primera Experiencia
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Misión y Visión -->
+	<section id="mision-vision" class="mision-vision-section section-padding">
+		<div class="container">
+			<!-- Misión -->
+			<div class="mision-vision-card animate-on-scroll animate-fade-in-up">
+				<div class="card-header">
+					<div class="card-icon">💛</div>
+					<h3 class="card-title">Misión con Corazón</h3>
+				</div>
+				<div class="card-content">
+					<p><strong>Tu bienestar, nuestra razón de ser</strong></p>
+					<p>En ARspa, no simplemente atendemos clientes, acompañamos personas en su viaje de autodescubrimiento y autoaceptación. Nuestro propósito va más allá de los resultados visibles; buscamos ser ese espacio seguro donde puedes desconectar del mundo exterior y reconectar contigo misma.</p>
+					<blockquote>
+						"Cada sesión es una oportunidad para restaurar no solo tu piel, sino tu confianza"
+					</blockquote>
+				</div>
+			</div>
+			
+			<!-- Visión -->
+			<div class="mision-vision-card animate-on-scroll animate-fade-in-up animate-delay-1">
+				<div class="card-header">
+					<div class="card-icon">🌍</div>
+					<h3 class="card-title">Visión con Alma</h3>
+				</div>
+				<div class="card-content">
+					<p><strong>Soñando en grande, creciendo con corazón</strong></p>
+					<p>Visualizamos un futuro donde ARspa sea sinónimo de excelencia en bienestar integral, no solo en Medellín, sino como referente internacional. Mi sueño es llevar esta filosofía de cuidado auténtico a Miami y más allá, demostrando que la verdadera belleza no conoce fronteras.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Valores que Nos Definen -->
+	<section id="valores" class="valores-section section-padding bg-secondary">
+		<div class="container">
+			<div class="section-header animate-on-scroll animate-fade-in-up">
+				<h2 class="titulo-seccion">Valores que Guían Cada Tratamiento</h2>
+				<p class="subtitulo-seccion">Los pilares fundamentales de nuestra filosofía de cuidado integral</p>
+			</div>
+			
+			<div class="hexagonos-grid">
+				<div class="hexagono-valor animate-on-scroll animate-fade-in-up animate-delay-1">
+					<div class="hexagono-icono">💛</div>
+					<h3>Profesionalismo con Pasión</h3>
+					<p>Cada tratamiento respaldado por años de estudio, aplicados con amor y dedicación.</p>
+				</div>
+				
+				<div class="hexagono-valor animate-on-scroll animate-fade-in-up animate-delay-2">
+					<div class="hexagono-icono">✨</div>
+					<h3>Autenticidad como Bandera</h3>
+					<p>Celebramos tu belleza única, la verdadera elegancia está en ser auténticamente tú.</p>
+				</div>
+				
+				<div class="hexagono-valor animate-on-scroll animate-fade-in-up animate-delay-3">
+					<div class="hexagono-icono">🤗</div>
+					<h3>Cercanía que Conecta</h3>
+					<p>No somos clientes y proveedores, somos una comunidad que se apoya y crece junta.</p>
+				</div>
+				
+				<div class="hexagono-valor animate-on-scroll animate-fade-in-up animate-delay-4">
+					<div class="hexagono-icono">🚀</div>
+					<h3>Innovación con Propósito</h3>
+					<p>Siempre buscamos las mejores técnicas, no por estar a la moda, sino porque queremos ofrecerte lo mejor.</p>
+				</div>
+				
+				<div class="hexagono-valor animate-on-scroll animate-fade-in-up animate-delay-5">
+					<div class="hexagono-icono">🌊</div>
+					<h3>Bienestar Integral</h3>
+					<p>Cuidamos de ti en todas tus dimensiones, porque entendemos que la belleza exterior florece desde el equilibrio interior.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA después de Valores -->
+	<div class="section-cta valores-cta section-padding">
+		<div class="container">
+			<div class="cta-content animate-on-scroll animate-fade-in-up">
+				<h3>¿Compartes nuestros valores?</h3>
+				<p>Únete a una comunidad que celebra la autenticidad y el cuidado integral.</p>
+				<div class="cta-community">
+					<button onclick="openWhatsAppCommunity()" class="btn-community">
+						<span class="btn-icon">👥</span>
+						<span>Unirte a Nuestra Comunidad</span>
+					</button>
+					<a href="/servicios" class="btn-services">
+						<span class="btn-icon">🎯</span>
+						<span>Descubrir Servicios</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Conexión Personal -->
+	<section id="conexion-personal" class="mensaje-directo section-padding">
+		<div class="container">
+			<div class="mensaje-content animate-on-scroll animate-fade-in-up">
+				<div class="imagen-leidis-intima">
+					<img src="/images/Perfil_nosotros.webp" alt="Leidis Ramirez - Fundadora de ARspa" class="imagen-intima">
+				</div>
+				<div class="mensaje-texto">
+					<h2 class="titulo-seccion">Un Mensaje Para Ti</h2>
+					<p class="mensaje-personal">
+						"Querida visitante, cada día que abro las puertas de ARspa, lo hago con la convicción de que este espacio es mucho más que un spa. Es un hogar donde tu belleza natural es celebrada, donde tu bienestar es nuestra prioridad y donde cada tratamiento es una expresión de amor propio. Mi experiencia como enfermera profesional y cosmetóloga esteticista me ha enseñado que la verdadera transformación ocurre cuando la ciencia y el cuidado humano se unen en perfecta armonía."
+					</p>
+					<p class="mensaje-personal">
+						"En ARspa, no solo te ofrecemos tratamientos, te ofrecemos una experiencia donde te sentirás vista, escuchada y valorada. Porque creo firmemente que cada persona merece brillar con su propia luz."
+					</p>
+					<div class="firma-completa">
+						<p>Con cariño,</p>
+						<div class="firma-leidis-completa">Leidis Ramirez</div>
+						<p class="titulo-profesional">Fundadora - Enfermera Profesional, Cosmetóloga Esteticista</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Credenciales Profesionales -->
+	<section id="credenciales" class="credentials-section section-padding bg-secondary">
+		<div class="container">
+			<div class="section-header animate-on-scroll animate-fade-in-up">
+				<h2 class="titulo-seccion">Nuestra Base Científica y Profesional</h2>
+				<p class="subtitulo-seccion">La confianza que mereces, respaldada por experiencia y conocimiento</p>
+			</div>
+			
+			<div class="credentials-grid">
+				<div class="credential-item animate-on-scroll animate-fade-in-up">
+					<div class="credential-icon">🎓</div>
+					<h3>Formación Profesional</h3>
+					<ul>
+						<li>Enfermera Profesional Certificada</li>
+						<li>Cosmetóloga Esteticista Especializada</li>
+						<li>Actualización constante en técnicas avanzadas</li>
+					</ul>
+				</div>
+				
+				<div class="credential-item animate-on-scroll animate-fade-in-up animate-delay-1">
+					<div class="credential-icon">🔬</div>
+					<h3>Base Científica</h3>
+					<ul>
+						<li>Tratamientos con evidencia comprobada</li>
+						<li>Productos de alta calidad dermatológica</li>
+						<li>Protocolos de seguridad internacional</li>
+					</ul>
+				</div>
+				
+				<div class="credential-item animate-on-scroll animate-fade-in-up animate-delay-2">
+					<div class="credential-icon">🏆</div>
+					<h3>Reconocimiento</h3>
+					<ul>
+						<li>Referente en bienestar integral</li>
+						<li>Satisfacción garantizada de clientes</li>
+						<li>Excelencia en servicio personalizado</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Final -->
+	<section id="cta-final" class="final-cta-section section-padding">
+		<div class="container">
+			<div class="final-cta-content">
+				<div class="cta-visual animate-on-scroll animate-fade-in-left">
+					<div class="cta-image-container">
+						<img src="/images/Banner_hero.webp" alt="Transformación en ARspa" class="cta-image">
+						<div class="cta-overlay">
+							<div class="overlay-text">Tu transformación comienza aquí</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="cta-text animate-on-scroll animate-fade-in-right">
+					<h2 class="titulo-final">El Momento de Cuidarte es Ahora</h2>
+					<p class="cta-subtitle">
+						En ARspa, no solo ofrecemos tratamientos, creamos experiencias que transforman. 
+						Permítenos ser parte de tu viaje hacia una versión más radiante y confiada de ti misma.
+					</p>
+					
+					<div class="cta-benefits">
+						<div class="benefit-item">
+							<span class="benefit-icon">🌟</span>
+							<span>Atención personalizada con Leidis Ramirez</span>
+						</div>
+						<div class="benefit-item">
+							<span class="benefit-icon">🔬</span>
+							<span>Tratamientos con base científica</span>
+						</div>
+						<div class="benefit-item">
+							<span class="benefit-icon">💝</span>
+							<span>Enfoque integral cuerpo-mente-espíritu</span>
+						</div>
+					</div>
+					
+					<div class="final-cta-buttons">
+						<button onclick="openBookingModal()" class="btn-final-primary">
+							<span class="btn-content">
+								<span class="btn-icon">🌈</span>
+								<span class="btn-text">Reservar Mi Primera Cita</span>
+								<span class="btn-arrow">→</span>
+							</span>
+						</button>
+						
+						<a href="tel:+573013545997" class="btn-final-secondary">
+							<span class="btn-content">
+								<span class="btn-icon">📞</span>
+								<span class="btn-text">Llamar Ahora</span>
+							</span>
+						</a>
+					</div>
+					
+					<div class="cta-trust">
+						<div class="trust-elements">
+							<span class="trust-item">✓ Primera consulta garantizada</span>
+							<span class="trust-item">✓ Atención profesional certificada</span>
+							<span class="trust-item">✓ Resultados visibles</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Scripts -->
+	<script src="/scripts/nosotros.js"></script>
+
+	<!-- Booking Modal Component -->
+	<BookingModal />
+</Layout>

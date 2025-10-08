@@ -33,9 +33,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(14, 14, 14, 0.6), rgba(14, 14, 14, 0.6)),
-        url("/images/Banner_hero.webp") center/cover no-repeat;
+    background-image: linear-gradient(rgba(14, 14, 14, 0.6), rgba(14, 14, 14, 0.6)),
+        url("/images/Banner_hero.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 6rem 0;
+}
+
+@media (min-width: 768px) {
+    .hero-minimal {
+        min-height: 70vh;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-minimal {
+        min-height: 80vh;
+    }
 }
 
 .container-centered {

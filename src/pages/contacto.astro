@@ -1,0 +1,331 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BookingModal from '../components/BookingModal.astro';
+import '../styles/global.css';
+import '../styles/contacto.css';
+---
+
+<Layout title="Contacto - ARspa | Agenda Tu Consulta" description="Contáctanos para agendar tu cita en ARspa. Atención personalizada en estética y bienestar en Medellín. WhatsApp, teléfono y ubicación.">
+	<!-- Hero Minimalista -->
+	<section id="hero-contacto" class="hero-contacto section-padding">
+		<div class="container">
+			<div class="hero-content-contacto animate-fade-in-up">
+				<h1 class="titulo-hero-contacto">Agenda Tu Consulta Personalizada</h1>
+				<p class="subtitulo-hero-contacto">Estamos aquí para atenderte. Completa el formulario o contáctanos directamente por WhatsApp.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Formulario de Contacto -->
+	<section id="formulario-contacto" class="formulario-section bg-secondary">
+		<div class="container">
+			<div class="section-header animate-fade-in-up">
+				<h2 class="titulo-seccion">Envíanos un Mensaje</h2>
+				<p class="subtitulo-seccion">Completa el formulario y nos pondremos en contacto contigo lo antes posible</p>
+			</div>
+
+			<div class="formulario-container">
+				<form id="contact-form" class="form-grid">
+					<!-- Columna 1 -->
+					<div class="form-column">
+						<div class="form-group">
+							<label for="nombre" class="form-label">Nombre Completo</label>
+							<input
+								type="text"
+								id="nombre"
+								name="nombre"
+								placeholder="Tu nombre completo"
+								required
+								class="form-input"
+							>
+						</div>
+
+						<div class="form-group">
+							<label for="telefono" class="form-label">Teléfono</label>
+							<input
+								type="tel"
+								id="telefono"
+								name="telefono"
+								placeholder="+57 300 123 4567"
+								required
+								class="form-input"
+							>
+						</div>
+
+						<div class="form-group">
+							<label for="email" class="form-label">Correo Electrónico</label>
+							<input
+								type="email"
+								id="email"
+								name="email"
+								placeholder="tu@email.com"
+								required
+								class="form-input"
+							>
+						</div>
+					</div>
+
+					<!-- Columna 2 -->
+					<div class="form-column">
+						<div class="form-group">
+							<label for="servicio" class="form-label">Servicio de Interés</label>
+							<select id="servicio" name="servicio" required class="form-select">
+								<option value="" style="color: var(--color-bg-main);">Selecciona un servicio</option>
+								<option value="masajes" style="color: var(--color-bg-main);">Masajes de Relajación</option>
+								<option value="corporales" style="color: var(--color-bg-main);">Tratamientos Corporales</option>
+								<option value="faciales" style="color: var(--color-bg-main);">Faciales</option>
+								<option value="sueroterapia" style="color: var(--color-bg-main);">Sueroterapia</option>
+								<option value="dias-especiales" style="color: var(--color-bg-main);">Días Especiales</option>
+								<option value="consulta" style="color: var(--color-bg-main);">Consulta General</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="mensaje" class="form-label">Mensaje</label>
+							<textarea
+								id="mensaje"
+								name="mensaje"
+								rows="5"
+								placeholder="Cuéntanos cómo podemos ayudarte..."
+								required
+								class="form-textarea"
+							></textarea>
+						</div>
+
+						<button type="submit" class="form-button">
+							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787"></path>
+							</svg>
+							Enviar por WhatsApp
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<!-- Información de Contacto -->
+	<section id="info-contacto" class="info-contacto-section bg-secondary">
+		<div class="container">
+			<div class="section-header animate-fade-in-up">
+				<h2 class="titulo-seccion">Otras Formas de Contacto</h2>
+			</div>
+
+			<div class="info-grid">
+				<!-- WhatsApp/Teléfono -->
+				<div class="info-card animate-fade-in-up animate-delay-1">
+					<div class="info-icon">
+						<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787"></path>
+						</svg>
+					</div>
+					<h3 class="info-titulo">WhatsApp</h3>
+					<p class="info-descripcion">Contáctanos directamente por WhatsApp para una atención inmediata</p>
+					<a href="https://wa.me/573013545997?text=Hola!%20Me%20gustaría%20agendar%20una%20consulta%20en%20ARspa." target="_blank" class="info-cta-button">
+						<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787"></path>
+						</svg>
+						Abrir WhatsApp
+					</a>
+				</div>
+
+				<!-- Horarios -->
+				<div class="info-card animate-fade-in-up animate-delay-2">
+					<div class="info-icon">
+						<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+						</svg>
+					</div>
+					<h3 class="info-titulo">Horarios</h3>
+					<p class="info-descripcion">
+						<strong>Lunes - Sábado</strong><br>
+						8:00 AM - 6:00 PM<br>
+						<br>
+						<strong>Domingo</strong><br>
+						Cerrado
+					</p>
+					<button onclick="openBookingModal()" class="info-cta-button">
+						<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+						</svg>
+						Agendar Cita
+					</button>
+				</div>
+
+				<!-- Ubicación -->
+				<div class="info-card animate-fade-in-up animate-delay-3">
+					<div class="info-icon">
+						<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+						</svg>
+					</div>
+					<h3 class="info-titulo">Ubicación</h3>
+					<p class="info-descripcion">
+						<strong>ARspa</strong><br>
+						Medellín, Colombia<br>
+						<br>
+						Conoce nuestra ubicación exacta
+					</p>
+					<a href="https://www.google.com/maps/place/AR+SPA/@6.2449337,-75.6013041,17z/data=!3m1!4b1!4m6!3m5!1s0x8e46832add5be333:0x6f80e21288e73a90!8m2!3d6.2449337!4d-75.6013041!16s%2Fg%2F11w8nxzpf4?entry=ttu" target="_blank" class="info-cta-button">
+						<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+						</svg>
+						Ver en Google Maps
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Mapa de Google -->
+	<section id="mapa" class="mapa-section bg-secondary">
+		<div class="container">
+			<div class="section-header animate-fade-in-up">
+				<h2 class="titulo-seccion">Encuéntranos</h2>
+				<p class="subtitulo-seccion">Visítanos en nuestra ubicación en Medellín</p>
+			</div>
+
+			<div class="mapa-container animate-fade-in-scale">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1234567890123!2d-75.6013041!3d6.2449337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46832add5be333%3A0x6f80e21288e73a90!2sAR%20SPA!5e0!3m2!1ses!2sco!4v1234567890123!5m2!1ses!2sco"
+					class="mapa-iframe"
+					allowfullscreen=""
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"
+					title="Ubicación de ARspa en Google Maps"
+				></iframe>
+			</div>
+		</div>
+	</section>
+
+	<!-- Social Proof / Reviews -->
+	<section id="reviews" class="reviews-section bg-secondary">
+		<div class="container">
+			<div class="reviews-container animate-fade-in-up">
+				<h2 class="titulo-seccion">Confían en Nosotros</h2>
+				<p class="subtitulo-seccion">Somos una empresa verificada con cientos de clientes satisfechos</p>
+
+				<div class="reviews-grid">
+					<div class="review-card">
+						<div class="review-stat-number">500+</div>
+						<div class="review-stat-label">Clientes Satisfechos</div>
+					</div>
+
+					<div class="review-card">
+						<div class="review-stat-number">4.9</div>
+						<div class="review-stat-label">Calificación Promedio</div>
+					</div>
+				</div>
+
+				<div class="reviews-cta">
+					<a href="https://www.google.com/search?q=arturo+ramirez+spa&sca_esv=ba24c2d2484ecd3d&sxsrf=AE3TifONv_6sLFO1HYUV1G0nPQHtK4bBZg%3A1759941229278&ei=bZLmaO7iEPOCwbkPpfSioQ0&ved=0ahUKEwiuza_-g5WQAxVzQTABHSW6KNQQ4dUDCBA&uact=5&oq=arturo+ramirez+spa&gs_lp=Egxnd3Mtd2l6LXNlcnAiEmFydHVybyByYW1pcmV6IHNwYTIEECMYJzIIEAAYogQYiQUyCBAAGKIEGIkFMggQABiABBiiBDIIEAAYogQYiQUyBRAAGO8FSKQ7UMcRWLk3cAN4AJABAZgBnASgAbwxqgELMC4xLjkuMy40LjK4AQPIAQD4AQGYAhWgAqcxwgIIEAAYsAMY7wXCAgsQABiABBiwAxiiBMICChAjGIAEGCcYigXCAgoQABiABBhDGIoFwgIKEC4YgAQYQxiKBcICCxAuGIAEGLEDGIMBwgIREC4YgAQYsQMY0QMYgwEYxwHCAg4QLhiABBixAxjRAxjHAcICDRAAGIAEGLEDGEMYigXCAg0QLhiABBixAxhDGIoFwgIQEC4YgAQYsQMYQxiDARiKBcICBRAAGIAEwgIQEAAYgAQYsQMYQxiDARiKBcICBRAuGIAEwgILEC4YgAQYxwEYrwHCAgoQABiABBgUGIcCwgIGEAAYFhgemAMAiAYBkAYCkgcJMy4wLjguNC42oAfEqAOyBwcyLTguNC42uAeQMcIHCDItMTUuNC4yyAexAQ&sclient=gws-wiz-serp" target="_blank" class="reviews-button">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+						</svg>
+						Ver Opiniones en Google
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Final -->
+	<section id="cta-final" class="cta-final-contacto bg-secondary">
+		<div class="container">
+			<div class="cta-final-container animate-fade-in-up">
+				<h2 class="cta-final-titulo">¿Listo para Tu Transformación?</h2>
+				<p class="cta-final-subtitulo">Agenda tu consulta personalizada ahora y descubre cómo podemos ayudarte a alcanzar tus objetivos de bienestar</p>
+
+				<div class="cta-buttons">
+					<a href="https://wa.me/573013545997?text=Hola!%20Me%20gustaría%20agendar%20una%20consulta%20en%20ARspa." target="_blank" class="btn-whatsapp-cta">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787"></path>
+						</svg>
+						Reservar por WhatsApp
+					</a>
+				</div>
+
+				<p class="cta-final-subtitulo" style="margin-top: 1.5rem; margin-bottom: 1rem;">Síguenos en redes sociales</p>
+				<div class="redes-sociales">
+					<a href="https://www.facebook.com/share/1ArHDiZFhJ/?mibextid=wwXIfr" target="_blank" class="red-social-link" aria-label="Facebook">
+						<img src="https://cdn.simpleicons.org/facebook/E8D4C0" alt="Facebook" class="w-6 h-6" style="filter: drop-shadow(0 2px 4px rgba(217, 173, 70, 0.3));">
+					</a>
+					<a href="https://www.instagram.com/ar_spamedellinigsh=MXE2dzRiY2wxZzY1NQ%3D%3D&utm_source=qr" target="_blank" class="red-social-link" aria-label="Instagram">
+						<img src="https://cdn.simpleicons.org/instagram/E8D4C0" alt="Instagram" class="w-6 h-6" style="filter: drop-shadow(0 2px 4px rgba(217, 173, 70, 0.3));">
+					</a>
+					<a href="https://www.tiktok.com/@ar.spamedellin?_t=ZS-8zEwl3gyfLk&_r=1" target="_blank" class="red-social-link" aria-label="TikTok">
+						<img src="https://cdn.simpleicons.org/tiktok/E8D4C0" alt="TikTok" class="w-6 h-6" style="filter: drop-shadow(0 2px 4px rgba(217, 173, 70, 0.3));">
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Scripts -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			// Formulario de contacto - WhatsApp
+			const form = document.getElementById('contact-form');
+			if (form) {
+				form.addEventListener('submit', function(e) {
+					e.preventDefault();
+
+					const nombre = (document.getElementById('nombre') as HTMLInputElement)?.value || '';
+					const telefono = (document.getElementById('telefono') as HTMLInputElement)?.value || '';
+					const email = (document.getElementById('email') as HTMLInputElement)?.value || '';
+					const servicio = (document.getElementById('servicio') as HTMLSelectElement)?.value || '';
+					const mensaje = (document.getElementById('mensaje') as HTMLTextAreaElement)?.value || '';
+
+					// Construir mensaje de WhatsApp
+					let whatsappMessage = `Hola! Me gustaría contactar con ARspa.\n\n`;
+					whatsappMessage += `👤 *Nombre:* ${nombre}\n`;
+					whatsappMessage += `📱 *Teléfono:* ${telefono}\n`;
+					whatsappMessage += `📧 *Email:* ${email}\n`;
+					whatsappMessage += `✨ *Servicio de interés:* ${getServiceName(servicio)}\n\n`;
+					whatsappMessage += `📝 *Mensaje:*\n${mensaje}`;
+
+					// Abrir WhatsApp
+					const whatsappUrl = `https://wa.me/573013545997?text=${encodeURIComponent(whatsappMessage)}`;
+					window.open(whatsappUrl, '_blank');
+
+					// Opcional: Resetear formulario
+					form.reset();
+				});
+			}
+
+			function getServiceName(serviceValue: string): string {
+				const services = {
+					'masajes': 'Masajes de Relajación',
+					'corporales': 'Tratamientos Corporales',
+					'faciales': 'Faciales',
+					'sueroterapia': 'Sueroterapia',
+					'dias-especiales': 'Días Especiales',
+					'consulta': 'Consulta General'
+				};
+				return services[serviceValue as keyof typeof services] || serviceValue;
+			}
+
+			// Intersection Observer para animaciones
+			const observerOptions = {
+				threshold: 0.1,
+				rootMargin: '0px 0px -50px 0px'
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('visible');
+						observer.unobserve(entry.target);
+					}
+				});
+			}, observerOptions);
+
+			// Observar todos los elementos con animación
+			const animatedElements = document.querySelectorAll('[class*="animate-"]');
+			animatedElements.forEach((el) => observer.observe(el));
+		});
+	</script>
+
+	<!-- Booking Modal Component -->
+	<BookingModal />
+</Layout>

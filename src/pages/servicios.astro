@@ -4,338 +4,1387 @@ import BookingModal from '../components/BookingModal.astro';
 import '../styles/global.css';
 ---
 
-<Layout title="Nuestros Servicios - ARspa | Medellín" description="Descubre nuestra amplia gama de tratamientos personalizados en ARspa Medellín: masajes, tratamientos corporales, faciales, sueroterapia y días especiales.">
-	<!-- Services Section -->
-	<section id="servicios" class="py-20 bg-white">
+<Layout
+	title="Nuestros Servicios - ARspa | Tratamientos Profesionales en Medellín"
+	description="Descubre nuestros servicios profesionales de spa: masajes terapéuticos, tratamientos corporales, faciales avanzados, sueroterapia personalizada y experiencias especiales. Atención con base científica en Medellín."
+>
+	<!-- Hero Section -->
+	<section id="hero-servicios" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden" style="background-color: var(--color-bg-main);">
+		<!-- Background Image -->
+		<div class="absolute inset-0">
+			<img
+				src="/images/Banner_hero.webp"
+				alt="ARspa servicios profesionales - ambiente luxury spa"
+				class="absolute inset-0 w-full h-full object-cover"
+			/>
+			<div class="absolute inset-0 bg-gradient-to-br from-black/85 via-black/75 to-black/60"></div>
+			<div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(217, 173, 70, 0.1), rgba(181, 136, 46, 0.05));"></div>
+		</div>
+
+		<!-- Content -->
+		<div class="relative z-20 section-padding text-center py-20">
+			<!-- Breadcrumb -->
+			<nav class="mb-8 animate-fade-in" aria-label="Breadcrumb">
+				<ol class="flex items-center justify-center space-x-2 text-sm">
+					<li>
+						<a href="/" class="text-gold-medium hover:text-gold-light transition-colors">Inicio</a>
+					</li>
+					<li class="text-gold-dark">
+						<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+						</svg>
+					</li>
+					<li class="text-accent font-medium">Servicios</li>
+				</ol>
+			</nav>
+
+			<div class="max-w-4xl mx-auto">
+				<h1 class="text-4xl md:text-6xl font-bold text-primary mb-6 animate-fade-in-up">
+					Nuestros Servicios <span class="text-gold-light">Profesionales</span>
+				</h1>
+				<p class="text-xl md:text-2xl text-secondary leading-relaxed mb-8 animate-fade-in-up animation-delay-200">
+					Tratamientos especializados diseñados para transformar tu bienestar físico y emocional. Cada servicio combina técnicas avanzadas con atención personalizada.
+				</p>
+				<button
+					onclick="openBookingModal()"
+					class="bg-luxury px-8 py-4 font-semibold rounded-full hover:opacity-90 transition-all shadow-gold hover:shadow-xl hover:scale-105 animate-fade-in-up animation-delay-400 inline-flex items-center"
+					style="color: var(--color-bg-main);"
+				>
+					<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+						<path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+					</svg>
+					Reservar Consulta
+				</button>
+			</div>
+		</div>
+	</section>
+
+	<!-- Masajes de Relajación -->
+	<section id="masajes-relajacion" class="py-20 bg-secondary">
 		<div class="section-padding">
-			<div class="text-center mb-16">
-				<h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">Nuestros Servicios</h1>
-				<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-					Descubre nuestra amplia gama de tratamientos personalizados,
-					diseñados para mejorar tu bienestar físico y emocional.
+			<!-- Section Header -->
+			<div class="text-center mb-12 scroll-reveal">
+				<div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 bg-gold-light/20">
+					<svg class="w-8 h-8 text-gold-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+					</svg>
+				</div>
+				<h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Masajes de Relajación</h2>
+				<p class="text-secondary max-w-3xl mx-auto mb-8">
+					Nuestros masajes terapéuticos alivian tensiones musculares, mejoran la circulación y promueven un estado profundo de relajación. Cada técnica está diseñada para atender necesidades específicas del cuerpo.
 				</p>
 			</div>
 
-			<!-- Service Tabs -->
-			<div class="max-w-6xl mx-auto">
-				<!-- Tab Buttons -->
-				<div class="flex flex-wrap justify-center gap-4 mb-12">
-					<button class="service-tab active" data-tab="masajes">
-						<span class="text-2xl mb-2 block">💆‍♀️</span>
-						Masajes de Relajación
-					</button>
-					<button class="service-tab" data-tab="corporales">
-						<span class="text-2xl mb-2 block">🎨</span>
-						Tratamientos Corporales
-					</button>
-					<button class="service-tab" data-tab="faciales">
-						<span class="text-2xl mb-2 block">✨</span>
-						Faciales
-					</button>
-					<button class="service-tab" data-tab="sueroterapia">
-						<span class="text-2xl mb-2 block">💉</span>
-						Sueroterapia
-					</button>
-					<button class="service-tab" data-tab="dias-especiales">
-						<span class="text-2xl mb-2 block">🎁</span>
-						Días Especiales
+			<!-- Banner -->
+			<div class="mb-12 rounded-2xl overflow-hidden shadow-2xl max-w-5xl mx-auto scroll-reveal">
+				<img
+					src="/images/Masajes_banner.webp"
+					alt="Masajes profesionales ARspa - técnicas terapéuticas avanzadas"
+					class="w-full h-64 md:h-96 object-cover"
+					loading="lazy"
+				/>
+			</div>
+
+			<!-- Grid de Servicios -->
+			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+				<!-- Masaje de Relajación -->
+				<div class="service-detail-card scroll-reveal">
+					<div class="aspect-square overflow-hidden rounded-xl mb-4">
+						<img
+							src="/images/Masaje_relajacion_icon.webp"
+							alt="Masaje de relajación completo"
+							class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+							loading="lazy"
+						/>
+					</div>
+					<h3 class="text-xl font-bold text-gold-light mb-3">Masaje de Relajación</h3>
+					<p class="text-secondary text-sm mb-4 leading-relaxed">
+						Experiencia completa de relajación que trabaja todo el cuerpo. Técnicas suaves y envolventes que liberan tensión acumulada y restauran el equilibrio energético.
+					</p>
+					<div class="space-y-2 mb-4">
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Reduce estrés y ansiedad</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Mejora calidad del sueño</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Estimula circulación sanguínea</span>
+						</div>
+					</div>
+					<div class="text-sm text-gold-medium font-semibold mb-4">Duración: 60 minutos</div>
+					<div class="text-xs text-secondary mb-4">Ideal para: Personas con estrés laboral, insomnio o tensión generalizada</div>
+					<button onclick="openBookingModal()" class="w-full bg-luxury px-4 py-3 rounded-lg font-semibold transition-all hover:opacity-90 text-sm" style="color: var(--color-bg-main);">
+						Reservar Ahora
 					</button>
 				</div>
 
-				<!-- Tab Content -->
-				<div class="tab-content">
-					<!-- Masajes -->
-					<div id="masajes" class="tab-panel active">
-						<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-							<div class="service-card">
-								<div class="service-icon">💪</div>
-								<h3>Masaje de Espalda</h3>
-								<p>Alivia la tensión y dolor en espalda, cuello y hombros.</p>
-								<span class="price">$70.000</span>
-							</div>
-							<div class="service-card">
-								<div class="service-icon">😌</div>
-								<h3>Masaje de Relajación</h3>
-								<p>Experiencia completa de relajación y bienestar.</p>
-								<span class="price">$110.000</span>
-							</div>
-							<div class="service-card">
-								<div class="service-icon">🌋</div>
-								<h3>Masaje con Piedras Volcánicas</h3>
-								<p>Terapia de calor profundo para relajación muscular.</p>
-								<span class="price">$140.000</span>
-							</div>
-							<div class="service-card">
-								<div class="service-icon">💧</div>
-								<h3>Drenaje Linfático</h3>
-								<p>Estimula la circulación y elimina toxinas del cuerpo.</p>
-								<span class="price">$180.000</span>
-							</div>
+				<!-- Masaje de Espalda -->
+				<div class="service-detail-card scroll-reveal">
+					<div class="aspect-square overflow-hidden rounded-xl mb-4">
+						<img
+							src="/images/Masaje_espalda_icon.webp"
+							alt="Masaje terapéutico de espalda"
+							class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+							loading="lazy"
+						/>
+					</div>
+					<h3 class="text-xl font-bold text-gold-light mb-3">Masaje de Espalda</h3>
+					<p class="text-secondary text-sm mb-4 leading-relaxed">
+						Tratamiento focalizado en espalda, cuello y hombros. Técnicas de presión profunda que disuelven nudos musculares y alivian dolor crónico causado por malas posturas.
+					</p>
+					<div class="space-y-2 mb-4">
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Alivia dolor lumbar y cervical</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Mejora postura corporal</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Libera tensión muscular profunda</span>
 						</div>
 					</div>
+					<div class="text-sm text-gold-medium font-semibold mb-4">Duración: 45 minutos</div>
+					<div class="text-xs text-secondary mb-4">Ideal para: Trabajo de oficina, contracturas, dolor de espalda crónico</div>
+					<button onclick="openBookingModal()" class="w-full bg-luxury px-4 py-3 rounded-lg font-semibold transition-all hover:opacity-90 text-sm" style="color: var(--color-bg-main);">
+						Reservar Ahora
+					</button>
+				</div>
 
-					<!-- Tratamientos Corporales -->
-					<div id="corporales" class="tab-panel">
-						<div class="grid md:grid-cols-2 gap-8">
-							<div class="space-y-6">
-								<h3 class="text-2xl font-bold text-primary mb-4">Depilación con Cera</h3>
-								<div class="grid gap-4">
-									<div class="service-item">
-										<span class="service-name">Axilas</span>
-										<span class="service-price">$25.000</span>
-									</div>
-									<div class="service-item">
-										<span class="service-name">Bikini Parcial</span>
-										<span class="service-price">$35.000</span>
-									</div>
-									<div class="service-item">
-										<span class="service-name">Bikini Completo</span>
-										<span class="service-price">$50.000</span>
-									</div>
-									<div class="service-item">
-										<span class="service-name">Piernas</span>
-										<span class="service-price">$50.000</span>
-									</div>
-									<div class="service-item">
-										<span class="service-name">Pecho</span>
-										<span class="service-price">$30.000</span>
-									</div>
-									<div class="service-item">
-										<span class="service-name">Espalda</span>
-										<span class="service-price">$30.000</span>
-									</div>
-								</div>
-							</div>
-							<div class="space-y-6">
-								<h3 class="text-2xl font-bold text-primary mb-4">Paquetes de Masajes (10 sesiones)</h3>
-								<div class="grid gap-4">
-									<div class="package-card">
-										<h4>Masajes Reductores</h4>
-										<p class="text-sm text-gray-600">Reduce medidas y tonifica</p>
-										<span class="package-price">$1.100.000</span>
-									</div>
-									<div class="package-card">
-										<h4>Masajes Anticeluíticos</h4>
-										<p class="text-sm text-gray-600">Combate la celulitis efectivamente</p>
-										<span class="package-price">$1.100.000</span>
-									</div>
-									<div class="package-card">
-										<h4>Levantamiento de Glúteos</h4>
-										<p class="text-sm text-gray-600">Tonifica y levanta naturalmente</p>
-										<span class="package-price">$1.100.000</span>
-									</div>
-									<div class="package-card">
-										<h4>Masajes Post Quirúrgicos</h4>
-										<p class="text-sm text-gray-600">Recuperación óptima</p>
-										<span class="package-price">$1.100.000</span>
-									</div>
-								</div>
-							</div>
+				<!-- Piedras Volcánicas - POPULAR -->
+				<div class="service-detail-card featured-service scroll-reveal">
+					<div class="absolute top-4 right-4 bg-luxury text-xs font-bold px-3 py-1.5 rounded-full z-10 shadow-lg" style="color: var(--color-bg-main);">
+						POPULAR
+					</div>
+					<div class="aspect-square overflow-hidden rounded-xl mb-4">
+						<img
+							src="/images/Piedras_volcanicas_icon.webp"
+							alt="Masaje con piedras volcánicas calientes"
+							class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+							loading="lazy"
+						/>
+					</div>
+					<h3 class="text-xl font-bold text-gold-light mb-3">Piedras Volcánicas</h3>
+					<p class="text-secondary text-sm mb-4 leading-relaxed">
+						Termoterapia con piedras basálticas calientes que penetran en capas profundas del músculo. El calor terapéutico relaja, desintoxica y restaura el flujo energético del cuerpo.
+					</p>
+					<div class="space-y-2 mb-4">
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Relajación muscular profunda</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Desintoxica y mejora metabolismo</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Equilibra energía vital</span>
 						</div>
 					</div>
+					<div class="text-sm text-gold-medium font-semibold mb-4">Duración: 75 minutos</div>
+					<div class="text-xs text-secondary mb-4">Ideal para: Estrés crónico, rigidez muscular, necesidad de desconexión total</div>
+					<button onclick="openBookingModal()" class="w-full bg-luxury px-4 py-3 rounded-lg font-semibold transition-all hover:opacity-90 text-sm" style="color: var(--color-bg-main);">
+						Reservar Ahora
+					</button>
+				</div>
 
-					<!-- Faciales -->
-					<div id="faciales" class="tab-panel">
-						<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-							<div class="service-card">
-								<div class="service-icon">💧</div>
-								<h3>Hidratación Facial</h3>
-								<p>Restaura la hidratación natural de tu piel.</p>
-								<span class="price">$85.000</span>
-							</div>
-							<div class="service-card">
-								<div class="service-icon">🧡</div>
-								<h3>Limpieza Facial Profunda</h3>
-								<p>Elimina impurezas y puntos negros profundamente.</p>
-								<span class="price">$130.000</span>
-							</div>
-							<div class="service-card">
-								<div class="service-icon">✨</div>
-								<h3>Rejuvenecimiento Facial</h3>
-								<p>Tratamiento antiedad integral (10 sesiones).</p>
-								<span class="price">$1.100.000</span>
-							</div>
-							<div class="service-card highlight">
-								<div class="service-icon">🩸</div>
-								<h3>Plasma Rico en Plaquetas</h3>
-								<p>Facial y capilar. 3 sesiones con 15% descuento.</p>
-								<div class="price-group">
-									<span class="price-single">$220.000 x sesión</span>
-									<span class="price-package">$561.000 (3 sesiones)</span>
-								</div>
-							</div>
-							<div class="service-card">
-								<div class="service-icon">💋</div>
-								<h3>Hidralip</h3>
-								<p>Hidratación profunda para labios. 3 sesiones con 10% descuento.</p>
-								<div class="price-group">
-									<span class="price-single">$70.000 x sesión</span>
-									<span class="price-package">$189.000 (3 sesiones)</span>
-								</div>
-							</div>
+				<!-- Drenaje Linfático -->
+				<div class="service-detail-card scroll-reveal">
+					<div class="aspect-square overflow-hidden rounded-xl mb-4">
+						<img
+							src="/images/Drenaje_linfatico_icon.webp"
+							alt="Drenaje linfático terapéutico"
+							class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+							loading="lazy"
+						/>
+					</div>
+					<h3 class="text-xl font-bold text-gold-light mb-3">Drenaje Linfático</h3>
+					<p class="text-secondary text-sm mb-4 leading-relaxed">
+						Técnica especializada de masaje suave que estimula el sistema linfático para eliminar toxinas y líquidos retenidos. Mejora la circulación y fortalece el sistema inmunológico.
+					</p>
+					<div class="space-y-2 mb-4">
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Reduce retención de líquidos</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Mejora circulación linfática</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Fortalece sistema inmune</span>
 						</div>
 					</div>
+					<div class="text-sm text-gold-medium font-semibold mb-4">Duración: 60 minutos</div>
+					<div class="text-xs text-secondary mb-4">Ideal para: Retención de líquidos, piernas cansadas, post-operatorio</div>
+					<button onclick="openBookingModal()" class="w-full bg-luxury px-4 py-3 rounded-lg font-semibold transition-all hover:opacity-90 text-sm" style="color: var(--color-bg-main);">
+						Reservar Ahora
+					</button>
+				</div>
+			</div>
 
-					<!-- Sueroterapia -->
-					<div id="sueroterapia" class="tab-panel">
-						<div class="text-center mb-8">
-							<h3 class="text-2xl font-bold text-primary mb-4">Sueroterapia Personalizada</h3>
-							<p class="text-gray-600 max-w-2xl mx-auto">
-								Tratamientos intravenosos especializados para diferentes necesidades de salud y bienestar.
-								<strong class="text-accent">$120.000 por sesión</strong> |
-								<strong class="text-secondary">4 sesiones por $432.000 (10% descuento)</strong>
+			<!-- Link a Precios -->
+			<div class="text-center mt-12 scroll-reveal">
+				<a href="/precios#masajes-relajacion" class="inline-flex items-center text-gold-light hover:text-gold-medium transition-colors font-semibold">
+					Ver precios detallados
+					<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Tratamientos Corporales -->
+	<section id="tratamientos-corporales" class="relative py-20 overflow-hidden" style="background-color: var(--color-bg-main);">
+		<!-- Imagen de fondo sutil -->
+		<div class="absolute inset-0 opacity-5">
+			<img
+				src="/images/Tratamientos_corporales.webp"
+				alt="Tratamientos corporales profesionales"
+				class="w-full h-full object-cover"
+				loading="lazy"
+			/>
+		</div>
+
+		<div class="section-padding relative z-10">
+			<!-- Section Header -->
+			<div class="text-center mb-12 scroll-reveal">
+				<div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 bg-gold-light/20">
+					<svg class="w-8 h-8 text-gold-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+					</svg>
+				</div>
+				<h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Tratamientos Corporales</h2>
+				<p class="text-secondary max-w-3xl mx-auto">
+					Programas especializados que transforman tu figura y mejoran la salud de tu piel. Cada tratamiento combina tecnología avanzada con técnicas manuales expertas para resultados visibles y duraderos.
+				</p>
+			</div>
+
+			<div class="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+				<!-- Depilación con Cera -->
+				<div class="scroll-reveal">
+					<div class="bg-secondary rounded-2xl p-8 h-full border border-gold-dark/20 hover:border-gold-light/40 transition-all">
+						<div class="flex items-center gap-3 mb-6">
+							<div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+								<svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"/>
+								</svg>
+							</div>
+							<h3 class="text-2xl font-bold text-gold-light">Depilación con Cera</h3>
+						</div>
+						<p class="text-secondary mb-6 leading-relaxed">
+							Servicio profesional de depilación con cera de alta calidad. Técnica precisa y delicada que garantiza resultados duraderos y piel suave. Productos hipoalergénicos para minimizar irritación.
+						</p>
+						<div class="space-y-3">
+							<div class="flex justify-between items-center p-4 bg-main/30 rounded-lg border-l-3 border-accent hover:bg-main/50 transition-all">
+								<span class="font-medium text-primary">Axilas</span>
+								<span class="text-gold-light font-semibold">Servicio disponible</span>
+							</div>
+							<div class="flex justify-between items-center p-4 bg-main/30 rounded-lg border-l-3 border-accent hover:bg-main/50 transition-all">
+								<span class="font-medium text-primary">Bikini Parcial</span>
+								<span class="text-gold-light font-semibold">Servicio disponible</span>
+							</div>
+							<div class="flex justify-between items-center p-4 bg-main/30 rounded-lg border-l-3 border-accent hover:bg-main/50 transition-all">
+								<span class="font-medium text-primary">Bikini Completo</span>
+								<span class="text-gold-light font-semibold">Servicio disponible</span>
+							</div>
+							<div class="flex justify-between items-center p-4 bg-main/30 rounded-lg border-l-3 border-accent hover:bg-main/50 transition-all">
+								<span class="font-medium text-primary">Piernas Completas</span>
+								<span class="text-gold-light font-semibold">Servicio disponible</span>
+							</div>
+							<div class="flex justify-between items-center p-4 bg-main/30 rounded-lg border-l-3 border-accent hover:bg-main/50 transition-all">
+								<span class="font-medium text-primary">Pecho / Espalda</span>
+								<span class="text-gold-light font-semibold">Servicio disponible</span>
+							</div>
+						</div>
+						<div class="mt-6 p-4 bg-gold-light/10 rounded-lg border border-gold-light/20">
+							<p class="text-sm text-secondary">
+								<strong class="text-gold-light">Beneficio:</strong> Piel suave hasta por 4 semanas. Técnica profesional que reduce el crecimiento del vello con cada sesión.
 							</p>
-						</div>
-
-						<div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-							<div class="suero-card">Detox</div>
-							<div class="suero-card">Fortalecimiento Respiratorio</div>
-							<div class="suero-card">Inmunológico General</div>
-							<div class="suero-card">Anti Envejecimiento</div>
-							<div class="suero-card">Adelgazante</div>
-							<div class="suero-card">Post Quirúrgico</div>
-							<div class="suero-card">Afecciones de la Piel</div>
-							<div class="suero-card">Afecciones del Colon</div>
-							<div class="suero-card">Sistema Osteo-Articular</div>
-							<div class="suero-card">Estrés</div>
-							<div class="suero-card">Diabetes</div>
-							<div class="suero-card">Sistema Circulatorio</div>
-							<div class="suero-card">Energía - Fatiga</div>
-							<div class="suero-card">Ácido Úrico</div>
-							<div class="suero-card">Guayabo</div>
-							<div class="suero-card">Próstata</div>
-							<div class="suero-card">Migraña</div>
-							<div class="suero-card">Menopausia</div>
-							<div class="suero-card">Revitalizante Masculino</div>
-							<div class="suero-card">Revitalizante Femenino</div>
-						</div>
-					</div>
-
-					<!-- Días Especiales -->
-					<div id="dias-especiales" class="tab-panel">
-						<div class="text-center mb-8">
-							<h3 class="text-2xl font-bold text-primary mb-4">Días de ARspa</h3>
-							<p class="text-gray-600 max-w-2xl mx-auto">
-								Experiencias especiales diseñadas para celebrar momentos importantes
-								y crear recuerdos inolvidables.
-							</p>
-						</div>
-
-						<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-							<div class="special-day-card">
-								<div class="icon">💑</div>
-								<h4>En Pareja</h4>
-								<p>Experiencia romántica para dos</p>
-							</div>
-							<div class="special-day-card">
-								<div class="icon">🌹</div>
-								<h4>Día de la Madre</h4>
-								<p>Homenaje especial para mamá</p>
-							</div>
-							<div class="special-day-card">
-								<div class="icon">🎁</div>
-								<h4>Aguinaldos</h4>
-								<p>Regalo perfecto de fin de año</p>
-							</div>
-							<div class="special-day-card">
-								<div class="icon">👰</div>
-								<h4>Baño de Novia</h4>
-								<p>Preparación especial pre-boda</p>
-							</div>
-							<div class="special-day-card">
-								<div class="icon">👨‍🎓</div>
-								<h4>Día del Padre</h4>
-								<p>Relajación especial para papá</p>
-							</div>
-							<div class="special-day-card">
-								<div class="icon">💕</div>
-								<h4>Amor y Amistad</h4>
-								<p>Celebra el amor en todas sus formas</p>
-							</div>
-							<div class="special-day-card">
-								<div class="icon">🎉</div>
-								<h4>Spa de Aniversario</h4>
-								<p>Conmemoración única y especial</p>
-							</div>
-							<div class="special-day-card">
-								<div class="icon">🍾</div>
-								<h4>Despedida de Soltera</h4>
-								<p>Celebra tu última aventura soltera</p>
-							</div>
-							<div class="special-day-card">
-								<div class="icon">🎂</div>
-								<h4>Spa de Quinceañeras</h4>
-								<p>Celebra este momento tan especial</p>
-							</div>
 						</div>
 					</div>
 				</div>
 
-				<!-- Service Notice -->
-				<div class="bg-accent/10 border border-accent/20 rounded-xl p-6 mt-12 text-center">
-					<div class="flex items-center justify-center mb-4">
-						<svg class="w-6 h-6 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
-							<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+				<!-- Paquetes de 10 Sesiones -->
+				<div class="scroll-reveal">
+					<div class="bg-secondary rounded-2xl p-8 h-full border border-gold-dark/20 hover:border-gold-light/40 transition-all">
+						<div class="flex items-center gap-3 mb-6">
+							<div class="w-12 h-12 rounded-xl bg-gold-medium/20 flex items-center justify-center">
+								<svg class="w-6 h-6 text-gold-medium" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+								</svg>
+							</div>
+							<h3 class="text-2xl font-bold text-gold-light">Paquetes Especializados</h3>
+						</div>
+						<p class="text-secondary mb-6 leading-relaxed">
+							Programas de 10 sesiones diseñados para resultados progresivos y sostenibles. Cada tratamiento incluye valoración inicial, seguimiento personalizado y plan de mantenimiento.
+						</p>
+						<div class="space-y-4">
+							<!-- Masajes Reductores -->
+							<div class="p-5 bg-main/30 rounded-xl border border-gold-dark/20 hover:border-gold-medium/40 hover:bg-main/50 transition-all">
+								<h4 class="font-semibold text-primary mb-2 flex items-center">
+									<svg class="w-5 h-5 text-gold-medium mr-2" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+									</svg>
+									Masajes Reductores
+								</h4>
+								<p class="text-sm text-secondary mb-2">
+									Técnicas de masaje profundo que movilizan tejido adiposo y activan el metabolismo local. Reduce medidas y tonifica la figura de forma natural.
+								</p>
+								<span class="inline-block text-xs bg-gold-medium/20 text-gold-light px-3 py-1 rounded-full">10 sesiones - Programa completo</span>
+							</div>
+
+							<!-- Masajes Anticeluíticos -->
+							<div class="p-5 bg-main/30 rounded-xl border border-gold-dark/20 hover:border-gold-medium/40 hover:bg-main/50 transition-all">
+								<h4 class="font-semibold text-primary mb-2 flex items-center">
+									<svg class="w-5 h-5 text-gold-medium mr-2" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+									</svg>
+									Masajes Anticeluíticos
+								</h4>
+								<p class="text-sm text-secondary mb-2">
+									Tratamiento especializado que combate la celulitis mejorando circulación, drenando líquidos y alisando la textura de la piel. Resultados visibles desde las primeras sesiones.
+								</p>
+								<span class="inline-block text-xs bg-gold-medium/20 text-gold-light px-3 py-1 rounded-full">10 sesiones - Programa completo</span>
+							</div>
+
+							<!-- Levantamiento de Glúteos -->
+							<div class="p-5 bg-main/30 rounded-xl border border-gold-dark/20 hover:border-gold-medium/40 hover:bg-main/50 transition-all">
+								<h4 class="font-semibold text-primary mb-2 flex items-center">
+									<svg class="w-5 h-5 text-gold-medium mr-2" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+									</svg>
+									Levantamiento de Glúteos
+								</h4>
+								<p class="text-sm text-secondary mb-2">
+									Técnica específica que tonifica, levanta y moldea los glúteos. Estimula colágeno y elastina para firmeza duradera. Resultados naturales y armoniosos.
+								</p>
+								<span class="inline-block text-xs bg-gold-medium/20 text-gold-light px-3 py-1 rounded-full">10 sesiones - Programa completo</span>
+							</div>
+
+							<!-- Masajes Post Quirúrgicos -->
+							<div class="p-5 bg-main/30 rounded-xl border border-gold-dark/20 hover:border-gold-medium/40 hover:bg-main/50 transition-all">
+								<h4 class="font-semibold text-primary mb-2 flex items-center">
+									<svg class="w-5 h-5 text-gold-medium mr-2" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+									</svg>
+									Masajes Post Quirúrgicos
+								</h4>
+								<p class="text-sm text-secondary mb-2">
+									Tratamiento especializado para recuperación óptima después de cirugías estéticas. Reduce inflamación, previene fibrosis y acelera cicatrización. Supervisión profesional continua.
+								</p>
+								<span class="inline-block text-xs bg-gold-medium/20 text-gold-light px-3 py-1 rounded-full">10 sesiones - Programa completo</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Link a Precios -->
+			<div class="text-center mt-12 scroll-reveal">
+				<a href="/precios#tratamientos-corporales" class="inline-flex items-center text-gold-light hover:text-gold-medium transition-colors font-semibold">
+					Ver precios detallados
+					<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Tratamientos Faciales -->
+	<section id="tratamientos-faciales" class="py-20 bg-secondary">
+		<div class="section-padding">
+			<!-- Section Header -->
+			<div class="text-center mb-12 scroll-reveal">
+				<div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 bg-accent/20">
+					<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+					</svg>
+				</div>
+				<h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Tratamientos Faciales</h2>
+				<p class="text-secondary max-w-3xl mx-auto mb-8">
+					Tecnología avanzada y técnicas especializadas para el cuidado de tu rostro. Cada tratamiento está respaldado por evidencia científica y diseñado para resultados visibles y duraderos.
+				</p>
+			</div>
+
+			<!-- Grid de Faciales -->
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+				<!-- Hidratación Facial -->
+				<div class="service-detail-card scroll-reveal">
+					<h3 class="text-xl font-bold text-gold-light mb-3">Hidratación Facial</h3>
+					<p class="text-secondary text-sm mb-4 leading-relaxed">
+						Tratamiento profundo que restaura los niveles óptimos de hidratación. Utiliza activos humectantes de última generación para piel radiante y saludable.
+					</p>
+					<div class="space-y-2 mb-4">
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Restaura barrera cutánea</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Reduce líneas finas</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Luminosidad inmediata</span>
+						</div>
+					</div>
+					<div class="text-xs text-secondary mb-4">Ideal para: Piel seca, deshidratada, opaca</div>
+					<button onclick="openBookingModal()" class="w-full bg-luxury px-4 py-3 rounded-lg font-semibold transition-all hover:opacity-90 text-sm mt-auto" style="color: var(--color-bg-main);">
+						Agendar Tratamiento
+					</button>
+				</div>
+
+				<!-- Limpieza Facial Profunda -->
+				<div class="service-detail-card scroll-reveal">
+					<h3 class="text-xl font-bold text-gold-light mb-3">Limpieza Facial Profunda</h3>
+					<p class="text-secondary text-sm mb-4 leading-relaxed">
+						Protocolo especializado que elimina impurezas, destapa poros y oxigena la piel. Combina extracción manual experta con tecnología de vaporización.
+					</p>
+					<div class="space-y-2 mb-4">
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Elimina puntos negros</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Minimiza poros dilatados</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Previene acné y brotes</span>
+						</div>
+					</div>
+					<div class="text-xs text-secondary mb-4">Ideal para: Piel grasa, mixta, con impurezas</div>
+					<button onclick="openBookingModal()" class="w-full bg-luxury px-4 py-3 rounded-lg font-semibold transition-all hover:opacity-90 text-sm mt-auto" style="color: var(--color-bg-main);">
+						Agendar Tratamiento
+					</button>
+				</div>
+
+				<!-- Rejuvenecimiento Facial -->
+				<div class="service-detail-card scroll-reveal">
+					<h3 class="text-xl font-bold text-gold-light mb-3">Rejuvenecimiento Facial</h3>
+					<p class="text-secondary text-sm mb-4 leading-relaxed">
+						Tratamiento anti-edad que estimula producción de colágeno y elastina. Combina masaje facial especializado con sérums de alta concentración activa.
+					</p>
+					<div class="space-y-2 mb-4">
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Atenúa arrugas y líneas</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Mejora firmeza cutánea</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Efecto lifting natural</span>
+						</div>
+					</div>
+					<div class="text-xs text-secondary mb-4">Ideal para: Signos de envejecimiento, flacidez</div>
+					<button onclick="openBookingModal()" class="w-full bg-luxury px-4 py-3 rounded-lg font-semibold transition-all hover:opacity-90 text-sm mt-auto" style="color: var(--color-bg-main);">
+						Agendar Tratamiento
+					</button>
+				</div>
+
+				<!-- Plasma Rico en Plaquetas (PRP) - PREMIUM -->
+				<div class="service-detail-card featured-service scroll-reveal">
+					<div class="absolute top-4 right-4 bg-luxury text-xs font-bold px-3 py-1.5 rounded-full z-10 shadow-lg" style="color: var(--color-bg-main);">
+						PREMIUM
+					</div>
+					<h3 class="text-xl font-bold text-gold-light mb-3">Plasma Rico en Plaquetas (PRP)</h3>
+					<p class="text-secondary text-sm mb-4 leading-relaxed">
+						Tecnología médica avanzada que usa factores de crecimiento de tu propia sangre para regeneración celular profunda. Resultados profesionales de medicina estética.
+					</p>
+					<div class="space-y-2 mb-4">
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Regeneración celular profunda</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Estimula colágeno natural</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Resultados duraderos y naturales</span>
+						</div>
+					</div>
+					<div class="mb-3 p-2 bg-accent/10 rounded-lg text-center">
+						<span class="text-xs font-semibold text-accent">Descuento 15% en paquetes</span>
+					</div>
+					<div class="text-xs text-secondary mb-4">Ideal para: Rejuvenecimiento avanzado, cicatrices, pérdida de volumen</div>
+					<button onclick="openBookingModal()" class="w-full bg-luxury px-4 py-3 rounded-lg font-semibold transition-all hover:opacity-90 text-sm mt-auto" style="color: var(--color-bg-main);">
+						Consulta Valoración
+					</button>
+				</div>
+
+				<!-- Hidralip - NUEVO -->
+				<div class="service-detail-card featured-service scroll-reveal">
+					<div class="absolute top-4 right-4 bg-accent text-xs font-bold px-3 py-1.5 rounded-full z-10 shadow-lg" style="color: var(--color-bg-main);">
+						NUEVO
+					</div>
+					<h3 class="text-xl font-bold text-gold-light mb-3">Hidralip</h3>
+					<p class="text-secondary text-sm mb-4 leading-relaxed">
+						Tratamiento especializado para hidratación profunda de labios. Tecnología de micro-infiltración que restaura volumen natural y suavidad permanente.
+					</p>
+					<div class="space-y-2 mb-4">
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Hidratación de larga duración</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Restaura volumen natural</span>
+						</div>
+						<div class="flex items-start text-xs text-primary">
+							<svg class="w-4 h-4 text-accent mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+							</svg>
+							<span>Suavidad permanente</span>
+						</div>
+					</div>
+					<div class="mb-3 p-2 bg-gold-light/10 rounded-lg text-center">
+						<span class="text-xs font-semibold text-gold-light">Descuento 10% - Lanzamiento</span>
+					</div>
+					<div class="text-xs text-secondary mb-4">Ideal para: Labios secos, agrietados, sin volumen</div>
+					<button onclick="openBookingModal()" class="w-full bg-luxury px-4 py-3 rounded-lg font-semibold transition-all hover:opacity-90 text-sm mt-auto" style="color: var(--color-bg-main);">
+						Conocer Más
+					</button>
+				</div>
+			</div>
+
+			<!-- Link a Precios -->
+			<div class="text-center mt-12 scroll-reveal">
+				<a href="/precios#faciales" class="inline-flex items-center text-gold-light hover:text-gold-medium transition-colors font-semibold">
+					Ver precios detallados
+					<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sueroterapia -->
+	<section id="sueroterapia" class="relative py-20 overflow-hidden" style="background-color: var(--color-bg-main);">
+		<div class="section-padding">
+			<!-- Section Header -->
+			<div class="text-center mb-12 scroll-reveal">
+				<div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 bg-gold-medium/20">
+					<svg class="w-8 h-8 text-gold-medium" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+					</svg>
+				</div>
+				<h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Sueroterapia Personalizada</h2>
+				<p class="text-secondary max-w-3xl mx-auto mb-6">
+					Terapia intravenosa con vitaminas, minerales y antioxidantes de alta biodisponibilidad. Cada fórmula se personaliza según tus necesidades específicas de salud y bienestar.
+				</p>
+				<div class="max-w-2xl mx-auto p-6 bg-secondary rounded-xl border border-gold-dark/20">
+					<h3 class="text-lg font-semibold text-gold-light mb-3">¿Qué es la Sueroterapia?</h3>
+					<p class="text-sm text-secondary leading-relaxed">
+						Es la administración intravenosa de nutrientes esenciales que van directamente al torrente sanguíneo, evitando el sistema digestivo. Esto permite una absorción del 100% de los nutrientes, a diferencia de los suplementos orales que tienen una absorción del 20-30%. Ideal para hidratación profunda, recuperación deportiva, fortalecimiento inmunológico y bienestar general.
+					</p>
+				</div>
+			</div>
+
+			<!-- Grid de Sueros -->
+			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 max-w-7xl mx-auto mb-8">
+				<div class="suero-badge scroll-reveal">Vitamina C</div>
+				<div class="suero-badge scroll-reveal">Complejo B</div>
+				<div class="suero-badge scroll-reveal">Glutatión</div>
+				<div class="suero-badge scroll-reveal">Magnesio</div>
+				<div class="suero-badge scroll-reveal">Zinc</div>
+				<div class="suero-badge scroll-reveal">Calcio</div>
+				<div class="suero-badge scroll-reveal">Aminoácidos</div>
+				<div class="suero-badge scroll-reveal">Colágeno</div>
+				<div class="suero-badge scroll-reveal">Biotina</div>
+				<div class="suero-badge scroll-reveal">Ácido Fólico</div>
+				<div class="suero-badge scroll-reveal">L-Carnitina</div>
+				<div class="suero-badge scroll-reveal">Complejo Antioxidante</div>
+				<div class="suero-badge scroll-reveal">Hidratación Profunda</div>
+				<div class="suero-badge scroll-reveal">Recuperación Deportiva</div>
+				<div class="suero-badge scroll-reveal">Anti-Resaca</div>
+				<div class="suero-badge scroll-reveal">Energía y Vitalidad</div>
+				<div class="suero-badge scroll-reveal">Detox Hepático</div>
+				<div class="suero-badge scroll-reveal">Belleza y Piel</div>
+				<div class="suero-badge scroll-reveal">Inmunidad</div>
+				<div class="suero-badge scroll-reveal">Fórmula Personalizada</div>
+			</div>
+
+			<!-- Beneficios -->
+			<div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto scroll-reveal">
+				<div class="p-6 bg-secondary rounded-xl border border-gold-dark/20 text-center">
+					<div class="w-12 h-12 bg-gold-light/20 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-6 h-6 text-gold-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
 						</svg>
-						<h4 class="text-lg font-semibold text-primary">Servicio a Domicilio Disponible</h4>
 					</div>
-					<p class="text-gray-600">
-						Todos nuestros servicios están disponibles en la comodidad de tu hogar.
-						<strong class="text-accent">El costo adicional varía según la ubicación.</strong>
-						<a href="https://wa.me/573013545997?text=Hola! Me interesa el servicio a domicilio" target="_blank" class="text-secondary font-semibold hover:underline ml-2">Consultar precios →</a>
+					<h4 class="text-lg font-semibold text-primary mb-2">100% Biodisponible</h4>
+					<p class="text-sm text-secondary">Absorción completa de nutrientes directo al torrente sanguíneo</p>
+				</div>
+				<div class="p-6 bg-secondary rounded-xl border border-gold-dark/20 text-center">
+					<div class="w-12 h-12 bg-gold-light/20 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-6 h-6 text-gold-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+						</svg>
+					</div>
+					<h4 class="text-lg font-semibold text-primary mb-2">Resultados Inmediatos</h4>
+					<p class="text-sm text-secondary">Efectos visibles desde la primera sesión, energía y vitalidad instantánea</p>
+				</div>
+				<div class="p-6 bg-secondary rounded-xl border border-gold-dark/20 text-center">
+					<div class="w-12 h-12 bg-gold-light/20 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-6 h-6 text-gold-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+						</svg>
+					</div>
+					<h4 class="text-lg font-semibold text-primary mb-2">Personalizado</h4>
+					<p class="text-sm text-secondary">Fórmula adaptada a tus necesidades específicas de salud</p>
+				</div>
+			</div>
+
+			<!-- CTA -->
+			<div class="text-center mt-12 scroll-reveal">
+				<p class="text-secondary mb-4">Aplicado por enfermera profesional con supervisión médica</p>
+				<button onclick="openBookingModal()" class="bg-luxury px-8 py-4 font-semibold rounded-full hover:opacity-90 transition-all shadow-gold hover:shadow-xl hover:scale-105 inline-flex items-center" style="color: var(--color-bg-main);">
+					Agendar Valoración Gratuita
+				</button>
+			</div>
+		</div>
+	</section>
+
+	<!-- Días de ARspa -->
+	<section id="dias-arspa" class="py-20 bg-secondary">
+		<div class="section-padding">
+			<!-- Section Header -->
+			<div class="text-center mb-12 scroll-reveal">
+				<div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 bg-accent/20">
+					<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
+					</svg>
+				</div>
+				<h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Días de ARspa</h2>
+				<p class="text-secondary max-w-3xl mx-auto">
+					Experiencias especiales diseñadas para celebrar momentos únicos. Cada día incluye tratamientos personalizados, ambiente exclusivo y detalles que hacen la diferencia.
+				</p>
+			</div>
+
+			<!-- Grid de Experiencias -->
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+				<!-- En Pareja -->
+				<div class="special-day-card scroll-reveal">
+					<div class="special-icon-wrapper">
+						<svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+						</svg>
+					</div>
+					<h3 class="special-title">Día en Pareja</h3>
+					<p class="special-description">
+						Experiencia romántica para dos. Masajes simultáneos, ambiente íntimo con velas y música, copa de champagne, pétalos de rosa. Perfecto para aniversarios o escapadas románticas.
+					</p>
+				</div>
+
+				<!-- Día de la Madre -->
+				<div class="special-day-card scroll-reveal">
+					<div class="special-icon-wrapper">
+						<svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+							<path d="M2 6a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 100 4v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2a2 2 0 100-4V6z"/>
+						</svg>
+					</div>
+					<h3 class="special-title">Día de la Madre</h3>
+					<p class="special-description">
+						Homenaje especial para mamá. Facial rejuvenecedor, masaje relajante, manicure express, arreglo floral artesanal. Espacio para consentir y agradecer a quien lo merece todo.
+					</p>
+				</div>
+
+				<!-- Aguinaldos -->
+				<div class="special-day-card scroll-reveal">
+					<div class="special-icon-wrapper">
+						<svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+							<path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z"/>
+						</svg>
+					</div>
+					<h3 class="special-title">Aguinaldos</h3>
+					<p class="special-description">
+						Regalo corporativo ideal para fin de año. Sesión spa personalizada, kit de productos premium, certificado elegante presentación gift. Demuestra aprecio a tu equipo.
+					</p>
+				</div>
+
+				<!-- Baño de Novia -->
+				<div class="special-day-card scroll-reveal">
+					<div class="special-icon-wrapper">
+						<svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd"/>
+						</svg>
+					</div>
+					<h3 class="special-title">Baño de Novia</h3>
+					<p class="special-description">
+						Día mágico pre-boda. Hidratación facial profunda, manicure y pedicure spa, masaje anti-estrés, peinado y maquillaje prueba. Luce radiante en tu día especial.
+					</p>
+				</div>
+
+				<!-- Día del Padre -->
+				<div class="special-day-card scroll-reveal">
+					<div class="special-icon-wrapper">
+						<svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+						</svg>
+					</div>
+					<h3 class="special-title">Día del Padre</h3>
+					<p class="special-description">
+						Experiencia diseñada para papá. Masaje deportivo profundo, tratamiento facial masculino, aromaterapia relajante. Momento de descanso que se merece.
+					</p>
+				</div>
+
+				<!-- Amor y Amistad -->
+				<div class="special-day-card scroll-reveal">
+					<div class="special-icon-wrapper">
+						<svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+							<path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
+						</svg>
+					</div>
+					<h3 class="special-title">Amor y Amistad</h3>
+					<p class="special-description">
+						Celebración de vínculos especiales. Paquete duo con masajes, faciales express, snacks saludables. Ideal para amigas o pareja en septiembre.
+					</p>
+				</div>
+
+				<!-- Aniversario -->
+				<div class="special-day-card scroll-reveal">
+					<div class="special-icon-wrapper">
+						<svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+						</svg>
+					</div>
+					<h3 class="special-title">Aniversario</h3>
+					<p class="special-description">
+						Renovación de votos de amor. Spa en pareja, tratamiento con piedras volcánicas, cena ligera gourmet, fotografía de recuerdo. Celebra cada año juntos.
+					</p>
+				</div>
+
+				<!-- Despedida de Soltera -->
+				<div class="special-day-card scroll-reveal">
+					<div class="special-icon-wrapper">
+						<svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+							<path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+						</svg>
+					</div>
+					<h3 class="special-title">Despedida de Soltera</h3>
+					<p class="special-description">
+						Último día de soltera con estilo. Paquete grupal hasta 6 personas, masajes, faciales, manicure, prosecco, decoración festiva. Recuerdos inolvidables.
+					</p>
+				</div>
+
+				<!-- Quinceañeras -->
+				<div class="special-day-card scroll-reveal">
+					<div class="special-icon-wrapper">
+						<svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+						</svg>
+					</div>
+					<h3 class="special-title">Quinceañeras</h3>
+					<p class="special-description">
+						Transición a mujer con glamour. Facial para piel joven, manicure con diseño, masaje relajante pre-fiesta, sesión de fotos. Brilla en tus 15.
+					</p>
+				</div>
+			</div>
+
+			<!-- Link a Precios -->
+			<div class="text-center mt-12 scroll-reveal">
+				<a href="/precios#dias-especiales" class="inline-flex items-center text-gold-light hover:text-gold-medium transition-colors font-semibold">
+					Ver precios y disponibilidad
+					<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- ¿Por Qué ARspa? -->
+	<section id="por-que-arspa" class="relative py-20 overflow-hidden" style="background-color: var(--color-bg-main);">
+		<div class="section-padding">
+			<!-- Section Header -->
+			<div class="text-center mb-16 scroll-reveal">
+				<h2 class="text-3xl md:text-5xl font-bold text-primary mb-4">¿Por Qué Elegir <span class="text-gold-light">ARspa</span>?</h2>
+				<p class="text-secondary max-w-2xl mx-auto text-lg">
+					No somos un spa tradicional. Somos un espacio de transformación integral donde cada detalle está pensado para tu bienestar.
+				</p>
+			</div>
+
+			<!-- Grid de Pilares -->
+			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+				<!-- Profesionalismo -->
+				<div class="pilar-card scroll-reveal">
+					<div class="pilar-icon-wrapper mb-6">
+						<svg class="w-10 h-10 text-gold-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-gold-light mb-3">Profesionalismo Certificado</h3>
+					<p class="text-secondary text-sm leading-relaxed">
+						Equipo liderado por enfermera profesional y cosmetóloga certificada. Cada tratamiento respaldado por conocimiento médico y técnicas actualizadas.
+					</p>
+				</div>
+
+				<!-- Base Científica -->
+				<div class="pilar-card scroll-reveal">
+					<div class="pilar-icon-wrapper mb-6">
+						<svg class="w-10 h-10 text-gold-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-gold-light mb-3">Base Científica</h3>
+					<p class="text-secondary text-sm leading-relaxed">
+						Tratamientos respaldados por evidencia médica y resultados comprobados. No vendemos promesas, ofrecemos soluciones reales basadas en ciencia.
+					</p>
+				</div>
+
+				<!-- Personalización -->
+				<div class="pilar-card scroll-reveal">
+					<div class="pilar-icon-wrapper mb-6">
+						<svg class="w-10 h-10 text-gold-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-gold-light mb-3">Atención Personalizada</h3>
+					<p class="text-secondary text-sm leading-relaxed">
+						Valoración individual antes de cada tratamiento. Protocolos adaptados a tu tipo de piel, necesidades específicas y objetivos de bienestar.
+					</p>
+				</div>
+
+				<!-- Resultados -->
+				<div class="pilar-card scroll-reveal">
+					<div class="pilar-icon-wrapper mb-6">
+						<svg class="w-10 h-10 text-gold-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-gold-light mb-3">Resultados Comprobados</h3>
+					<p class="text-secondary text-sm leading-relaxed">
+						Seguimiento continuo y evaluación de resultados. Más de 500 clientes satisfechos que han transformado su bienestar con nuestros tratamientos.
 					</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Scripts -->
-	<script>
-		// Service Tabs Functionality
-		document.addEventListener('DOMContentLoaded', function() {
-			const tabs = document.querySelectorAll('.service-tab');
-			const panels = document.querySelectorAll('.tab-panel');
+	<!-- Proceso de Atención -->
+	<section id="proceso-atencion" class="py-20 bg-secondary">
+		<div class="section-padding">
+			<!-- Section Header -->
+			<div class="text-center mb-16 scroll-reveal">
+				<h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Nuestro Proceso de Atención</h2>
+				<p class="text-secondary max-w-3xl mx-auto">
+					Cada visita a ARspa es una experiencia completa de transformación, desde la valoración inicial hasta el seguimiento post-tratamiento.
+				</p>
+			</div>
 
-			tabs.forEach(tab => {
-				tab.addEventListener('click', () => {
-					// Remove active class from all tabs and panels
-					tabs.forEach(t => t.classList.remove('active'));
-					panels.forEach(p => p.classList.remove('active'));
+			<!-- Grid de Pasos -->
+			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+				<!-- Paso 1 -->
+				<div class="step-item text-center scroll-reveal" data-step="1">
+					<div class="relative mb-6">
+						<div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 shadow-2xl transition-all duration-300" style="border-color: var(--color-gold-light);">
+							<img
+								src="/images/Valoracion_1.webp"
+								alt="Valoración personalizada ARspa"
+								class="w-full h-full object-cover"
+								loading="lazy"
+							/>
+						</div>
+						<div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-luxury rounded-full flex items-center justify-center text-2xl font-bold shadow-lg" style="color: var(--color-bg-main);">
+							1
+						</div>
+					</div>
+					<h3 class="text-xl font-bold text-gold-light mb-3">Valoración</h3>
+					<p class="text-secondary text-sm leading-relaxed">
+						Evaluación profesional de tu estado actual, necesidades específicas y objetivos. Diseñamos el plan perfecto para ti.
+					</p>
+				</div>
 
-					// Add active class to clicked tab
-					tab.classList.add('active');
+				<!-- Paso 2 -->
+				<div class="step-item text-center scroll-reveal" data-step="2">
+					<div class="relative mb-6">
+						<div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 shadow-2xl transition-all duration-300" style="border-color: var(--color-gold-light);">
+							<img
+								src="/images/Tratamiento_2.webp"
+								alt="Tratamiento profesional ARspa"
+								class="w-full h-full object-cover"
+								loading="lazy"
+							/>
+						</div>
+						<div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-luxury rounded-full flex items-center justify-center text-2xl font-bold shadow-lg" style="color: var(--color-bg-main);">
+							2
+						</div>
+					</div>
+					<h3 class="text-xl font-bold text-gold-light mb-3">Tratamiento</h3>
+					<p class="text-secondary text-sm leading-relaxed">
+						Aplicación experta del tratamiento personalizado. Técnicas profesionales en ambiente relajante y seguro.
+					</p>
+				</div>
 
-					// Show corresponding panel
-					const targetPanel = tab.getAttribute('data-tab');
-					const panel = document.getElementById(targetPanel);
-					if (panel) {
-						panel.classList.add('active');
-					}
-				});
-			});
+				<!-- Paso 3 -->
+				<div class="step-item text-center scroll-reveal" data-step="3">
+					<div class="relative mb-6">
+						<div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 shadow-2xl transition-all duration-300" style="border-color: var(--color-gold-light);">
+							<img
+								src="/images/Acompanamiento_3.webp"
+								alt="Acompañamiento continuo ARspa"
+								class="w-full h-full object-cover"
+								loading="lazy"
+							/>
+						</div>
+						<div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-luxury rounded-full flex items-center justify-center text-2xl font-bold shadow-lg" style="color: var(--color-bg-main);">
+							3
+						</div>
+					</div>
+					<h3 class="text-xl font-bold text-gold-light mb-3">Acompañamiento</h3>
+					<p class="text-secondary text-sm leading-relaxed">
+						Recomendaciones personalizadas para mantener resultados en casa. Estamos contigo en cada paso de tu transformación.
+					</p>
+				</div>
 
-			function getServiceName(serviceValue: string): string {
-				const services = {
-					'masajes': 'Masajes de Relajación',
-					'corporales': 'Tratamientos Corporales',
-					'faciales': 'Faciales',
-					'sueroterapia': 'Sueroterapia',
-					'dias-especiales': 'Días Especiales'
-				};
-				return services[serviceValue as keyof typeof services] || serviceValue;
-			}
+				<!-- Paso 4 -->
+				<div class="step-item text-center scroll-reveal" data-step="4">
+					<div class="relative mb-6">
+						<div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 shadow-2xl transition-all duration-300" style="border-color: var(--color-gold-light);">
+							<img
+								src="/images/Evaluacion_4.webp"
+								alt="Evaluación de resultados ARspa"
+								class="w-full h-full object-cover"
+								loading="lazy"
+							/>
+						</div>
+						<div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-luxury rounded-full flex items-center justify-center text-2xl font-bold shadow-lg" style="color: var(--color-bg-main);">
+							4
+						</div>
+					</div>
+					<h3 class="text-xl font-bold text-gold-light mb-3">Evaluación</h3>
+					<p class="text-secondary text-sm leading-relaxed">
+						Seguimiento de resultados y ajustes según tu evolución. Tu satisfacción y bienestar son nuestra prioridad.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
-			// Smooth scrolling for service cards clicks
-			document.querySelectorAll('.service-card, .package-card, .suero-card, .special-day-card').forEach(card => {
-				card.addEventListener('click', function(this: HTMLElement) {
-					const serviceName = (this.querySelector('h3, h4') as HTMLElement)?.textContent || 'Consulta de servicio';
-					const whatsappUrl = `https://wa.me/573013545997?text=Hola! Me interesa información sobre: ${encodeURIComponent(serviceName)}`;
-					window.open(whatsappUrl, '_blank');
-				});
-			});
-		});
-	</script>
-	
-	<!-- Booking Modal Component -->
+	<!-- CTA Final -->
+	<section id="cta-final" class="relative py-24 overflow-hidden" style="background: linear-gradient(135deg, #0E0E0E 0%, #1A1A1A 100%);">
+		<!-- Efecto de brillo -->
+		<div class="absolute inset-0 opacity-20">
+			<div class="absolute top-0 left-1/4 w-96 h-96 bg-gold-light rounded-full filter blur-3xl"></div>
+			<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-gold-medium rounded-full filter blur-3xl"></div>
+		</div>
+
+		<div class="section-padding relative z-10">
+			<div class="max-w-4xl mx-auto text-center scroll-reveal">
+				<h2 class="text-3xl md:text-5xl font-bold text-primary mb-6">
+					Comienza Tu Transformación <span class="text-gold-light">Hoy</span>
+				</h2>
+				<p class="text-xl text-secondary mb-8 leading-relaxed">
+					Más de 500 personas han confiado en ARspa para su bienestar. Únete a nuestra comunidad y descubre el poder de cuidarte con profesionales que realmente se preocupan por tus resultados.
+				</p>
+
+				<!-- Estadísticas -->
+				<div class="grid grid-cols-3 gap-6 max-w-2xl mx-auto mb-12">
+					<div class="p-4">
+						<div class="text-4xl font-bold text-gold-light mb-2">500+</div>
+						<div class="text-sm text-secondary">Clientes Satisfechos</div>
+					</div>
+					<div class="p-4">
+						<div class="text-4xl font-bold text-gold-light mb-2">98%</div>
+						<div class="text-sm text-secondary">Recomendación</div>
+					</div>
+					<div class="p-4">
+						<div class="text-4xl font-bold text-gold-light mb-2">5+</div>
+						<div class="text-sm text-secondary">Años Experiencia</div>
+					</div>
+				</div>
+
+				<!-- Botones -->
+				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+					<button
+						onclick="openBookingModal()"
+						class="bg-luxury px-10 py-5 font-bold rounded-full hover:opacity-90 transition-all shadow-gold hover:shadow-2xl hover:scale-105 text-lg inline-flex items-center"
+						style="color: var(--color-bg-main);"
+					>
+						<svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+						</svg>
+						Reservar Mi Cita
+					</button>
+					<a
+						href="/precios"
+						class="px-10 py-5 font-bold rounded-full border-2 hover:bg-gold-light/10 transition-all text-lg inline-flex items-center"
+						style="border-color: var(--color-gold-light); color: var(--color-gold-light);"
+					>
+						<svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+						</svg>
+						Ver Precios
+					</a>
+				</div>
+
+				<!-- Nota adicional -->
+				<p class="text-sm text-secondary mt-8">
+					Primera consulta y valoración completamente gratuitas. Sin compromiso.
+				</p>
+			</div>
+		</div>
+	</section>
+
 	<BookingModal />
 </Layout>
+
+<style>
+	/* Animaciones personalizadas */
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.animate-fade-in {
+		animation: fadeIn 0.8s ease-out;
+	}
+
+	.animate-fade-in-up {
+		animation: fadeInUp 0.8s ease-out;
+	}
+
+	.animation-delay-200 {
+		animation-delay: 0.2s;
+		opacity: 0;
+		animation-fill-mode: forwards;
+	}
+
+	.animation-delay-400 {
+		animation-delay: 0.4s;
+		opacity: 0;
+		animation-fill-mode: forwards;
+	}
+
+	/* Service Detail Cards */
+	.service-detail-card {
+		background: linear-gradient(135deg, rgba(26,26,26,0.95), rgba(26,26,26,0.85));
+		backdrop-filter: blur(20px);
+		border: 1px solid var(--color-border);
+		border-radius: 1.5rem;
+		padding: 1.5rem;
+		transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.service-detail-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: var(--gradient-luxury);
+		opacity: 0;
+		transition: opacity 0.4s ease;
+	}
+
+	.service-detail-card:hover::before {
+		opacity: 1;
+	}
+
+	.service-detail-card:hover {
+		transform: translateY(-8px);
+		border-color: var(--color-gold-light);
+		box-shadow: 0 20px 60px rgba(217, 173, 70, 0.3);
+	}
+
+	.service-detail-card.featured-service {
+		border: 2px solid var(--color-gold-medium);
+		background: linear-gradient(135deg, rgba(217, 173, 70, 0.08), rgba(26,26,26,0.95));
+	}
+
+	.service-detail-card.featured-service::before {
+		opacity: 1;
+	}
+
+	/* Scroll Reveal */
+	.scroll-reveal {
+		opacity: 0;
+		transform: translateY(30px);
+		transition: all 0.6s ease-out;
+	}
+
+	.scroll-reveal.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	/* Border utility */
+	.border-l-3 {
+		border-left-width: 3px;
+	}
+
+	/* Suero Badges */
+	.suero-badge {
+		padding: 1rem 1.25rem;
+		background: linear-gradient(135deg, rgba(232, 212, 192, 0.08), rgba(217, 173, 70, 0.05));
+		border: 1px solid rgba(232, 212, 192, 0.2);
+		border-radius: 0.75rem;
+		text-align: center;
+		font-weight: 500;
+		color: var(--color-text-primary);
+		font-size: 0.9375rem;
+		transition: all 0.3s ease;
+		cursor: pointer;
+	}
+
+	.suero-badge:hover {
+		background: rgba(232, 212, 192, 0.15);
+		border-color: var(--color-accent);
+		transform: translateY(-2px);
+		box-shadow: 0 6px 16px rgba(232, 212, 192, 0.2);
+		color: var(--color-gold-light);
+	}
+
+	/* Special Day Cards */
+	.special-day-card {
+		background: linear-gradient(135deg, rgba(26,26,26,0.95), rgba(26,26,26,0.85));
+		backdrop-filter: blur(20px);
+		border: 1px solid var(--color-border);
+		border-radius: 1.5rem;
+		padding: 2rem;
+		text-align: center;
+		transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+		cursor: pointer;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.special-day-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 3px;
+		background: var(--gradient-luxury);
+		opacity: 0;
+		transition: opacity 0.4s ease;
+	}
+
+	.special-day-card:hover::before {
+		opacity: 1;
+	}
+
+	.special-day-card:hover {
+		transform: translateY(-6px);
+		border-color: var(--color-gold-light);
+		box-shadow: 0 16px 48px rgba(217, 173, 70, 0.25);
+	}
+
+	.special-icon-wrapper {
+		width: 4rem;
+		height: 4rem;
+		margin: 0 auto 1.5rem;
+		background: rgba(232, 212, 192, 0.1);
+		border-radius: 1rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+	}
+
+	.special-day-card:hover .special-icon-wrapper {
+		transform: scale(1.1) rotate(-5deg);
+		background: rgba(232, 212, 192, 0.2);
+	}
+
+	.special-title {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: var(--color-text-primary);
+		margin-bottom: 0.75rem;
+	}
+
+	.special-description {
+		color: var(--color-text-secondary);
+		font-size: 0.9375rem;
+		line-height: 1.5;
+	}
+
+	/* Pilar Cards */
+	.pilar-card {
+		background: linear-gradient(135deg, rgba(26,26,26,0.95), rgba(26,26,26,0.85));
+		backdrop-filter: blur(20px);
+		border: 1px solid var(--color-border);
+		border-radius: 1.5rem;
+		padding: 2rem 1.5rem;
+		text-align: center;
+		transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.pilar-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 3px;
+		background: var(--gradient-luxury);
+		opacity: 0;
+		transition: opacity 0.4s ease;
+	}
+
+	.pilar-card:hover::before {
+		opacity: 1;
+	}
+
+	.pilar-card:hover {
+		transform: translateY(-8px);
+		border-color: var(--color-gold-light);
+		box-shadow: 0 20px 60px rgba(217, 173, 70, 0.3);
+	}
+
+	.pilar-icon-wrapper {
+		width: 4rem;
+		height: 4rem;
+		margin: 0 auto;
+		background: rgba(217, 173, 70, 0.1);
+		border-radius: 1rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+	}
+
+	.pilar-card:hover .pilar-icon-wrapper {
+		transform: scale(1.15) rotate(5deg);
+		background: rgba(217, 173, 70, 0.2);
+	}
+
+	/* Step Items - Process Section */
+	.step-item {
+		opacity: 0;
+		transform: translateY(30px);
+		transition: all 0.6s ease-out;
+	}
+
+	.step-item.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.step-item:hover {
+		transform: translateY(-8px);
+		transition: all 0.3s ease;
+	}
+
+	.step-item:hover .w-40 {
+		box-shadow: 0 12px 35px rgba(217, 173, 70, 0.6);
+		transform: scale(1.05);
+	}
+</style>
+
+<script>
+	// Scroll Reveal Animation
+	document.addEventListener('DOMContentLoaded', function() {
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: '0px 0px -50px 0px'
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+					observer.unobserve(entry.target);
+				}
+			});
+		}, observerOptions);
+
+		const scrollElements = document.querySelectorAll('.scroll-reveal');
+		scrollElements.forEach((el) => observer.observe(el));
+	});
+</script>
